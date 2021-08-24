@@ -12,33 +12,39 @@ using UnityEngine;
 
 public class CameraControl : MonoBehaviour
 {
-    [SerializeField] Transform[] team1;
-    [SerializeField] Transform[] team2;
-    [SerializeField] int playerNumber;
-    [SerializeField] int team;
+    [SerializeField] Transform camStartPos;
     [SerializeField] bool LookAtPlayer;
     [SerializeField] Vector3 cameraOffset;
-    [SerializeField] [Range(0.01f, 1.0f)] float SmoothFactor;
+    private float SmoothFactor;
+    private bool selecting = false;
+    private bool atacked = false;
+    private Transform characterSelected;
 
+    public bool Selecting { get => selecting; set => selecting = value; }
+    public Transform CharacterSelected { get => characterSelected; set => characterSelected = value; }
+    public bool Atacked { get => atacked; set => atacked = value; }
+    public float SmoothFactor1 { get => SmoothFactor; set => SmoothFactor = value; }
+
+    // LateUpdate is called after Update methods
     private void Update()
     {
-        playerNumber = Mathf.Clamp(playerNumber, 0, team1.Length - 1);
-        team = Mathf.Clamp(team, 1, 2);
+        Debug.Log(SmoothFactor);
+        if (Selecting == false)
+        {
+            Vector3 newPos = characterSelected.position - cameraOffset;
+            transform.position = Vector3.Slerp(transform.position, newPos, SmoothFactor1);
+            if (LookAtPlayer) { transform.LookAt(characterSelected); }
+        }
+        else if (selecting == true && Atacked == true)
+        {
+            SmoothFactor = 0.05f;
+            Vector3 newPos = camStartPos.position - cameraOffset;
+            transform.position = Vector3.Slerp(transform.position, newPos, SmoothFactor1);
+        }
     }
-    // LateUpdate is called after Update methods
-    private void LateUpdate()
+
+    private void OnTriggerStay(Collider other)
     {
-        if (team == 1)
-        {
-            Vector3 newPos = team1[playerNumber].position - cameraOffset;
-            transform.position = Vector3.Slerp(transform.position, newPos, SmoothFactor);
-            if (LookAtPlayer) { transform.LookAt(team1[playerNumber]); }
-        }
-        if (team == 2)
-        {
-            Vector3 newPos = team2[playerNumber].position - cameraOffset;
-            transform.position = Vector3.Slerp(transform.position, newPos, SmoothFactor);
-            if (LookAtPlayer) { transform.LookAt(team2[playerNumber]); }
-        }
+        SmoothFactor = 1f;
     }
 }

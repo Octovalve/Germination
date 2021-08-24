@@ -15,22 +15,22 @@ using UnityEngine;
 [RequireComponent(typeof(Collider))]
 public class Stick : MonoBehaviour
 {
+    CameraControl cameracontrol;
     //Este string determina el tac se sera el encargado de marcar como aderibles las superficies
     [SerializeField] string StickySurfeceTag;
-    Drag dragScript;
     private void Awake()
     {
-        dragScript = GetComponent<Drag>();
+        cameracontrol = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraControl>();
     }
     //este detiene por completo el movimiento del objeto al colicionar y le quita la gravedad para simular el efecto de que se adiere
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag(StickySurfeceTag))
         {
-            dragScript.IsShoot = false;
             GetComponent<Rigidbody>().velocity = Vector3.zero;
             GetComponent<Rigidbody>().useGravity = false;
             GetComponent<Rigidbody>().Sleep();
+            cameracontrol.Selecting = true;
         }
     }
 }

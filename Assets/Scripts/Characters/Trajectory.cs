@@ -24,11 +24,12 @@ public class Trajectory : MonoBehaviour
         Instance = this;
     }
     #endregion
-
+    //Se encarga de calcular la trayectoria  y actualizar la gráfica en un tiempo determinado 
+    //para permitir la visualización del desplazamiento que seguirá el objeto
     public void UpdateTrajectory(Vector3 forceVector, Rigidbody rigidbody, Vector3 startingPoint)
     {
         Vector3 velocity = (forceVector / rigidbody.mass) * Time.fixedDeltaTime;
-        float FlightDuration = 2;
+        float FlightDuration = 1;
         float stepTime = FlightDuration / _lineSegmentCount;
         _linePoints.Clear();
         for (int i = 0; i < _lineSegmentCount; i++)
@@ -37,13 +38,14 @@ public class Trajectory : MonoBehaviour
             Vector3 MovementVector = new Vector3(
                  velocity.x * stepTimePassed,
                  velocity.y * stepTimePassed + 0.5f * Physics.gravity.y * stepTimePassed * stepTimePassed,
-                 velocity.z * 0f
+                 velocity.z * stepTimePassed
                 );
             _linePoints.Add(item: MovementVector + startingPoint);
         }
         _lineRenderer.positionCount = _linePoints.Count;
         _lineRenderer.SetPositions(_linePoints.ToArray());
     }
+    //Desaparece la línea poniendo los puntos de proyección en 0
     public void HideLine()
     {
         _lineRenderer.positionCount = 0;

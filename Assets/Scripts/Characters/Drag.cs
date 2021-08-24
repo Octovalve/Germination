@@ -17,7 +17,7 @@ public class Drag : MonoBehaviour
     private Vector3 mouseDownPos;
     private Vector3 mouseUpPos;
     private Rigidbody rb;
-    private bool isShoot;
+    private bool isShoot = true;
     private Vector3 force;
 
     public Vector3 Force { get => force; set => force = value; }
@@ -36,11 +36,14 @@ public class Drag : MonoBehaviour
     //debuelbe la grabedad al objeto toma el bector de la posicion del mouse y corre el void Shoot
     private void OnMouseUp()
     {
-        Trajectory.Instance.HideLine();
-        rb.useGravity = true;
-        mouseUpPos = Input.mousePosition;
-        force = mouseDownPos - mouseUpPos;
-        Shoot(force);
+        if (isShoot == false)
+        {
+            Trajectory.Instance.HideLine();
+            rb.useGravity = true;
+            mouseUpPos = Input.mousePosition;
+            force = mouseDownPos - mouseUpPos;
+            Shoot(force);
+        }
     }
     private void OnMouseDrag()
     {
@@ -50,7 +53,7 @@ public class Drag : MonoBehaviour
             Trajectory.Instance.UpdateTrajectory(forceVector: forceInit * 2, rb, startingPoint: transform.position);
         }
     }
-
+    public void Jump() { isShoot = false; }
     //determina si el objeto a sido disparado y en caso de que no este marcado como disparado-
     //le agrega una fuersa determinada por la diferencia de los bectores de posicion del muse tomados anterior mente
     void Shoot(Vector3 Force)

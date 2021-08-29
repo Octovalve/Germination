@@ -19,6 +19,7 @@ public class Drag : MonoBehaviour
     private Rigidbody rb;
     private bool isShoot = true;
     private Vector3 force;
+    [SerializeField] TurnControl turnControl;
 
     public Vector3 Force { get => force; set => force = value; }
     public bool IsShoot { get => isShoot; set => isShoot = value; }
@@ -36,10 +37,9 @@ public class Drag : MonoBehaviour
     //debuelbe la grabedad al objeto toma el bector de la posicion del mouse y corre el void Shoot
     private void OnMouseUp()
     {
-        if (isShoot == false)
+        if (turnControl.Estado >= 4)
         {
             Trajectory.Instance.HideLine();
-            rb.useGravity = true;
             mouseUpPos = Input.mousePosition;
             force = mouseDownPos - mouseUpPos;
             Shoot(force);
@@ -62,8 +62,8 @@ public class Drag : MonoBehaviour
         {
             return;
         }
+        rb.useGravity = true;
         rb.AddForce(force * 2);
-
         isShoot = true;
     }
 }

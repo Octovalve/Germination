@@ -5,7 +5,10 @@ using UnityEngine;
 public class Attack : MonoBehaviour
 {
     CameraControl cameracontrol;
-    [SerializeField] bool truee = false;
+    private bool attacked = false;
+
+    public bool Attacked { get => attacked; set => attacked = value; }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -15,6 +18,6 @@ public class Attack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        cameracontrol.Atacked = truee;
+        cameracontrol.Atacked = Attacked;
     }
 }

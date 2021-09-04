@@ -25,7 +25,7 @@ public class HP : MonoBehaviour
         if (curentHP <= 0)
         {
             Destroy(gameObject);
-            if(isCapitan == true)
+            if (isCapitan == true)
             {
                 defeatUI.SetActive(true);
             }

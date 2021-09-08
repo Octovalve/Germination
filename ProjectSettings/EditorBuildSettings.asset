@@ -5,7 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
+  - enabled: 0
+    path: Assets/Scenes/Lobby.unity
+    guid: 862269194a6acbe489000f8124869fae
   - enabled: 1
-    path: Assets/Scenes/MovimientoTest.unity
-    guid: 009957a662f6ae84bbb21e38c04214bd
+    path: Assets/Scenes/Intro.unity
+    guid: 4cc9d923b10d1d844ad2e239a2eee3e5
+  - enabled: 1
+    path: Assets/Scenes/MovimientoParabolico.unity
+    guid: 582b9d403d32ea942a36f3cf84c03b5d
   m_configObjects: {}

@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &548249075
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 548249076}
+  m_Layer: 8
+  m_Name: Origin Point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &548249076
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 548249075}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -1.13, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3552377286757915682}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3552377286757915710
 GameObject:
   m_ObjectHideFlags: 0
@@ -16,7 +46,6 @@ GameObject:
   - component: {fileID: 3552377286757915685}
   - component: {fileID: 3552377286757915689}
   - component: {fileID: 3552377286757915691}
-  - component: {fileID: 3552377286757915688}
   - component: {fileID: 2478257733394855645}
   - component: {fileID: 3552377286757915687}
   - component: {fileID: 3552377286757915686}
@@ -25,7 +54,7 @@ GameObject:
   - component: {fileID: 3552377286757915693}
   m_Layer: 8
   m_Name: Player 1 T1
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -42,6 +71,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3119299704133297816}
+  - {fileID: 548249076}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -133,7 +163,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1b4312d9ec90d3479d9c86316333e08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turnControl: {fileID: 0}
 --- !u!114 &3552377286757915689
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -159,20 +188,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c56780348d2f47a449b042ad17f66a1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &3552377286757915688
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3552377286757915710}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fcfdcdd0fcc971740bf1bcfce5e26f09, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _lineRenderer: {fileID: 0}
-  _lineSegmentCount: 20
 --- !u!114 &2478257733394855645
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -187,6 +202,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   barraHP: {fileID: 4763581251901178066}
   maxHP: 100
+  isCapitan: 0
+  VictoryUI: {fileID: 0}
 --- !u!1818360608 &3552377286757915687
 PositionConstraint:
   m_ObjectHideFlags: 0

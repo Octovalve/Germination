@@ -19,7 +19,7 @@ public class Drag : MonoBehaviour
     private Rigidbody rb;
     private bool isShoot = true;
     private Vector3 force;
-    [SerializeField] TurnControl turnControl;
+    TurnControl turnControl;
 
     public Vector3 Force { get => force; set => force = value; }
     public bool IsShoot { get => isShoot; set => isShoot = value; }
@@ -28,6 +28,7 @@ public class Drag : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        turnControl = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<TurnControl>();
     }
     //Toma la posicion del maus en el momento que unde sobr el objeto 
     private void OnMouseDown()

@@ -52,6 +52,6 @@ public class BulrtShot : MonoBehaviour
         }
         rb.useGravity = true;
         rb.AddForce(force * 2);
-        //isShoot = true;
+        isShoot = true;
     }
 }

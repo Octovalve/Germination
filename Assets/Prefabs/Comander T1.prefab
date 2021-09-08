@@ -190,15 +190,15 @@ GameObject:
   - component: {fileID: 8501326898186611364}
   - component: {fileID: 8501326898186611368}
   - component: {fileID: 8501326898186611370}
-  - component: {fileID: 8501326898186611369}
   - component: {fileID: 8501326898186611366}
   - component: {fileID: 8501326898186611367}
   - component: {fileID: 8501326898186611371}
   - component: {fileID: 8501326898186611373}
   - component: {fileID: 8501326898186611372}
+  - component: {fileID: 8852950930339318108}
   m_Layer: 8
   m_Name: Comander T1
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -217,7 +217,7 @@ Transform:
   - {fileID: 8070354988224040985}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -179.99998}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &8501326898186611362
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -306,7 +306,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1b4312d9ec90d3479d9c86316333e08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turnControl: {fileID: 0}
 --- !u!114 &8501326898186611368
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -332,20 +331,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c56780348d2f47a449b042ad17f66a1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &8501326898186611369
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8501326898186611391}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fcfdcdd0fcc971740bf1bcfce5e26f09, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _lineRenderer: {fileID: 0}
-  _lineSegmentCount: 20
 --- !u!1818360608 &8501326898186611366
 PositionConstraint:
   m_ObjectHideFlags: 0
@@ -440,6 +425,22 @@ MonoBehaviour:
   m_SynchronizeAngularVelocity: 1
   m_TeleportEnabled: 1
   m_TeleportIfDistanceGreaterThan: 3
+--- !u!114 &8852950930339318108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8501326898186611391}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51fcbb31fd354b946adcdb133a0aa1a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  barraHP: {fileID: 481305164707935827}
+  maxHP: 100
+  isCapitan: 1
+  VictoryUI: {fileID: 0}
 --- !u!1 &8807269891743192817
 GameObject:
   m_ObjectHideFlags: 0

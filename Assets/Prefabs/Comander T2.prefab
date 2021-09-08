@@ -89,7 +89,6 @@ GameObject:
   - component: {fileID: 6381566945123598859}
   - component: {fileID: 7895654504002365931}
   - component: {fileID: 7895654504002365932}
-  - component: {fileID: 7895654504002365845}
   - component: {fileID: 7895654504002365933}
   - component: {fileID: 7895654504002365934}
   - component: {fileID: 7895654504002365843}
@@ -118,7 +117,7 @@ Transform:
   - {fileID: 1786329197453689991}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -179.99998}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &7895654504002365847
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -207,7 +206,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1b4312d9ec90d3479d9c86316333e08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turnControl: {fileID: 0}
 --- !u!114 &7895654504002365932
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -221,20 +219,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StickySurfeceTag: ground
---- !u!114 &7895654504002365845
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7895654504002365935}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fcfdcdd0fcc971740bf1bcfce5e26f09, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _lineRenderer: {fileID: 0}
-  _lineSegmentCount: 20
 --- !u!1818360608 &7895654504002365933
 PositionConstraint:
   m_ObjectHideFlags: 0
@@ -356,7 +340,7 @@ MonoBehaviour:
   barraHP: {fileID: 8482108676895726944}
   maxHP: 100
   isCapitan: 1
-  defeatUI: {fileID: 0}
+  VictoryUI: {fileID: 0}
 --- !u!1 &7900561296524973677
 GameObject:
   m_ObjectHideFlags: 0

@@ -26,6 +26,10 @@ public class Trajectory : MonoBehaviour
     #endregion
     //Se encarga de calcular la trayectoria  y actualizar la gráfica en un tiempo determinado 
     //para permitir la visualización del desplazamiento que seguirá el objeto
+    private void Start()
+    {
+        _lineRenderer = this.GetComponent<LineRenderer>();
+    }
     public void UpdateTrajectory(Vector3 forceVector, Rigidbody rigidbody, Vector3 startingPoint)
     {
         Vector3 velocity = (forceVector / rigidbody.mass) * Time.fixedDeltaTime;

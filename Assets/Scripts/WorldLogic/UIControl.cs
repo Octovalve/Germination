@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class UIControl : MonoBehaviour
@@ -34,6 +35,7 @@ public class UIControl : MonoBehaviour
         if (turnControl.Estado == 4)
         {
             dragScript = teamSelectio.CurentPlayer.GetComponent<Drag>();
+            Debug.Log(teamSelectio.CurentPlayer);
             //attackScript = teamSelectio.CurentPlayer.GetComponent<Attack>();
         }
         if (turnControl.Estado == 5)
@@ -65,5 +67,10 @@ public class UIControl : MonoBehaviour
     {
         turnControl.Estado += 2;
         attackButon.interactable = false;
+    }
+    public void Reload()
+    {
+        SceneManager.LoadScene("MovimientoParabolico");
+        Time.timeScale = 1;
     }
 }

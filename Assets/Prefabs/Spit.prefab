@@ -115,7 +115,8 @@ PositionConstraint:
   m_IsContraintActive: 1
   m_IsLocked: 1
   m_Sources:
-  - sourceTransform: {fileID: 0}
+  - sourceTransform: {fileID: 4360555123025209868, guid: 42b7bf02a6491e043993543cab985ec1,
+      type: 3}
     weight: 1
 --- !u!1818360609 &5172035881416133422
 RotationConstraint:
@@ -134,7 +135,8 @@ RotationConstraint:
   m_IsContraintActive: 1
   m_IsLocked: 1
   m_Sources:
-  - sourceTransform: {fileID: 0}
+  - sourceTransform: {fileID: 4360555123025209868, guid: 42b7bf02a6491e043993543cab985ec1,
+      type: 3}
     weight: 1
 --- !u!54 &5172035881416133423
 Rigidbody:

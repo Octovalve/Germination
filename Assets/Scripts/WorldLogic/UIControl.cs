@@ -37,12 +37,13 @@ public class UIControl : MonoBehaviour
         }
         if (turnControl.Estado == 4)
         {
-            dragScript = teamSelectio.CurentPlayer.GetComponent<Drag>();
-            attackScript = teamSelectio.CurentPlayer.GetComponent<Attack>();
+            dragScript = teamSelectio.CurentPlayer.transform.GetComponent<Drag>();
+            attackScript = teamSelectio.CurentPlayer.transform.GetComponent<Attack>();
         }
-        if (turnControl.Estado != laststate && turnControl.Estado <7)
+        if (turnControl.Estado != laststate && turnControl.Estado < 7)
         {
             fondo.SetActive(true);
+            trigetUI.enabled = true;
             laststate = turnControl.Estado;
         }
 
@@ -59,7 +60,7 @@ public class UIControl : MonoBehaviour
     }
     public void Weapon1()
     {
-        Debug.Log("Spit");
+        attackScript.Attack1();
         spitButon.interactable = false;
         trigetUI.enabled = false;
         fondo.SetActive(false);

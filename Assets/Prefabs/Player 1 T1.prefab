@@ -188,6 +188,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c56780348d2f47a449b042ad17f66a1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weapon1: {fileID: 5172035881416133423, guid: 82f6c49cba2808a4d9f2bf6b3af1051c, type: 3}
+  SpawnPoint: {fileID: 548249076}
 --- !u!114 &2478257733394855645
 MonoBehaviour:
   m_ObjectHideFlags: 0

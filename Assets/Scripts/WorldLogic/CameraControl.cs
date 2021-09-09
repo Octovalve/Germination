@@ -52,6 +52,5 @@ public class CameraControl : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         SmoothFactor = 1f;
-
     }
 }

@@ -2,24 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-/*
- NOTA
- Todo esta comentado, por favor leer o preguntar si algo no se entiende
- Este script permite moverse en un tiro parabolico usando el mouse para determinar direccion y fuerza
- Cualquier cosa me preguntan
- ATT: Jesus Antonio Buitrago (Octovalve)
- */
-
 [RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(Collider))]
-public class Drag : MonoBehaviour
+public class BulrtShot : MonoBehaviour
 {
     private Vector3 mouseDownPos;
     private Vector3 mouseUpPos;
     private Rigidbody rb;
-    private bool isShoot = true;
+    private bool isShoot = false;
     private Vector3 force;
-    TurnControl turnControl;
 
     public Vector3 Force { get => force; set => force = value; }
     public bool IsShoot { get => isShoot; set => isShoot = value; }
@@ -28,7 +19,6 @@ public class Drag : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        turnControl = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<TurnControl>();
     }
     //Toma la posicion del maus en el momento que unde sobr el objeto 
     private void OnMouseDown()
@@ -38,13 +28,10 @@ public class Drag : MonoBehaviour
     //debuelbe la grabedad al objeto toma el bector de la posicion del mouse y corre el void Shoot
     private void OnMouseUp()
     {
-        if (turnControl.Estado >= 4)
-        {
-            Trajectory.Instance.HideLine();
-            mouseUpPos = Input.mousePosition;
-            force = mouseDownPos - mouseUpPos;
-            Shoot(force);
-        }
+        Trajectory.Instance.HideLine();
+        mouseUpPos = Input.mousePosition;
+        force = mouseDownPos - mouseUpPos;
+        Shoot(force);
     }
     private void OnMouseDrag()
     {

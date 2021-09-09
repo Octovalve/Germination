@@ -9,6 +9,7 @@ public class UIControl : MonoBehaviour
     [SerializeField] GameObject fondo;
     [SerializeField] Button jumpButon;
     [SerializeField] Button spitButon;
+    [SerializeField] Button cancel;
     BoxCollider trigetUI;
 
     CharctesSelection teamSelectio;
@@ -26,6 +27,7 @@ public class UIControl : MonoBehaviour
         cameracontrol = GetComponent<CameraControl>();
         jumpButon.interactable = false;
         spitButon.interactable = false;
+        cancel.interactable = false;
     }
     private void Update()
     {
@@ -56,12 +58,14 @@ public class UIControl : MonoBehaviour
             fondo.SetActive(true);
             jumpButon.interactable = true;
             spitButon.interactable = true;
+            cancel.interactable = true;
         }
     }
     public void Weapon1()
     {
         attackScript.Attack1();
         spitButon.interactable = false;
+        cancel.interactable = false;
         trigetUI.enabled = false;
         fondo.SetActive(false);
         laststate = turnControl.Estado;
@@ -75,8 +79,13 @@ public class UIControl : MonoBehaviour
     {
         dragScript.IsShoot = false;
         jumpButon.interactable = false;
+        cancel.interactable = false;
         trigetUI.enabled = false;
         fondo.SetActive(false);
         laststate = turnControl.Estado;
+    }
+    public void Cancel()
+    {
+        turnControl.Estado = 0;
     }
 }

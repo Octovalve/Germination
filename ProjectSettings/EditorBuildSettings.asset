@@ -12,6 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Intro.unity
     guid: 4cc9d923b10d1d844ad2e239a2eee3e5
   - enabled: 1
-    path: Assets/Scenes/MovimientoParabolico.unity
+    path: Assets/Scenes/Jesus.unity
     guid: 582b9d403d32ea942a36f3cf84c03b5d
   m_configObjects: {}

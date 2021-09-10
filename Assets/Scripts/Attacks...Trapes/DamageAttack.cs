@@ -24,7 +24,6 @@ public class DamageAttack : MonoBehaviour
                 turnControl.Estado += 2;
             }
             Destroy(gameObject);
-            //Debug.Log("Attacked :D");
         }
         else
         {
@@ -33,7 +32,6 @@ public class DamageAttack : MonoBehaviour
                 turnControl.Estado += 2;
             }
             Destroy(gameObject);
-            //Debug.Log("Auch :X");
         }
     }
 }

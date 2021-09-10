@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 
-public class CharctesSelection : MonoBehaviour//Pun//, IPunObservable
+public class CharctesSelection : MonoBehaviour
 {
     [SerializeField] Transform[] team1;
     [SerializeField] Transform[] team2;

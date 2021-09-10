@@ -35,6 +35,5 @@ public class HP : MonoBehaviour
     public void TackeDamage(float damage)
     {
         curentHP -= damage;
-        Debug.Log(damage / maxHP);
     }
 }

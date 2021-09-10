@@ -39,8 +39,8 @@ public class UIControl : MonoBehaviour
         }
         if (turnControl.Estado == 4)
         {
-            dragScript = teamSelectio.CurentPlayer.transform.GetComponent<Drag>();
-            attackScript = teamSelectio.CurentPlayer.transform.GetComponent<Attack>();
+            dragScript = teamSelectio.CurentPlayer.GetComponent<Drag>();
+            attackScript = teamSelectio.CurentPlayer.GetComponent<Attack>();
         }
         if (turnControl.Estado != laststate && turnControl.Estado < 7)
         {
@@ -70,11 +70,6 @@ public class UIControl : MonoBehaviour
         fondo.SetActive(false);
         laststate = turnControl.Estado;
     }
-    public void Reload()
-    {
-        SceneManager.LoadScene("MovimientoParabolico");
-        Time.timeScale = 1;
-    }
     public void JumpButon()
     {
         dragScript.IsShoot = false;
@@ -87,5 +82,10 @@ public class UIControl : MonoBehaviour
     public void Cancel()
     {
         turnControl.Estado = 0;
+    }
+    public void Reload()
+    {
+        SceneManager.LoadScene("MovimientoParabolico");
+        Time.timeScale = 1;
     }
 }

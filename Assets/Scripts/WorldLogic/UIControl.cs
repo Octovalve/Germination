@@ -70,6 +70,24 @@ public class UIControl : MonoBehaviour
         fondo.SetActive(false);
         laststate = turnControl.Estado;
     }
+    public void Weapon2()
+    {
+        attackScript.Attack3();
+        //spitButon.interactable = false;
+        cancel.interactable = false;
+        trigetUI.enabled = false;
+        fondo.SetActive(false);
+        laststate = turnControl.Estado;
+    }
+    public void Weapon3()
+    {
+        attackScript.Attack3();
+        //spitButon.interactable = false;
+        cancel.interactable = false;
+        trigetUI.enabled = false;
+        fondo.SetActive(false);
+        laststate = turnControl.Estado;
+    }
     public void JumpButon()
     {
         dragScript.IsShoot = false;
@@ -85,7 +103,7 @@ public class UIControl : MonoBehaviour
     }
     public void Reload()
     {
-        SceneManager.LoadScene("MovimientoParabolico");
+        SceneManager.LoadScene("Jesus");
         Time.timeScale = 1;
     }
 }

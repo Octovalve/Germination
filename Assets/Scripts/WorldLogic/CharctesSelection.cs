@@ -64,17 +64,4 @@ public class CharctesSelection : MonoBehaviour
             }
         }
     }
-    /*public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
-    {
-        if (stream.IsWriting)
-        {
-            stream.SendNext(team);
-            Debug.Log(team + "Local");
-        }
-        else
-        {
-            this.team = (int)stream.ReceiveNext();
-            Debug.Log(team + "Remote");
-        }
-    }*/
 }

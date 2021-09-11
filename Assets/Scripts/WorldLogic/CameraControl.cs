@@ -13,12 +13,13 @@ using UnityEngine;
 public class CameraControl : MonoBehaviour
 {
     [SerializeField] Transform camStartPos;
-    [SerializeField] bool LookAtPlayer;
     [SerializeField] Vector3 cameraOffset;
     private float SmoothFactor;
+    public bool startposreach = false;
     private bool atacked = false;
     private Transform characterSelected;
     TurnControl turnControl;
+    [SerializeField] Camerapan paneo;
     BoxCollider trigetUI;
 
     public Transform CharacterSelected { get => characterSelected; set => characterSelected = value; }
@@ -29,23 +30,32 @@ public class CameraControl : MonoBehaviour
     {
         turnControl = GetComponent<TurnControl>();
         trigetUI = GetComponent<BoxCollider>();
+        paneo = GetComponentInChildren<Camerapan>();
     }
     // LateUpdate is called after Update methods
     private void Update()
     {
         if (turnControl.Estado >= 4)
         {
+            paneo.enabled = false;
+            startposreach = false;
             Vector3 newPos = characterSelected.position - cameraOffset;
-            transform.position = Vector3.Slerp(transform.position, newPos, SmoothFactor1);
-            if (LookAtPlayer) { transform.LookAt(characterSelected); }
+            this.transform.position = Vector3.Lerp(transform.position, newPos, SmoothFactor1);
         }
         else if (turnControl.Estado == 0)
         {
+            Vector3 distanciAInicialPos = transform.position - camStartPos.position;
+            float distTotal = distanciAInicialPos.magnitude;
             SmoothFactor = 0.05f;
-            Vector3 newPos = camStartPos.position - cameraOffset;
-            transform.position = Vector3.Slerp(transform.position, newPos, SmoothFactor1);
-            trigetUI.enabled = true;
-
+            if (distTotal >= 0.5f && startposreach == false)
+            {
+                this.transform.position = Vector3.Lerp(transform.position, camStartPos.position, SmoothFactor1);
+            }
+            else
+            {
+                paneo.enabled = true;
+                startposreach = true;
+            }
         }
     }
 

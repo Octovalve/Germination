@@ -483,7 +483,7 @@ MonoBehaviour:
   credits: {fileID: 515807981}
   options: {fileID: 1774083881}
   menuUI: {fileID: 2127588343}
-  levelName: Jesus
+  levelName: Level1
 --- !u!1 &262450916
 GameObject:
   m_ObjectHideFlags: 0

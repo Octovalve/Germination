@@ -9,6 +9,7 @@ public class Weapon1 : MonoBehaviour
     [SerializeField] GameObject projectile;
     Vector3 mouseUpPos;
     Vector3 force;
+    CameraControl camControl;
     Rigidbody rb;
     Camera cam;
     float forceMod = 2;
@@ -20,6 +21,7 @@ public class Weapon1 : MonoBehaviour
     {
         rb = projectile.GetComponent<Rigidbody>();
         cam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
+        camControl = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraControl>();
     }
     void Update()
     {
@@ -31,7 +33,6 @@ public class Weapon1 : MonoBehaviour
         {
             if (IsShoot == false)
             {
-                Debug.Log("Mass: " + rb.mass);
                 Trajectory.Instance.UpdateTrajectoryInpuls(forceVector: force * forceMod, rb, startingPoint: SpawnP.position);
             }
         }
@@ -46,6 +47,7 @@ public class Weapon1 : MonoBehaviour
         if (IsShoot) { return; }
         Trajectory.Instance.HideLine();
         GameObject bullet = Instantiate(projectile, SpawnP.position, Quaternion.identity) as GameObject;
+        camControl.FolowThis = bullet.GetComponent<Transform>();
         bullet.GetComponent<Rigidbody>().AddForce(force * forceMod, ForceMode.Impulse);
         IsShoot = true;
     }

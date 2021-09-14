@@ -17,11 +17,13 @@ public class CameraControl : MonoBehaviour
     private float SmoothFactor;
     public bool startposreach = false;
     private bool atacked = false;
-    private Transform characterSelected;
+    private Transform folowThis;
+    Transform characterSelected;
     TurnControl turnControl;
     [SerializeField] Camerapan paneo;
     BoxCollider trigetUI;
 
+    public Transform FolowThis { get => folowThis; set => folowThis = value; }
     public Transform CharacterSelected { get => characterSelected; set => characterSelected = value; }
     public bool Atacked { get => atacked; set => atacked = value; }
     public float SmoothFactor1 { get => SmoothFactor; set => SmoothFactor = value; }
@@ -35,11 +37,19 @@ public class CameraControl : MonoBehaviour
     // LateUpdate is called after Update methods
     private void Update()
     {
-        if (turnControl.Estado >= 4)
+        Debug.Log(folowThis);
+        if (turnControl.Estado == 4 || turnControl.Estado == 5)
         {
             paneo.enabled = false;
             startposreach = false;
-            Vector3 newPos = characterSelected.position - cameraOffset;
+            Vector3 newPos = folowThis.position - cameraOffset;
+            this.transform.position = Vector3.Lerp(transform.position, newPos, SmoothFactor1);
+        }
+        if (turnControl.Estado >= 6)
+        {
+            paneo.enabled = false;
+            startposreach = false;
+            Vector3 newPos = CharacterSelected.position - cameraOffset;
             this.transform.position = Vector3.Lerp(transform.position, newPos, SmoothFactor1);
         }
         else if (turnControl.Estado == 0)

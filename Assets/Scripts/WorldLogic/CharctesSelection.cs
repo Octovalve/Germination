@@ -44,6 +44,7 @@ public class CharctesSelection : MonoBehaviour
                         if (team1[i] == curentPlayer && turnControl.Estado < 4)
                         {
                             cameracontrol.CharacterSelected = curentPlayer.transform;
+                            cameracontrol.FolowThis = curentPlayer.transform;
                             turnControl.Estado += 4;
                         }
                     }
@@ -56,6 +57,7 @@ public class CharctesSelection : MonoBehaviour
                         {
 
                             cameracontrol.CharacterSelected = curentPlayer.transform;
+                            cameracontrol.FolowThis = curentPlayer.transform;
                             turnControl.Estado += 4;
                         }
                     }

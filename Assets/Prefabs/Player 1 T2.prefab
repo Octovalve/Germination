@@ -147,7 +147,7 @@ PositionConstraint:
   m_IsContraintActive: 1
   m_IsLocked: 1
   m_Sources:
-  - sourceTransform: {fileID: 0}
+  - sourceTransform: {fileID: 2866733403655827020}
     weight: 1
 --- !u!1818360609 &6932543198969293233
 RotationConstraint:
@@ -166,7 +166,7 @@ RotationConstraint:
   m_IsContraintActive: 1
   m_IsLocked: 1
   m_Sources:
-  - sourceTransform: {fileID: 0}
+  - sourceTransform: {fileID: 2866733403655827020}
     weight: 1
 --- !u!1 &2866733403655826997
 GameObject:

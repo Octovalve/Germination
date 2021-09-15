@@ -6,7 +6,8 @@ public class TurnControl : MonoBehaviour
 {
     // 4 turno asignado
     // 5 salto
-    // 7 ataco
+    // 6 ataco
+    // 7 termino
     private int estado = 0;
     CharctesSelection teamselection;
     public int Estado { get => estado; set => estado = value; }

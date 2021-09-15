@@ -8,7 +8,7 @@ public class HP : MonoBehaviour
     [SerializeField] Image barraHP;
     [SerializeField] float maxHP;
     [SerializeField] bool isCapitan;
-    [SerializeField] GameObject defeatUI;
+    [SerializeField] GameObject VictoryUI;
     private float curentHP;
 
     public float CurentHP { get => curentHP; set => curentHP = value; }
@@ -27,13 +27,13 @@ public class HP : MonoBehaviour
             Destroy(gameObject);
             if (isCapitan == true)
             {
-                defeatUI.SetActive(true);
+                VictoryUI.SetActive(true);
+                Time.timeScale = 0;
             }
         }
     }
     public void TackeDamage(float damage)
     {
         curentHP -= damage;
-        Debug.Log(damage / maxHP);
     }
 }

@@ -13,11 +13,12 @@ public class Damgetest : MonoBehaviour
         {
             hpScript = collision.transform.GetComponent<HP>();
             hpScript.TackeDamage(damageToDeal);
-            Debug.Log("Attacked :D");
+            //Debug.Log("Attacked :D");
         }
         else
         {
-            Debug.Log("Auch :X");
+            return;
+            //Debug.Log("Auch :X");
         }
     }
 }

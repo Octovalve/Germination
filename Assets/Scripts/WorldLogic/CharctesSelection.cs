@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 
-public class CharctesSelection : MonoBehaviour//Pun//, IPunObservable
+public class CharctesSelection : MonoBehaviour
 {
     [SerializeField] Transform[] team1;
     [SerializeField] Transform[] team2;
@@ -44,6 +44,7 @@ public class CharctesSelection : MonoBehaviour//Pun//, IPunObservable
                         if (team1[i] == curentPlayer && turnControl.Estado < 4)
                         {
                             cameracontrol.CharacterSelected = curentPlayer.transform;
+                            cameracontrol.FolowThis = curentPlayer.transform;
                             turnControl.Estado += 4;
                         }
                     }
@@ -56,6 +57,7 @@ public class CharctesSelection : MonoBehaviour//Pun//, IPunObservable
                         {
 
                             cameracontrol.CharacterSelected = curentPlayer.transform;
+                            cameracontrol.FolowThis = curentPlayer.transform;
                             turnControl.Estado += 4;
                         }
                     }
@@ -64,17 +66,4 @@ public class CharctesSelection : MonoBehaviour//Pun//, IPunObservable
             }
         }
     }
-    /*public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
-    {
-        if (stream.IsWriting)
-        {
-            stream.SendNext(team);
-            Debug.Log(team + "Local");
-        }
-        else
-        {
-            this.team = (int)stream.ReceiveNext();
-            Debug.Log(team + "Remote");
-        }
-    }*/
 }

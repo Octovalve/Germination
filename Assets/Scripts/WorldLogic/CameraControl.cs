@@ -13,14 +13,17 @@ using UnityEngine;
 public class CameraControl : MonoBehaviour
 {
     [SerializeField] Transform camStartPos;
-    [SerializeField] bool LookAtPlayer;
     [SerializeField] Vector3 cameraOffset;
     private float SmoothFactor;
+    public bool startposreach = false;
     private bool atacked = false;
-    private Transform characterSelected;
+    private Transform folowThis;
+    Transform characterSelected;
     TurnControl turnControl;
+    [SerializeField] Camerapan paneo;
     BoxCollider trigetUI;
 
+    public Transform FolowThis { get => folowThis; set => folowThis = value; }
     public Transform CharacterSelected { get => characterSelected; set => characterSelected = value; }
     public bool Atacked { get => atacked; set => atacked = value; }
     public float SmoothFactor1 { get => SmoothFactor; set => SmoothFactor = value; }
@@ -29,23 +32,40 @@ public class CameraControl : MonoBehaviour
     {
         turnControl = GetComponent<TurnControl>();
         trigetUI = GetComponent<BoxCollider>();
+        paneo = GetComponentInChildren<Camerapan>();
     }
     // LateUpdate is called after Update methods
     private void Update()
     {
-        if (turnControl.Estado >= 4)
+        Debug.Log(folowThis);
+        if (turnControl.Estado == 4 || turnControl.Estado == 5)
         {
-            Vector3 newPos = characterSelected.position - cameraOffset;
-            transform.position = Vector3.Slerp(transform.position, newPos, SmoothFactor1);
-            if (LookAtPlayer) { transform.LookAt(characterSelected); }
+            paneo.enabled = false;
+            startposreach = false;
+            Vector3 newPos = folowThis.position - cameraOffset;
+            this.transform.position = Vector3.Lerp(transform.position, newPos, SmoothFactor1);
+        }
+        if (turnControl.Estado >= 6)
+        {
+            paneo.enabled = false;
+            startposreach = false;
+            Vector3 newPos = CharacterSelected.position - cameraOffset;
+            this.transform.position = Vector3.Lerp(transform.position, newPos, SmoothFactor1);
         }
         else if (turnControl.Estado == 0)
         {
+            Vector3 distanciAInicialPos = transform.position - camStartPos.position;
+            float distTotal = distanciAInicialPos.magnitude;
             SmoothFactor = 0.05f;
-            Vector3 newPos = camStartPos.position - cameraOffset;
-            transform.position = Vector3.Slerp(transform.position, newPos, SmoothFactor1);
-            trigetUI.enabled = true;
-
+            if (distTotal >= 0.5f && startposreach == false)
+            {
+                this.transform.position = Vector3.Lerp(transform.position, camStartPos.position, SmoothFactor1);
+            }
+            else
+            {
+                paneo.enabled = true;
+                startposreach = true;
+            }
         }
     }
 

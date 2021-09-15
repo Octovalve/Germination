@@ -558,8 +558,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camStartPos: {fileID: 970469789}
-  LookAtPlayer: 0
   cameraOffset: {x: 0, y: 0, z: 8}
+  startposreach: 0
+  paneo: {fileID: 0}
 --- !u!114 &452696405
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -617,7 +618,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fondo: {fileID: 2014803951}
   jumpButon: {fileID: 449623971}
-  attackButon: {fileID: 1146247694}
+  spitButon: {fileID: 0}
+  cancel: {fileID: 0}
 --- !u!114 &452696409
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -941,6 +943,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f8c08c288f8646499bdce5c2510bf22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageToDeal: 0
 --- !u!1 &559270011
 GameObject:
   m_ObjectHideFlags: 0
@@ -2840,18 +2843,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2037820845}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &688145078531528119 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 481305164707935827, guid: 80e724c79d2dd7345abef9b03f081a51,
-    type: 3}
-  m_PrefabInstance: {fileID: 1090214375508419556}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1090214375508419556
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3303,28 +3294,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1ba29c5d1104940448c4352ae5682117, type: 3}
---- !u!1 &8852950930339318107 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8501326898186611391, guid: 80e724c79d2dd7345abef9b03f081a51,
-    type: 3}
-  m_PrefabInstance: {fileID: 1090214375508419556}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &8852950930339318108
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8852950930339318107}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51fcbb31fd354b946adcdb133a0aa1a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  barraHP: {fileID: 688145078531528119}
-  maxHP: 100
-  isCapitan: 1
-  defeatUI: {fileID: 0}
 --- !u!4 &8852950930339318122 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8501326898186611363, guid: 80e724c79d2dd7345abef9b03f081a51,

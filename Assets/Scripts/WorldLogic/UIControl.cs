@@ -98,9 +98,5 @@ public class UIControl : MonoBehaviour
         SceneManager.LoadScene("Jesus");
         Time.timeScale = 1;
     }
-    public void Reload()
-    {
-        SceneManager.LoadScene("MovimientoParabolico");
-        Time.timeScale = 1;
-    }
+    
 }

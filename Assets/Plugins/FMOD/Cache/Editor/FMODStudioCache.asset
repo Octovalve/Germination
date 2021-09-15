@@ -15,11 +15,34 @@ MonoBehaviour:
   Path: ../../Fmod Projects/Germifmod/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637667474857189312
+  lastModified: 637670026786907196
   FileSizes:
   - Name: Desktop
-    Value: 1414208
+    Value: 1429856
   Exists: 1
+--- !u!114 &-3276409545222140099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/FX/GroundBacteria
+  m_EditorClassIdentifier: 
+  Path: event:/FX/GroundBacteria
+  guid: 98e54994dd220244ac5d0ba3df8202a0
+  Banks:
+  - {fileID: -8439597086774613239}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 496
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38,13 +61,38 @@ MonoBehaviour:
   EditorEvents:
   - {fileID: 6563485239919526886}
   - {fileID: 7401579436943833371}
+  - {fileID: 755119954619174672}
+  - {fileID: -3276409545222140099}
   EditorParameters: []
   MasterBanks:
   - {fileID: -8439597086774613239}
   StringsBanks:
   - {fileID: 4644512151834945769}
-  stringsBankWriteTime: 637667474857199278
+  stringsBankWriteTime: 637670026786917244
   cacheVersion: 8
+--- !u!114 &755119954619174672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/FX/JumpBacteria
+  m_EditorClassIdentifier: 
+  Path: event:/FX/JumpBacteria
+  guid: fd0814fca21d6c4eb74c52351484cf1c
+  Banks:
+  - {fileID: -8439597086774613239}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 339
 --- !u!114 &4644512151834945769
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60,10 +108,10 @@ MonoBehaviour:
   Path: ../../Fmod Projects/Germifmod/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637667474857199278
+  lastModified: 637670026786917244
   FileSizes:
   - Name: Desktop
-    Value: 808
+    Value: 912
   Exists: 1
 --- !u!114 &5789073171297957641
 MonoBehaviour:

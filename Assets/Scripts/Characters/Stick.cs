@@ -18,6 +18,8 @@ public class Stick : MonoBehaviour
     TurnControl turnControl;
     //Este string determina el tac se sera el encargado de marcar como aderibles las superficies
     [SerializeField] string StickySurfeceTag;
+    [FMODUnity.EventRef]
+    public string Event;
     private void Awake()
     {
         turnControl = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<TurnControl>();
@@ -33,6 +35,7 @@ public class Stick : MonoBehaviour
             if (turnControl.Estado >= 4)
             {
                 turnControl.Estado += 1;
+                FMODUnity.RuntimeManager.PlayOneShotAttached(Event, gameObject);
             }
         }
     }

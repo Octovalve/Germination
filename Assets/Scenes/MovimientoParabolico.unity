@@ -3069,11 +3069,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2866733403655827023, guid: 1ee1001e9faa88f4aaa6ee56c6bf9268,
+    - target: {fileID: 3364670425628255790, guid: 1ee1001e9faa88f4aaa6ee56c6bf9268,
         type: 3}
-      propertyPath: _lineRenderer
+      propertyPath: projectile
       value: 
-      objectReference: {fileID: 1204754853}
+      objectReference: {fileID: 2037830563759639262, guid: 944e0f830605ab44aaf130a301480190,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1ee1001e9faa88f4aaa6ee56c6bf9268, type: 3}
 --- !u!1001 &3552377287943208209
@@ -3168,6 +3169,12 @@ PrefabInstance:
       propertyPath: sceneViewId
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 3552377286757915691, guid: 8bd927e1480902c4a9bc4ec768f0c1e7,
+        type: 3}
+      propertyPath: weapon1
+      value: 
+      objectReference: {fileID: 4427063738961224247, guid: 8eb10c5935536734cada69f006bd8f1c,
+        type: 3}
     - target: {fileID: 3552377286757915710, guid: 8bd927e1480902c4a9bc4ec768f0c1e7,
         type: 3}
       propertyPath: m_Name

@@ -3590,6 +3590,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6769005541482795355, guid: 80e724c79d2dd7345abef9b03f081a51,
+        type: 3}
+      propertyPath: projectile
+      value: 
+      objectReference: {fileID: 2037830563759639262, guid: 8eb10c5935536734cada69f006bd8f1c,
+        type: 3}
     - target: {fileID: 8461466036771297437, guid: 80e724c79d2dd7345abef9b03f081a51,
         type: 3}
       propertyPath: m_IsActive
@@ -3788,6 +3794,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3364670425628255790, guid: 1ee1001e9faa88f4aaa6ee56c6bf9268,
+        type: 3}
+      propertyPath: projectile
+      value: 
+      objectReference: {fileID: 2037830563759639262, guid: 944e0f830605ab44aaf130a301480190,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1ee1001e9faa88f4aaa6ee56c6bf9268, type: 3}
 --- !u!1001 &3552377287943208209
@@ -3797,6 +3809,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1296011315, guid: 8bd927e1480902c4a9bc4ec768f0c1e7, type: 3}
+      propertyPath: projectile
+      value: 
+      objectReference: {fileID: 2037830563759639262, guid: 8eb10c5935536734cada69f006bd8f1c,
+        type: 3}
     - target: {fileID: 3552377286757915682, guid: 8bd927e1480902c4a9bc4ec768f0c1e7,
         type: 3}
       propertyPath: m_RootOrder
@@ -3990,6 +4007,12 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -1
       objectReference: {fileID: 0}
+    - target: {fileID: 3430304208053707196, guid: 1ba29c5d1104940448c4352ae5682117,
+        type: 3}
+      propertyPath: projectile
+      value: 
+      objectReference: {fileID: 2037830563759639262, guid: 944e0f830605ab44aaf130a301480190,
+        type: 3}
     - target: {fileID: 6840130419483869746, guid: 1ba29c5d1104940448c4352ae5682117,
         type: 3}
       propertyPath: VictoryUI

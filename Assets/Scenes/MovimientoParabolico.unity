@@ -905,8 +905,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camStartPos: {fileID: 970469789}
-  LookAtPlayer: 0
   cameraOffset: {x: 0, y: 0, z: 8}
+  startposreach: 0
+  paneo: {fileID: 0}
 --- !u!114 &452696405
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3411,6 +3412,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3364670425628255790, guid: 1ee1001e9faa88f4aaa6ee56c6bf9268,
+        type: 3}
+      propertyPath: projectile
+      value: 
+      objectReference: {fileID: 2037830563759639262, guid: 944e0f830605ab44aaf130a301480190,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1ee1001e9faa88f4aaa6ee56c6bf9268, type: 3}
 --- !u!1001 &3552377287943208209

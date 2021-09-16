@@ -36,14 +36,7 @@ public class UIControl : MonoBehaviour
             trigerUI.enabled = true;
             fondo.SetActive(false);
         }
-        /*if (turnControl.Estado == 4)
-        {
-            dragScript = teamSelectio.CurentPlayer.GetComponent<Drag>();
-            attackScript = teamSelectio.CurentPlayer.GetComponent<Attack>();
-            Debug.Log(teamSelectio.CurentPlayer);
-            Debug.Log(dragScript);
-            Debug.Log(attackScript);
-        }*/
+        
         if (turnControl.Estado != laststate && turnControl.Estado < 7)
         {
             fondo.SetActive(true);
@@ -106,4 +99,5 @@ public class UIControl : MonoBehaviour
         SceneManager.LoadScene(levelToLoad);
         Time.timeScale = 1;
     }
+    
 }

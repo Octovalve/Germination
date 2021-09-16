@@ -20,6 +20,8 @@ public class Drag : MonoBehaviour
     private bool isShoot = true;
     private Vector3 force;
     TurnControl turnControl;
+    [FMODUnity.EventRef]
+    public string Event;
 
     public Vector3 Force { get => force; set => force = value; }
     public bool IsShoot { get => isShoot; set => isShoot = value; }
@@ -54,7 +56,10 @@ public class Drag : MonoBehaviour
             Trajectory.Instance.UpdateTrajectory(forceVector: forceInit * 2, rb, startingPoint: transform.position);
         }
     }
-    public void Jump() { isShoot = false; }
+    public void Jump()
+    {
+        isShoot = false;
+    }
     //determina si el objeto a sido disparado y en caso de que no este marcado como disparado-
     //le agrega una fuersa determinada por la diferencia de los bectores de posicion del muse tomados anterior mente
     void Shoot(Vector3 Force)
@@ -67,4 +72,5 @@ public class Drag : MonoBehaviour
         rb.AddForce(force * 2);
         isShoot = true;
     }
+
 }

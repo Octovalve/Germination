@@ -37,7 +37,6 @@ public class CameraControl : MonoBehaviour
     // LateUpdate is called after Update methods
     private void Update()
     {
-        Debug.Log(folowThis);
         if (turnControl.Estado == 4 || turnControl.Estado == 5)
         {
             paneo.enabled = false;

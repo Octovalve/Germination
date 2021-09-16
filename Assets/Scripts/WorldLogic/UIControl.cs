@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class UIControl : MonoBehaviour
 {
     [SerializeField] GameObject fondo;
+    [SerializeField] string levelToLoad;
     [SerializeField] Button jumpButon;
     [SerializeField] Button spitButon;
     [SerializeField] Button cancel;
@@ -102,7 +103,7 @@ public class UIControl : MonoBehaviour
     }
     public void Reload()
     {
-        SceneManager.LoadScene("Jesus");
+        SceneManager.LoadScene(levelToLoad);
         Time.timeScale = 1;
     }
 }

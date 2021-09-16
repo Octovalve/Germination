@@ -21,13 +21,11 @@ public class TurnControl : MonoBehaviour
     {
         if (estado >= 7 && teamselection.Team == 1)
         {
-            Debug.Log("Turno acabado");
             teamselection.Team += 1;
             estado = 0;
         }
         else if (estado >= 7 && teamselection.Team == 2)
         {
-            Debug.Log("Turno acabado");
             teamselection.Team -= 1;
             estado = 0;
         }

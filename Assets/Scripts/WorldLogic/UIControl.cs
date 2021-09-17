@@ -6,15 +6,16 @@ using UnityEngine.UI;
 
 public class UIControl : MonoBehaviour
 {
-    [SerializeField] GameObject fondo;
     [SerializeField] string levelToLoad;
+    [SerializeField] GameObject fondo;
     [SerializeField] Button jumpButon;
     [SerializeField] Button spitButon;
+    [SerializeField] Button pasturn;
     [SerializeField] Button cancel;
-    BoxCollider trigerUI;
     CharctesSelection teamSelectio;
     CameraControl cameracontrol;
     TurnControl turnControl;
+    BoxCollider trigerUI;
     Attack attackScript;
     Drag dragScript;
     int laststate;
@@ -27,6 +28,7 @@ public class UIControl : MonoBehaviour
         trigerUI = GetComponent<BoxCollider>();
         jumpButon.interactable = false;
         spitButon.interactable = false;
+        pasturn.interactable = false;
         cancel.interactable = false;
     }
     private void Update()
@@ -36,7 +38,7 @@ public class UIControl : MonoBehaviour
             trigerUI.enabled = true;
             fondo.SetActive(false);
         }
-        
+
         if (turnControl.Estado != laststate && turnControl.Estado < 7)
         {
             fondo.SetActive(true);
@@ -54,6 +56,7 @@ public class UIControl : MonoBehaviour
             fondo.SetActive(true);
             jumpButon.interactable = true;
             spitButon.interactable = true;
+            pasturn.interactable = true;
             cancel.interactable = true;
             trigerUI.enabled = false;
         }
@@ -94,10 +97,18 @@ public class UIControl : MonoBehaviour
     {
         turnControl.Estado = 0;
     }
+    public void EndTurn()
+    {
+        jumpButon.interactable = false;
+        spitButon.interactable = false;
+        pasturn.interactable = false;
+        cancel.interactable = false;
+        turnControl.Estado = 7;
+    }
     public void Reload()
     {
         SceneManager.LoadScene(levelToLoad);
         Time.timeScale = 1;
     }
-    
+
 }

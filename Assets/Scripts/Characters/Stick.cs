@@ -27,7 +27,7 @@ public class Stick : MonoBehaviour
     //este detiene por completo el movimiento del objeto al colicionar y le quita la gravedad para simular el efecto de que se adiere
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag(StickySurfeceTag))
+        if (collision.gameObject.CompareTag(StickySurfeceTag) || collision.gameObject.CompareTag("jumpingWall"))
         {
             GetComponent<Rigidbody>().velocity = Vector3.zero;
             GetComponent<Rigidbody>().useGravity = false;

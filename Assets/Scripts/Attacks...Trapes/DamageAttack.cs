@@ -36,11 +36,19 @@ public class DamageAttack : MonoBehaviour
         }
         else
         {
-            if (turnControl.Estado >= 4)
+            if (collision.gameObject.tag != "jumpingWall")
+            {
+                if (turnControl.Estado >= 4)
+                {
+                    turnControl.Estado += 2;
+                }
+                Destroy(gameObject);
+            }
+            /*if (turnControl.Estado >= 4)
             {
                 turnControl.Estado += 2;
             }
-            Destroy(gameObject);
+            Destroy(gameObject);*/
         }
     }
 }

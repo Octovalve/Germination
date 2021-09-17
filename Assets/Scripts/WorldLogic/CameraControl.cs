@@ -14,13 +14,14 @@ public class CameraControl : MonoBehaviour
 {
     [SerializeField] Transform camStartPos;
     [SerializeField] Vector3 cameraOffset;
-    private float SmoothFactor;
+    [SerializeField] Camerapan paneo;
     public bool startposreach = false;
     private bool atacked = false;
+    private float SmoothFactor;
     private Transform folowThis;
+    private bool esperar;
     Transform characterSelected;
     TurnControl turnControl;
-    [SerializeField] Camerapan paneo;
     BoxCollider trigetUI;
 
     public Transform FolowThis { get => folowThis; set => folowThis = value; }

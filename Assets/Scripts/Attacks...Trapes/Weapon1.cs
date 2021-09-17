@@ -12,9 +12,9 @@ public class Weapon1 : MonoBehaviour
     CameraControl camControl;
     Rigidbody rb;
     Camera cam;
-    //ParticleSystem ps;
     float forceMod = 2;
     float rotZ;
+    float angle;
     private bool isShoot = false;
 
     public bool IsShoot { get => isShoot; set => isShoot = value; }
@@ -31,6 +31,7 @@ public class Weapon1 : MonoBehaviour
         force = SpawnP.position - WorldPosition(0);
         rotZ = Mathf.Atan2(-diference.y, -diference.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0, 0, rotZ + ofsetRot);
+
         if (Input.GetMouseButton(0))
         {
             if (IsShoot == false)
@@ -51,9 +52,6 @@ public class Weapon1 : MonoBehaviour
         GameObject bullet = Instantiate(projectile, SpawnP.position, Quaternion.identity) as GameObject;
         camControl.FolowThis = bullet.GetComponent<Transform>();
         bullet.GetComponent<Rigidbody>().AddForce(force * forceMod, ForceMode.Impulse);
-        /*ps = bullet.GetComponentInChildren<ParticleSystem>();
-        var main = ps.main;
-        main.startRotationX = rotZ + ofsetRot;*/
         IsShoot = true;
     }
     private Vector3 WorldPosition(float z)

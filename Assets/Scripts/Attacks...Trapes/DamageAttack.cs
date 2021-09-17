@@ -9,9 +9,18 @@ public class DamageAttack : MonoBehaviour
     [SerializeField] float damageToDeal;
     TurnControl turnControl;
     HP hpScript;
+    Rigidbody rb;
+    Transform bulletTransform;
     private void Start()
     {
         turnControl = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<TurnControl>();
+        rb = GetComponent<Rigidbody>();
+        bulletTransform = GetComponentInChildren<Transform>();
+    }
+    private void Update()
+    {
+        float angle = Mathf.Atan2(rb.velocity.y, rb.velocity.x) * Mathf.Rad2Deg;
+        bulletTransform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
     }
     private void OnCollisionEnter(Collision collision)
     {

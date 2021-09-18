@@ -5,7 +5,8 @@ using UnityEngine;
 public class Camerapan : MonoBehaviour
 {
     private Vector3 startpoint;
-    [SerializeField] Camera cam;
+    [SerializeField] GameObject cam;
+    [SerializeField] Camera cameraWorld;
     [SerializeField] float groundZ = 0;
     private void Update()
     {
@@ -16,12 +17,12 @@ public class Camerapan : MonoBehaviour
         if (Input.GetMouseButton(0))
         {
             Vector3 direction = startpoint - WorldPosition(0);
-            Camera.main.transform.position += direction;
+            cam.transform.position += direction;
         }
     }
     private Vector3 WorldPosition(float z)
     {
-        Ray mousePos = cam.ScreenPointToRay(Input.mousePosition);
+        Ray mousePos = cameraWorld.ScreenPointToRay(Input.mousePosition);
         Plane ground = new Plane(Vector3.forward, new Vector3(0, 0, z));
         float distance;
         ground.Raycast(mousePos, out distance);

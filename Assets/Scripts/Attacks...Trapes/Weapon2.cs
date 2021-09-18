@@ -21,7 +21,7 @@ public class Weapon2 : MonoBehaviour
     {
         rb = projectile.GetComponent<Rigidbody>();
         cam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
-        camControl = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraControl>();
+        camControl = GameObject.FindGameObjectWithTag("MainCinemachineCamera").GetComponent<CameraControl>();
     }
     void Update()
     {

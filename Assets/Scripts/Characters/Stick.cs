@@ -22,7 +22,7 @@ public class Stick : MonoBehaviour
     public string Event;
     private void Awake()
     {
-        turnControl = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<TurnControl>();
+        turnControl = GameObject.FindGameObjectWithTag("MainCinemachineCamera").GetComponent<TurnControl>();
     }
     //este detiene por completo el movimiento del objeto al colicionar y le quita la gravedad para simular el efecto de que se adiere
     private void OnCollisionEnter(Collision collision)

@@ -11,13 +11,15 @@ public class Attack : MonoBehaviour
     TurnControl turnControl;
     private void Start()
     {
-        turnControl = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<TurnControl>();
+        turnControl = GameObject.FindGameObjectWithTag("MainCinemachineCamera").GetComponent<TurnControl>();
     }
     private void Update()
     {
-        if (turnControl.Estado >= 6)
+        if (turnControl.Estado >= 6 || turnControl.Estado == 0)
         {
             weapon1.SetActive(false);
+            weapon2.SetActive(false);
+            weapon3.SetActive(false);
         }
     }
     public void Attack1()

@@ -7,13 +7,15 @@ using UnityEngine;
 public class DamageAttack : MonoBehaviour
 {
     [SerializeField] float damageToDeal;
-    TurnControl turnControl;
-    HP hpScript;
-    Rigidbody rb;
+    CameraControl cameracontrol;
     Transform bulletTransform;
+    TurnControl turnControl;
+    Rigidbody rb;
+    HP hpScript;
     private void Start()
     {
-        turnControl = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<TurnControl>();
+        turnControl = GameObject.FindGameObjectWithTag("MainCinemachineCamera").GetComponent<TurnControl>();
+        cameracontrol = GameObject.FindGameObjectWithTag("MainCinemachineCamera").GetComponent<CameraControl>();
         rb = GetComponent<Rigidbody>();
         bulletTransform = GetComponentInChildren<Transform>();
     }
@@ -24,6 +26,7 @@ public class DamageAttack : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
+        cameracontrol.TEspera = 120;
         if (collision.gameObject.tag == "Player")
         {
             hpScript = collision.transform.GetComponent<HP>();

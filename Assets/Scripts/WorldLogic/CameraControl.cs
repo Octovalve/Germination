@@ -19,15 +19,16 @@ public class CameraControl : MonoBehaviour
     private bool atacked = false;
     private float SmoothFactor;
     private Transform folowThis;
-    private bool esperar;
     Transform characterSelected;
     TurnControl turnControl;
     BoxCollider trigetUI;
+    int tEspera = 0;
 
     public Transform FolowThis { get => folowThis; set => folowThis = value; }
     public Transform CharacterSelected { get => characterSelected; set => characterSelected = value; }
     public bool Atacked { get => atacked; set => atacked = value; }
     public float SmoothFactor1 { get => SmoothFactor; set => SmoothFactor = value; }
+    public int TEspera { get => tEspera; set => tEspera = value; }
 
     private void Start()
     {
@@ -38,6 +39,8 @@ public class CameraControl : MonoBehaviour
     // LateUpdate is called after Update methods
     private void Update()
     {
+        Debug.Log(TEspera);
+        EsperarTiempo();
         if (turnControl.Estado == 4 || turnControl.Estado == 5)
         {
             paneo.enabled = false;
@@ -45,14 +48,14 @@ public class CameraControl : MonoBehaviour
             Vector3 newPos = folowThis.position - cameraOffset;
             this.transform.position = Vector3.Lerp(transform.position, newPos, SmoothFactor1);
         }
-        if (turnControl.Estado >= 6)
+        if (turnControl.Estado >= 6 && tEspera == 0)
         {
             paneo.enabled = false;
             startposreach = false;
             Vector3 newPos = CharacterSelected.position - cameraOffset;
             this.transform.position = Vector3.Lerp(transform.position, newPos, SmoothFactor1);
         }
-        else if (turnControl.Estado == 0)
+        else if (turnControl.Estado == 0 && tEspera == 0)
         {
             Vector3 distanciAInicialPos = transform.position - camStartPos.position;
             float distTotal = distanciAInicialPos.magnitude;
@@ -72,5 +75,13 @@ public class CameraControl : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         SmoothFactor = 1f;
+    }
+    private void EsperarTiempo()
+    {
+        if (TEspera > 1)
+        {
+            TEspera -= 1; Debug.Log(TEspera);
+        }
+        else { TEspera = 0; }
     }
 }

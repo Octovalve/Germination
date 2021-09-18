@@ -30,7 +30,7 @@ public class Drag : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        turnControl = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<TurnControl>();
+        turnControl = GameObject.FindGameObjectWithTag("MainCinemachineCamera").GetComponent<TurnControl>();
     }
     //Toma la posicion del maus en el momento que unde sobr el objeto 
     private void OnMouseDown()

@@ -6,6 +6,8 @@ TagManager:
   tags:
   - jumpingWall
   - ground
+  - MainCinemachineCamera
+  - ZoomCamera
   layers:
   - Default
   - TransparentFX

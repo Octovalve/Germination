@@ -7,6 +7,7 @@ public class Weapon1 : MonoBehaviour
     [SerializeField] float ofsetRot;
     [SerializeField] Transform SpawnP;
     [SerializeField] GameObject projectile;
+    [SerializeField] GameObject muzzleVFX;
     Vector3 mouseUpPos;
     Vector3 force;
     CameraControl camControl;
@@ -50,6 +51,7 @@ public class Weapon1 : MonoBehaviour
         if (IsShoot) { return; }
         Trajectory.Instance.HideLine();
         GameObject bullet = Instantiate(projectile, SpawnP.position, Quaternion.identity) as GameObject;
+        GameObject muzzle = Instantiate(muzzleVFX, SpawnP.position, Quaternion.identity) as GameObject;
         camControl.FolowThis = bullet.GetComponent<Transform>();
         bullet.GetComponent<Rigidbody>().AddForce(force * forceMod, ForceMode.Impulse);
         IsShoot = true;

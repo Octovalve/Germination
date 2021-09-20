@@ -128,7 +128,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ofsetRot: 0
   SpawnP: {fileID: 8802178169956857623}
-  projectile: {fileID: 5172035881416133409, guid: 82f6c49cba2808a4d9f2bf6b3af1051c,
+  projectile: {fileID: 2037830563759639262, guid: 944e0f830605ab44aaf130a301480190,
+    type: 3}
+  muzzleVFX: {fileID: 1005267914599616905, guid: fbc37c05ca71f634083e78882dcfb042,
     type: 3}
 --- !u!1818360608 &4049762065098249239
 PositionConstraint:

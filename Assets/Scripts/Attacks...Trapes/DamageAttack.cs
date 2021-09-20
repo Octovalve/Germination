@@ -7,6 +7,7 @@ using UnityEngine;
 public class DamageAttack : MonoBehaviour
 {
     [SerializeField] float damageToDeal;
+    [SerializeField] GameObject hitVFX;
     TurnControl turnControl;
     HP hpScript;
     Rigidbody rb;
@@ -28,6 +29,7 @@ public class DamageAttack : MonoBehaviour
         {
             hpScript = collision.transform.GetComponent<HP>();
             hpScript.TackeDamage(damageToDeal);
+            GameObject hit = Instantiate(hitVFX, transform.position, Quaternion.identity) as GameObject;
             if (turnControl.Estado >= 4)
             {
                 turnControl.Estado += 2;
@@ -36,6 +38,7 @@ public class DamageAttack : MonoBehaviour
         }
         else
         {
+            GameObject hit = Instantiate(hitVFX, transform.position, Quaternion.identity) as GameObject;
             if (turnControl.Estado >= 4)
             {
                 turnControl.Estado += 2;

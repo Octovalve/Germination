@@ -16,6 +16,9 @@ public class Weapon1 : MonoBehaviour
     Camera cam;
     float rotZ;
     float angle;
+    float forceMod = 2;
+    [FMODUnity.EventRef]
+    public string Event;
     private bool isShoot = false;
 
     public bool IsShoot { get => isShoot; set => isShoot = value; }
@@ -52,6 +55,7 @@ public class Weapon1 : MonoBehaviour
         if (IsShoot) { return; }
         Trajectory.Instance.HideLine();
         GameObject bullet = Instantiate(projectile, SpawnP.position, Quaternion.identity) as GameObject;
+        FMODUnity.RuntimeManager.PlayOneShotAttached(Event, gameObject);
         camControl.FolowThis = bullet.GetComponent<Transform>();
         bullet.GetComponent<Rigidbody>().AddForce(force * forceMod, ForceMode.Impulse);
         ZoomCam.ZoomCamera1.SetActive(false);

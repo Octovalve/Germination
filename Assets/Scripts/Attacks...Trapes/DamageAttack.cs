@@ -12,6 +12,8 @@ public class DamageAttack : MonoBehaviour
     TurnControl turnControl;
     Rigidbody rb;
     HP hpScript;
+    [FMODUnity.EventRef]
+    public string Event;
     private void Start()
     {
         turnControl = GameObject.FindGameObjectWithTag("MainCinemachineCamera").GetComponent<TurnControl>();
@@ -26,6 +28,7 @@ public class DamageAttack : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
+        FMODUnity.RuntimeManager.PlayOneShotAttached(Event, gameObject);
         cameracontrol.TEspera = 120;
         if (collision.gameObject.tag == "Player")
         {

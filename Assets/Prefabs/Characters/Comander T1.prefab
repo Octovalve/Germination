@@ -302,7 +302,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ofsetRot: 0
   SpawnP: {fileID: 3252273309386033266}
-  projectile: {fileID: 5172035881416133409, guid: 82f6c49cba2808a4d9f2bf6b3af1051c,
+  projectile: {fileID: 2037830563759639262, guid: 8eb10c5935536734cada69f006bd8f1c,
+    type: 3}
+  muzzleVFX: {fileID: 1005267914599616905, guid: bac524d7245dac74ba4e308269f54734,
     type: 3}
   Event: event:/FX/SpitShoot
 --- !u!1818360608 &1030768156871330597

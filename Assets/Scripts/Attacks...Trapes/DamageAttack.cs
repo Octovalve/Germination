@@ -46,6 +46,7 @@ public class DamageAttack : MonoBehaviour
         {
             if (collision.gameObject.tag != "jumpingWall")
             {
+                GameObject hit = Instantiate(hitVFX, transform.position, Quaternion.identity) as GameObject;
                 if (turnControl.Estado >= 4)
                 {
                     turnControl.Estado += 2;

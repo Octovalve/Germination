@@ -106,6 +106,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageToDeal: 100
   hitVFX: {fileID: 3707039816863422156, guid: 53fa31ca8239add40b02b04a10844d05, type: 3}
+  Event: event:/FX/SpitImpact
 --- !u!135 &3158581680043861905
 SphereCollider:
   m_ObjectHideFlags: 0

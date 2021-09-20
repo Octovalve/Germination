@@ -18585,6 +18585,7 @@ GameObject:
   - component: {fileID: 4071143974235151629}
   - component: {fileID: 501234986064338600}
   - component: {fileID: 4800276118404789465}
+  - component: {fileID: 4800276118404789466}
   m_Layer: 0
   m_Name: Plataforma2
   m_TagString: ground
@@ -18605,6 +18606,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.8777335, y: 0.5540452, z: 10.730646}
   m_Center: {x: 0.20234105, y: 0.12468304, z: -2.035461}
+--- !u!114 &4800276118404789466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4800276118404789464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbb110fe1ddc6e74aa057000382d6293, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!23 &4810373106609858226
 MeshRenderer:
   m_ObjectHideFlags: 0

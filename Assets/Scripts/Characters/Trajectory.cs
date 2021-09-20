@@ -15,6 +15,8 @@ public class Trajectory : MonoBehaviour
     [SerializeField] private LineRenderer _lineRenderer;
     [SerializeField] [Range(3, 30)] private int _lineSegmentCount = 20;
     private List<Vector3> _linePoints = new List<Vector3>();
+    [FMODUnity.EventRef]
+    public string Event;
 
     #region Singleton
     public static Trajectory Instance;

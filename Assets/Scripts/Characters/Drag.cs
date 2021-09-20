@@ -53,7 +53,7 @@ public class Drag : MonoBehaviour
         Vector3 forceInit = (mouseDownPos - Input.mousePosition);
         if (!isShoot)
         {
-            Trajectory.Instance.UpdateTrajectory(forceVector: forceInit * 2, rb, startingPoint: transform.position);
+            Trajectory.Instance.UpdateTrajectory(forceVector: forceInit * 2000, rb, startingPoint: transform.position);
         }
     }
     public void Jump()
@@ -69,7 +69,8 @@ public class Drag : MonoBehaviour
             return;
         }
         rb.useGravity = true;
-        rb.AddForce(force * 2);
+        FMODUnity.RuntimeManager.PlayOneShotAttached(Event, gameObject);
+        rb.AddForce(force * 2000);
         isShoot = true;
     }
 

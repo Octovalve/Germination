@@ -20,6 +20,12 @@ public class UIControl : MonoBehaviour
     Attack attackScript;
     Drag dragScript;
     int laststate;
+    [FMODUnity.EventRef]
+    public string JumpBSound;
+    [FMODUnity.EventRef]
+    public string BackBSound;
+    [FMODUnity.EventRef]
+    public string WeaponBSound;
 
     public GameObject ZoomCamera1 { get => ZoomCamera; set => ZoomCamera = value; }
 
@@ -71,11 +77,13 @@ public class UIControl : MonoBehaviour
     public void Weapon1()
     {
         attackScript.Attack1();
+        FMODUnity.RuntimeManager.PlayOneShotAttached(WeaponBSound, gameObject);
         spitButon.interactable = false;
         cancel.interactable = false;
         ZoomCamera1.SetActive(true);
         fondo.SetActive(false);
         laststate = turnControl.Estado;
+
     }
     public void Weapon2()
     {
@@ -100,9 +108,11 @@ public class UIControl : MonoBehaviour
         cancel.interactable = false;
         fondo.SetActive(false);
         laststate = turnControl.Estado;
+        FMODUnity.RuntimeManager.PlayOneShotAttached(JumpBSound, gameObject);
     }
     public void Cancel()
     {
+        FMODUnity.RuntimeManager.PlayOneShotAttached(BackBSound, gameObject);
         turnControl.Estado = 0;
     }
     public void EndTurn()
@@ -119,4 +129,5 @@ public class UIControl : MonoBehaviour
         Time.timeScale = 1;
     }
 
+    
 }

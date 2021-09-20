@@ -105,6 +105,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageToDeal: 100
+  Event: event:/FX/SpitImpact
 --- !u!135 &3158581680043861905
 SphereCollider:
   m_ObjectHideFlags: 0

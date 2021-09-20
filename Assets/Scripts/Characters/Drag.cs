@@ -22,6 +22,8 @@ public class Drag : MonoBehaviour
     TurnControl turnControl;
     [FMODUnity.EventRef]
     public string Event;
+    [FMODUnity.EventRef]
+    public string Event2;
 
     public Vector3 Force { get => force; set => force = value; }
     public bool IsShoot { get => isShoot; set => isShoot = value; }
@@ -69,6 +71,7 @@ public class Drag : MonoBehaviour
             return;
         }
         rb.useGravity = true;
+        FMODUnity.RuntimeManager.PlayOneShotAttached(Event, gameObject);
         rb.AddForce(force * 2);
         isShoot = true;
     }

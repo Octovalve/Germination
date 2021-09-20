@@ -13,6 +13,8 @@ public class Weapon1 : MonoBehaviour
     Rigidbody rb;
     Camera cam;
     float forceMod = 2;
+    [FMODUnity.EventRef]
+    public string Event;
     private bool isShoot = false;
 
     public bool IsShoot { get => isShoot; set => isShoot = value; }
@@ -47,6 +49,7 @@ public class Weapon1 : MonoBehaviour
         if (IsShoot) { return; }
         Trajectory.Instance.HideLine();
         GameObject bullet = Instantiate(projectile, SpawnP.position, Quaternion.identity) as GameObject;
+        FMODUnity.RuntimeManager.PlayOneShotAttached(Event, gameObject);
         camControl.FolowThis = bullet.GetComponent<Transform>();
         bullet.GetComponent<Rigidbody>().AddForce(force * forceMod, ForceMode.Impulse);
         IsShoot = true;

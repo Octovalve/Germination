@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{84619c08-4cf6-46e0-b358-83d19b5cc363}">
+		<property name="assetPath">
+			<value>SpitShoot.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.36571428571428571</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{1aa181c0-d176-4cd0-b44a-1fa5f954c64d}</destination>
+		</relationship>
+	</object>
+</objects>

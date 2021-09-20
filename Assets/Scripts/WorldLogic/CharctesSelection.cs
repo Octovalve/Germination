@@ -8,6 +8,8 @@ public class CharctesSelection : MonoBehaviour
     [SerializeField] Transform[] team1;
     [SerializeField] Transform[] team2;
     CameraControl cameracontrol;
+    [FMODUnity.EventRef]
+    public string Event;
     private int team;
     TurnControl turnControl;
     private Transform curentPlayer;
@@ -43,6 +45,7 @@ public class CharctesSelection : MonoBehaviour
                     {
                         if (team1[i] == curentPlayer && turnControl.Estado < 4)
                         {
+                            FMODUnity.RuntimeManager.PlayOneShotAttached(Event, gameObject);
                             cameracontrol.CharacterSelected = curentPlayer.transform;
                             cameracontrol.FolowThis = curentPlayer.transform;
                             turnControl.Estado += 4;
@@ -55,7 +58,7 @@ public class CharctesSelection : MonoBehaviour
                     {
                         if (team2[i] == curentPlayer && turnControl.Estado < 4)
                         {
-
+                            FMODUnity.RuntimeManager.PlayOneShotAttached(Event, gameObject);
                             cameracontrol.CharacterSelected = curentPlayer.transform;
                             cameracontrol.FolowThis = curentPlayer.transform;
                             turnControl.Estado += 4;

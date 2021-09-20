@@ -20,11 +20,11 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
+  m_AmbientSkyColor: {r: 0.31621575, g: 0.33030736, b: 0.3584906, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
-  m_AmbientMode: 0
+  m_AmbientMode: 3
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
   m_HaloStrength: 0.5
@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionBounces: 1
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
-  m_Sun: {fileID: 0}
+  m_Sun: {fileID: 1371356066}
   m_IndirectSpecularColor: {r: 0.17176479, g: 0.20532411, b: 0.2441606, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
@@ -58,7 +58,7 @@ LightmapSettings:
     m_Resolution: 2
     m_BakeResolution: 40
     m_AtlasSize: 1024
-    m_AO: 0
+    m_AO: 1
     m_AOMaxDistance: 1
     m_CompAOExponent: 1
     m_CompAOExponentDirect: 0
@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -121,6 +121,18 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &8651786 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8958862144033619649, guid: 923af75c26414dc41b3c362df06242c6,
+    type: 3}
+  m_PrefabInstance: {fileID: 2028603220}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &34887703
 GameObject:
   m_ObjectHideFlags: 0
@@ -650,7 +662,6 @@ GameObject:
   - component: {fileID: 452696402}
   - component: {fileID: 452696401}
   - component: {fileID: 452696406}
-  - component: {fileID: 452696400}
   - component: {fileID: 452696403}
   - component: {fileID: 452696404}
   - component: {fileID: 452696405}
@@ -658,6 +669,8 @@ GameObject:
   - component: {fileID: 452696408}
   - component: {fileID: 452696410}
   - component: {fileID: 452696409}
+  - component: {fileID: 452696400}
+  - component: {fileID: 452696412}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -665,14 +678,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &452696400
-AudioListener:
+--- !u!114 &452696400
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 452696399}
   m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attenuationObject: {fileID: 0}
+  ListenerNumber: -1
 --- !u!20 &452696401
 Camera:
   m_ObjectHideFlags: 0
@@ -796,6 +815,7 @@ MonoBehaviour:
   team2:
   - {fileID: 98280641}
   - {fileID: 1873445256}
+  Event: event:/FX/ChooseBacteria
 --- !u!65 &452696406
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -837,6 +857,9 @@ MonoBehaviour:
   jumpButon: {fileID: 61424867}
   spitButon: {fileID: 1921265575}
   cancel: {fileID: 81829410}
+  JumpBSound: event:/UI/JumpButtonSFX
+  BackBSound: event:/UI/ButtonBackSFX
+  WeaponBSound: event:/UI/ShootButtonSFX
 --- !u!114 &452696409
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -876,6 +899,29 @@ MonoBehaviour:
   sceneViewId: 1
   InstantiationId: 0
   isRuntimeInstantiated: 0
+--- !u!114 &452696412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 452696399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/Music/NeveraSFX
+  PlayEvent: 1
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
 --- !u!1 &506600248
 GameObject:
   m_ObjectHideFlags: 0
@@ -1352,6 +1398,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 585349523}
   m_CullTransparentMesh: 0
+--- !u!114 &654772454 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8958862143985504485, guid: 923af75c26414dc41b3c362df06242c6,
+    type: 3}
+  m_PrefabInstance: {fileID: 2028603220}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &670884275
 GameObject:
   m_ObjectHideFlags: 0
@@ -1995,6 +2053,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _lineRenderer: {fileID: 1204754853}
   _lineSegmentCount: 20
+  Event: event:/FX/AimSFX
 --- !u!1 &1308851271
 GameObject:
   m_ObjectHideFlags: 0
@@ -2460,12 +2519,12 @@ PrefabInstance:
     - target: {fileID: 5172035881416133417, guid: 82f6c49cba2808a4d9f2bf6b3af1051c,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5172035881416133417, guid: 82f6c49cba2808a4d9f2bf6b3af1051c,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 1
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 5172035881416133417, guid: 82f6c49cba2808a4d9f2bf6b3af1051c,
         type: 3}
@@ -3030,6 +3089,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 8465284442293120721}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1893230675 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8958862143339216206, guid: 923af75c26414dc41b3c362df06242c6,
+    type: 3}
+  m_PrefabInstance: {fileID: 2028603220}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1921265575 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8958862143339216207, guid: 923af75c26414dc41b3c362df06242c6,
@@ -3447,32 +3518,122 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TargetGraphic
       value: 
+      objectReference: {fileID: 1893230675}
+    - target: {fileID: 8958862143339216207, guid: 923af75c26414dc41b3c362df06242c6,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8958862143339216207, guid: 923af75c26414dc41b3c362df06242c6,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8958862143339216207, guid: 923af75c26414dc41b3c362df06242c6,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 452696408}
+    - target: {fileID: 8958862143339216207, guid: 923af75c26414dc41b3c362df06242c6,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 452696408}
+    - target: {fileID: 8958862143339216207, guid: 923af75c26414dc41b3c362df06242c6,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8958862143339216207, guid: 923af75c26414dc41b3c362df06242c6,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: Button
+      objectReference: {fileID: 0}
+    - target: {fileID: 8958862143339216207, guid: 923af75c26414dc41b3c362df06242c6,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 8958862143985504482, guid: 923af75c26414dc41b3c362df06242c6,
         type: 3}
       propertyPath: m_TargetGraphic
       value: 
+      objectReference: {fileID: 654772454}
+    - target: {fileID: 8958862143985504482, guid: 923af75c26414dc41b3c362df06242c6,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8958862143985504482, guid: 923af75c26414dc41b3c362df06242c6,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8958862143985504482, guid: 923af75c26414dc41b3c362df06242c6,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 452696408}
+    - target: {fileID: 8958862143985504482, guid: 923af75c26414dc41b3c362df06242c6,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 452696408}
+    - target: {fileID: 8958862143985504482, guid: 923af75c26414dc41b3c362df06242c6,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8958862143985504482, guid: 923af75c26414dc41b3c362df06242c6,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: Button
+      objectReference: {fileID: 0}
+    - target: {fileID: 8958862143985504482, guid: 923af75c26414dc41b3c362df06242c6,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 8958862144033619518, guid: 923af75c26414dc41b3c362df06242c6,
         type: 3}
       propertyPath: m_TargetGraphic
       value: 
+      objectReference: {fileID: 8651786}
+    - target: {fileID: 8958862144033619518, guid: 923af75c26414dc41b3c362df06242c6,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8958862144033619518, guid: 923af75c26414dc41b3c362df06242c6,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8958862144033619518, guid: 923af75c26414dc41b3c362df06242c6,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 452696408}
+    - target: {fileID: 8958862144033619518, guid: 923af75c26414dc41b3c362df06242c6,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 452696408}
+    - target: {fileID: 8958862144033619518, guid: 923af75c26414dc41b3c362df06242c6,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8958862144033619518, guid: 923af75c26414dc41b3c362df06242c6,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: ButtonBack
+      objectReference: {fileID: 0}
+    - target: {fileID: 8958862144033619518, guid: 923af75c26414dc41b3c362df06242c6,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 923af75c26414dc41b3c362df06242c6, type: 3}
 --- !u!1 &2037820845
@@ -3575,6 +3736,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6769005541482795355, guid: 80e724c79d2dd7345abef9b03f081a51,
+        type: 3}
+      propertyPath: Event
+      value: event:/FX/SpitShoot
+      objectReference: {fileID: 0}
     - target: {fileID: 8461466036771297437, guid: 80e724c79d2dd7345abef9b03f081a51,
         type: 3}
       propertyPath: m_IsActive
@@ -3640,6 +3806,11 @@ PrefabInstance:
       propertyPath: Event
       value: event:/FX/JumpBacteria
       objectReference: {fileID: 0}
+    - target: {fileID: 8501326898186611364, guid: 80e724c79d2dd7345abef9b03f081a51,
+        type: 3}
+      propertyPath: Event2
+      value: event:/FX/AimSFX
+      objectReference: {fileID: 0}
     - target: {fileID: 8501326898186611366, guid: 80e724c79d2dd7345abef9b03f081a51,
         type: 3}
       propertyPath: m_Sources.Array.data[0].sourceTransform
@@ -3690,6 +3861,11 @@ PrefabInstance:
         type: 3}
       propertyPath: Event
       value: event:/FX/JumpBacteria
+      objectReference: {fileID: 0}
+    - target: {fileID: 2866733403655826993, guid: 1ee1001e9faa88f4aaa6ee56c6bf9268,
+        type: 3}
+      propertyPath: Event2
+      value: event:/FX/AimSFX
       objectReference: {fileID: 0}
     - target: {fileID: 2866733403655826996, guid: 1ee1001e9faa88f4aaa6ee56c6bf9268,
         type: 3}
@@ -3782,6 +3958,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1296011315, guid: 8bd927e1480902c4a9bc4ec768f0c1e7, type: 3}
+      propertyPath: Event
+      value: event:/FX/SpitShoot
+      objectReference: {fileID: 0}
     - target: {fileID: 3552377286757915682, guid: 8bd927e1480902c4a9bc4ec768f0c1e7,
         type: 3}
       propertyPath: m_RootOrder
@@ -3842,6 +4022,11 @@ PrefabInstance:
       propertyPath: Event
       value: event:/FX/JumpBacteria
       objectReference: {fileID: 0}
+    - target: {fileID: 3552377286757915685, guid: 8bd927e1480902c4a9bc4ec768f0c1e7,
+        type: 3}
+      propertyPath: Event2
+      value: event:/FX/AimSFX
+      objectReference: {fileID: 0}
     - target: {fileID: 3552377286757915689, guid: 8bd927e1480902c4a9bc4ec768f0c1e7,
         type: 3}
       propertyPath: Event
@@ -3861,6 +4046,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -5611841446477609067, guid: 7db377b5513ab6146a58db6775262a4b,
+        type: 3}
+      propertyPath: Event
+      value: event:/FX/AimSFX
+      objectReference: {fileID: 0}
+    - target: {fileID: -5611841446477609067, guid: 7db377b5513ab6146a58db6775262a4b,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5601044942058728220, guid: 7db377b5513ab6146a58db6775262a4b,
         type: 3}
       propertyPath: m_RootOrder
@@ -3923,6 +4118,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5601044942058728223, guid: 7db377b5513ab6146a58db6775262a4b,
         type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5601044942058728223, guid: 7db377b5513ab6146a58db6775262a4b,
+        type: 3}
       propertyPath: m_Parameters.colorGradient.key0.b
       value: 1
       objectReference: {fileID: 0}
@@ -3974,6 +4174,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalRotation.z
       value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3430304208053707196, guid: 1ba29c5d1104940448c4352ae5682117,
+        type: 3}
+      propertyPath: Event
+      value: event:/FX/SpitShoot
       objectReference: {fileID: 0}
     - target: {fileID: 6840130419483869746, guid: 1ba29c5d1104940448c4352ae5682117,
         type: 3}
@@ -4039,6 +4244,11 @@ PrefabInstance:
         type: 3}
       propertyPath: Event
       value: event:/FX/JumpBacteria
+      objectReference: {fileID: 0}
+    - target: {fileID: 7895654504002365931, guid: 1ba29c5d1104940448c4352ae5682117,
+        type: 3}
+      propertyPath: Event2
+      value: event:/FX/AimSFX
       objectReference: {fileID: 0}
     - target: {fileID: 7895654504002365932, guid: 1ba29c5d1104940448c4352ae5682117,
         type: 3}

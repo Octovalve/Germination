@@ -17,6 +17,12 @@ public class UIControl : MonoBehaviour
     Attack attackScript;
     Drag dragScript;
     int laststate;
+    [FMODUnity.EventRef]
+    public string JumpBSound;
+    [FMODUnity.EventRef]
+    public string BackBSound;
+    [FMODUnity.EventRef]
+    public string WeaponBSound;
     // Start is called before the first frame update
     void Start()
     {
@@ -60,10 +66,12 @@ public class UIControl : MonoBehaviour
     public void Weapon1()
     {
         attackScript.Attack1();
+        FMODUnity.RuntimeManager.PlayOneShotAttached(WeaponBSound, gameObject);
         spitButon.interactable = false;
         cancel.interactable = false;
         fondo.SetActive(false);
         laststate = turnControl.Estado;
+
     }
     public void Weapon2()
     {
@@ -88,9 +96,11 @@ public class UIControl : MonoBehaviour
         cancel.interactable = false;
         fondo.SetActive(false);
         laststate = turnControl.Estado;
+        FMODUnity.RuntimeManager.PlayOneShotAttached(JumpBSound, gameObject);
     }
     public void Cancel()
     {
+        FMODUnity.RuntimeManager.PlayOneShotAttached(BackBSound, gameObject);
         turnControl.Estado = 0;
     }
     public void Reload()
@@ -98,5 +108,6 @@ public class UIControl : MonoBehaviour
         SceneManager.LoadScene("Jesus");
         Time.timeScale = 1;
     }
+
     
 }

@@ -10,6 +10,7 @@ public class DamageAttack : MonoBehaviour
     CameraControl cameracontrol;
     Transform bulletTransform;
     [SerializeField] GameObject hitVFX;
+    [SerializeField] GameObject hitWallVFX;
     TurnControl turnControl;
     Rigidbody rb;
     HP hpScript;
@@ -31,6 +32,7 @@ public class DamageAttack : MonoBehaviour
     {
         cameracontrol.TEspera = 120;
         FMODUnity.RuntimeManager.PlayOneShotAttached(Event, gameObject);
+        hitWallVFX.SetActive(true);
         if (collision.gameObject.tag == "Player")
         {
             hpScript = collision.transform.GetComponent<HP>();

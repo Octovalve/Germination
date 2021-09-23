@@ -20,6 +20,7 @@ public class Drag : MonoBehaviour
     private bool isShoot = true;
     private Vector3 force;
     TurnControl turnControl;
+    //[SerializeField] GameObject liquidSlimeVFX;
     [FMODUnity.EventRef]
     public string Event;
 
@@ -68,6 +69,7 @@ public class Drag : MonoBehaviour
         {
             return;
         }
+        //liquidSlimeVFX.SetActive(true);
         rb.useGravity = true;
         FMODUnity.RuntimeManager.PlayOneShotAttached(Event, gameObject);
         rb.AddForce(force * 2000);

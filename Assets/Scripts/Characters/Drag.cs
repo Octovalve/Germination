@@ -20,7 +20,10 @@ public class Drag : MonoBehaviour
     private bool isShoot = true;
     private Vector3 force;
     TurnControl turnControl;
-    //[SerializeField] GameObject liquidSlimeVFX;
+    [SerializeField] GameObject liquidSlimeBurstVFX;
+    [SerializeField] GameObject liquidSlimeVFX;
+    ParticleSystem liquidSlimeBurstPs;
+    ParticleSystem liquidSlimePs;
     [FMODUnity.EventRef]
     public string Event;
 
@@ -32,6 +35,8 @@ public class Drag : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         turnControl = GameObject.FindGameObjectWithTag("MainCinemachineCamera").GetComponent<TurnControl>();
+        liquidSlimeBurstPs = liquidSlimeBurstVFX.GetComponentInChildren<ParticleSystem>();
+        liquidSlimePs = liquidSlimeVFX.GetComponentInChildren<ParticleSystem>();
     }
     //Toma la posicion del maus en el momento que unde sobr el objeto 
     private void OnMouseDown()
@@ -69,7 +74,8 @@ public class Drag : MonoBehaviour
         {
             return;
         }
-        //liquidSlimeVFX.SetActive(true);
+        liquidSlimeBurstPs.Play();
+        liquidSlimePs.Play();
         rb.useGravity = true;
         FMODUnity.RuntimeManager.PlayOneShotAttached(Event, gameObject);
         rb.AddForce(force * 2000);

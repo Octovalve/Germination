@@ -4455,34 +4455,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8501326898186611364, guid: 80e724c79d2dd7345abef9b03f081a51,
-        type: 3}
-      propertyPath: Event
-      value: event:/FX/JumpBacteria
-      objectReference: {fileID: 0}
-    - target: {fileID: 8501326898186611364, guid: 80e724c79d2dd7345abef9b03f081a51,
-        type: 3}
-      propertyPath: liquidSlimeVFX
-      value: 
-      objectReference: {fileID: 1779146171899094139, guid: bb0d6428d8408c848a4dbc0c9de487a8,
-        type: 3}
-    - target: {fileID: 8501326898186611366, guid: 80e724c79d2dd7345abef9b03f081a51,
-        type: 3}
-      propertyPath: m_Sources.Array.data[0].sourceTransform
-      value: 
-      objectReference: {fileID: 4360555123025209868, guid: 42b7bf02a6491e043993543cab985ec1,
-        type: 3}
-    - target: {fileID: 8501326898186611367, guid: 80e724c79d2dd7345abef9b03f081a51,
-        type: 3}
-      propertyPath: m_Sources.Array.data[0].sourceTransform
-      value: 
-      objectReference: {fileID: 4360555123025209868, guid: 42b7bf02a6491e043993543cab985ec1,
-        type: 3}
-    - target: {fileID: 8501326898186611368, guid: 80e724c79d2dd7345abef9b03f081a51,
-        type: 3}
-      propertyPath: Event
-      value: event:/FX/GroundBacteria
-      objectReference: {fileID: 0}
     - target: {fileID: 8501326898186611391, guid: 80e724c79d2dd7345abef9b03f081a51,
         type: 3}
       propertyPath: m_Name
@@ -4507,22 +4479,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1492757766304876008, guid: 1ee1001e9faa88f4aaa6ee56c6bf9268,
-        type: 3}
-      propertyPath: isCapitan
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2866733403655826993, guid: 1ee1001e9faa88f4aaa6ee56c6bf9268,
-        type: 3}
-      propertyPath: Event
-      value: event:/FX/JumpBacteria
-      objectReference: {fileID: 0}
-    - target: {fileID: 2866733403655826993, guid: 1ee1001e9faa88f4aaa6ee56c6bf9268,
-        type: 3}
-      propertyPath: liquidSlimeVFX
-      value: 
-      objectReference: {fileID: 1779146171899094139, guid: bb0d6428d8408c848a4dbc0c9de487a8,
-        type: 3}
     - target: {fileID: 2866733403655826996, guid: 1ee1001e9faa88f4aaa6ee56c6bf9268,
         type: 3}
       propertyPath: m_Sources.Array.data[0].sourceTransform
@@ -4533,11 +4489,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player 1 T2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2866733403655826998, guid: 1ee1001e9faa88f4aaa6ee56c6bf9268,
-        type: 3}
-      propertyPath: Event
-      value: event:/FX/GroundBacteria
       objectReference: {fileID: 0}
     - target: {fileID: 2866733403655826999, guid: 1ee1001e9faa88f4aaa6ee56c6bf9268,
         type: 3}
@@ -4677,21 +4628,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3552377286757915685, guid: 8bd927e1480902c4a9bc4ec768f0c1e7,
-        type: 3}
-      propertyPath: Event
-      value: event:/FX/JumpBacteria
-      objectReference: {fileID: 0}
-    - target: {fileID: 3552377286757915685, guid: 8bd927e1480902c4a9bc4ec768f0c1e7,
-        type: 3}
-      propertyPath: liquidSlimeVFX
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 3552377286757915689, guid: 8bd927e1480902c4a9bc4ec768f0c1e7,
-        type: 3}
-      propertyPath: Event
-      value: event:/FX/GroundBacteria
       objectReference: {fileID: 0}
     - target: {fileID: 3552377286757915710, guid: 8bd927e1480902c4a9bc4ec768f0c1e7,
         type: 3}
@@ -4880,22 +4816,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7895654504002365931, guid: 1ba29c5d1104940448c4352ae5682117,
-        type: 3}
-      propertyPath: Event
-      value: event:/FX/JumpBacteria
-      objectReference: {fileID: 0}
-    - target: {fileID: 7895654504002365931, guid: 1ba29c5d1104940448c4352ae5682117,
-        type: 3}
-      propertyPath: liquidSlimeVFX
-      value: 
-      objectReference: {fileID: 1779146171899094139, guid: bb0d6428d8408c848a4dbc0c9de487a8,
-        type: 3}
-    - target: {fileID: 7895654504002365932, guid: 1ba29c5d1104940448c4352ae5682117,
-        type: 3}
-      propertyPath: Event
-      value: event:/FX/GroundBacteria
       objectReference: {fileID: 0}
     - target: {fileID: 7895654504002365933, guid: 1ba29c5d1104940448c4352ae5682117,
         type: 3}

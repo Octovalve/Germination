@@ -13,6 +13,7 @@ public class UIControl : MonoBehaviour
     [SerializeField] Button spitButon;
     [SerializeField] Button pasturn;
     [SerializeField] Button cancel;
+    [SerializeField] GameObject tip;
     CharctesSelection teamSelectio;
     CameraControl cameracontrol;
     TurnControl turnControl;
@@ -110,6 +111,19 @@ public class UIControl : MonoBehaviour
         laststate = turnControl.Estado;
         FMODUnity.RuntimeManager.PlayOneShotAttached(JumpBSound, gameObject);
     }
+
+    public void ShowTip()
+    {
+        tip.SetActive(true);
+        StartCoroutine(TurnOff());
+    }
+
+    IEnumerator TurnOff()
+    {
+        yield return new WaitForSeconds(4f);
+        tip.SetActive(false);
+    }
+
     public void Cancel()
     {
         FMODUnity.RuntimeManager.PlayOneShotAttached(BackBSound, gameObject);

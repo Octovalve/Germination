@@ -39,4 +39,11 @@ public class Stick : MonoBehaviour
             }
         }
     }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "ground")
+        {
+            GetComponent<Rigidbody>().useGravity = true;
+        }
+    }
 }

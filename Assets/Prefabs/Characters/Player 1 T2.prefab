@@ -184,6 +184,7 @@ GameObject:
   - component: {fileID: 2866733403655826994}
   - component: {fileID: 2866733403655826992}
   - component: {fileID: 2866733403655826995}
+  - component: {fileID: 6759511758630334017}
   - component: {fileID: 2866733403655826993}
   - component: {fileID: 2866733403655826998}
   - component: {fileID: 2866733403655827022}
@@ -289,6 +290,19 @@ SphereCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.49
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!135 &6759511758630334017
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2866733403655826997}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.53
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &2866733403655826993
 MonoBehaviour:
@@ -613,6 +627,7 @@ MonoBehaviour:
   SpawnP: {fileID: 3525364077762521333}
   projectile: {fileID: 5172035881416133409, guid: 82f6c49cba2808a4d9f2bf6b3af1051c,
     type: 3}
+  muzzleVFX: {fileID: 0}
   Event: 
 --- !u!1818360608 &1370105505588577912
 PositionConstraint:

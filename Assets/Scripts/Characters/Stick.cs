@@ -18,17 +18,21 @@ public class Stick : MonoBehaviour
     TurnControl turnControl;
     //Este string determina el tac se sera el encargado de marcar como aderibles las superficies
     [SerializeField] string StickySurfeceTag;
+    [SerializeField] GameObject liquidSlimeVFX;
+    ParticleSystem liquidSlimePs;
     [FMODUnity.EventRef]
     public string Event;
     private void Awake()
     {
         turnControl = GameObject.FindGameObjectWithTag("MainCinemachineCamera").GetComponent<TurnControl>();
+        liquidSlimePs = liquidSlimeVFX.GetComponentInChildren<ParticleSystem>();
     }
     //este detiene por completo el movimiento del objeto al colicionar y le quita la gravedad para simular el efecto de que se adiere
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag(StickySurfeceTag) || collision.gameObject.CompareTag("jumpingWall"))
         {
+            liquidSlimePs.Stop();
             GetComponent<Rigidbody>().velocity = Vector3.zero;
             GetComponent<Rigidbody>().useGravity = false;
             GetComponent<Rigidbody>().Sleep();

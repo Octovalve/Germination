@@ -15,7 +15,7 @@ public class Falingtrap : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Player" || collision.gameObject.tag == "Bullet")
+        if (collision.gameObject.tag == "Player" || collision.gameObject.tag == "shot")
         {
             RB.useGravity = true;
             if (collision.gameObject.tag == "Player")

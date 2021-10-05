@@ -9,6 +9,7 @@ public class DamageAttack : MonoBehaviour
     [SerializeField] float damageToDeal;
     CameraControl cameracontrol;
     Transform bulletTransform;
+    [SerializeField] GameObject hitVFX;
     TurnControl turnControl;
     Rigidbody rb;
     HP hpScript;
@@ -28,12 +29,13 @@ public class DamageAttack : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        FMODUnity.RuntimeManager.PlayOneShotAttached(Event, gameObject);
         cameracontrol.TEspera = 120;
+        FMODUnity.RuntimeManager.PlayOneShotAttached(Event, gameObject);
         if (collision.gameObject.tag == "Player")
         {
             hpScript = collision.transform.GetComponent<HP>();
             hpScript.TackeDamage(damageToDeal);
+            GameObject hit = Instantiate(hitVFX, transform.position, Quaternion.identity) as GameObject;
             if (turnControl.Estado >= 4)
             {
                 turnControl.Estado += 2;
@@ -44,17 +46,13 @@ public class DamageAttack : MonoBehaviour
         {
             if (collision.gameObject.tag != "jumpingWall")
             {
+                GameObject hit = Instantiate(hitVFX, transform.position, Quaternion.identity) as GameObject;
                 if (turnControl.Estado >= 4)
                 {
                     turnControl.Estado += 2;
                 }
                 Destroy(gameObject);
             }
-            /*if (turnControl.Estado >= 4)
-            {
-                turnControl.Estado += 2;
-            }
-            Destroy(gameObject);*/
         }
     }
 }

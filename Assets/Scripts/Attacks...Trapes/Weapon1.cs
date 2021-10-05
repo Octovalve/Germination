@@ -9,6 +9,7 @@ public class Weapon1 : MonoBehaviour
     [SerializeField] GameObject projectile;
     CameraControl camControl;
     float forceMod = 2;
+    [SerializeField] GameObject muzzleVFX;
     Vector3 mouseUpPos;
     UIControl ZoomCam;
     Vector3 force;
@@ -16,7 +17,6 @@ public class Weapon1 : MonoBehaviour
     Camera cam;
     float rotZ;
     float angle;
-    float forceMod = 2;
     [FMODUnity.EventRef]
     public string Event;
     private bool isShoot = false;
@@ -56,6 +56,7 @@ public class Weapon1 : MonoBehaviour
         Trajectory.Instance.HideLine();
         GameObject bullet = Instantiate(projectile, SpawnP.position, Quaternion.identity) as GameObject;
         FMODUnity.RuntimeManager.PlayOneShotAttached(Event, gameObject);
+        GameObject muzzle = Instantiate(muzzleVFX, SpawnP.position, Quaternion.identity) as GameObject;
         camControl.FolowThis = bullet.GetComponent<Transform>();
         bullet.GetComponent<Rigidbody>().AddForce(force * forceMod, ForceMode.Impulse);
         ZoomCam.ZoomCamera1.SetActive(false);

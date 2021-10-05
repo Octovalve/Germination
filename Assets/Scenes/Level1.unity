@@ -725,7 +725,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 436850106}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.42, y: -4.99, z: 0.49}
+  m_LocalPosition: {x: 1.42, y: -4.99, z: 3.8}
   m_LocalScale: {x: 0.92920995, y: 1.3283, z: 0.92920995}
   m_Children: []
   m_Father: {fileID: 0}
@@ -4528,7 +4528,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8050568960744155443}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.7, y: 16.54, z: 3.85}
+  m_LocalPosition: {x: -2.7, y: 16.6, z: 3.85}
   m_LocalScale: {x: 1.2206233, y: 0.570457, z: 1.2206233}
   m_Children: []
   m_Father: {fileID: 2868720777673525289}
@@ -19099,7 +19099,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3228465214305878803}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -12.7703905, y: -11.000634, z: 5.9836845}
+  m_LocalPosition: {x: -12.8, y: -11.000634, z: 5.83}
   m_LocalScale: {x: 0.77708703, y: 0.7770871, z: 0.777087}
   m_Children: []
   m_Father: {fileID: 5021534173647257515}
@@ -19982,7 +19982,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2691897067446673948}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.9530478, y: -11.010302, z: 2.7300596}
+  m_LocalPosition: {x: -6.97, y: -11.010302, z: 2.63}
   m_LocalScale: {x: 0.77708703, y: 0.7770871, z: 0.777087}
   m_Children: []
   m_Father: {fileID: 5021534173647257515}
@@ -22466,7 +22466,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6882360479405837993}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.505085, y: -11.0021305, z: 1.3932519}
+  m_LocalPosition: {x: -4.52, y: -11.0021305, z: 1.29}
   m_LocalScale: {x: 0.77708703, y: 0.7770871, z: 0.777087}
   m_Children: []
   m_Father: {fileID: 5021534173647257515}
@@ -24679,7 +24679,7 @@ GameObject:
   m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967294
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!54 &8050568960744155444
 Rigidbody:

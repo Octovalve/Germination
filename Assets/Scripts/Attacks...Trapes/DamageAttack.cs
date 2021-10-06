@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody))]
-[RequireComponent(typeof(Collider))]
 public class DamageAttack : MonoBehaviour
 {
     [SerializeField] float damageToDeal;
@@ -31,6 +29,7 @@ public class DamageAttack : MonoBehaviour
     {
         cameracontrol.TEspera = 120;
         FMODUnity.RuntimeManager.PlayOneShotAttached(Event, gameObject);
+        //Berifica si golpeo al jugador toma su script de HP y le pasa un balor de daño a recivir
         if (collision.gameObject.tag == "Player")
         {
             hpScript = collision.transform.GetComponent<HP>();
@@ -42,6 +41,7 @@ public class DamageAttack : MonoBehaviour
             }
             Destroy(gameObject);
         }
+        //Berifica si es una superficie distinta al muro y si si es distinta prosede con la destrucion del proyectil
         else
         {
             if (collision.gameObject.tag != "jumpingWall")

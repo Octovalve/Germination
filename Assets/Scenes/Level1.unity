@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -3065,6 +3065,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a65bc9fcde7d51488f370d4e115a309, type: 3}
+--- !u!1 &1867153525 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2747072965980464462, guid: 1ba29c5d1104940448c4352ae5682117,
+    type: 3}
+  m_PrefabInstance: {fileID: 8465284442293120721}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1873445256 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7895654504002365846, guid: 1ba29c5d1104940448c4352ae5682117,
@@ -18700,12 +18706,12 @@ PrefabInstance:
     - target: {fileID: 3552377286757915682, guid: 8bd927e1480902c4a9bc4ec768f0c1e7,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.17
+      value: 2.6302633
       objectReference: {fileID: 0}
     - target: {fileID: 3552377286757915682, guid: 8bd927e1480902c4a9bc4ec768f0c1e7,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.8
+      value: 4.539241
       objectReference: {fileID: 0}
     - target: {fileID: 3552377286757915682, guid: 8bd927e1480902c4a9bc4ec768f0c1e7,
         type: 3}
@@ -25214,6 +25220,11 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -1
       objectReference: {fileID: 0}
+    - target: {fileID: 6840130419483869746, guid: 1ba29c5d1104940448c4352ae5682117,
+        type: 3}
+      propertyPath: slime
+      value: 
+      objectReference: {fileID: 1867153525}
     - target: {fileID: 6840130419483869746, guid: 1ba29c5d1104940448c4352ae5682117,
         type: 3}
       propertyPath: VictoryUI

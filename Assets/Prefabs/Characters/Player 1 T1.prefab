@@ -42,6 +42,7 @@ Transform:
   - {fileID: 5805424362004954141}
   - {fileID: 3998416638281348757}
   - {fileID: 6917852960661618389}
+  - {fileID: 7527709407163991051}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -160,6 +161,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StickySurfeceTag: ground
+  liquidSlimeVFX: {fileID: 970338277708351745}
   Event: event:/FX/GroundBacteria
 --- !u!114 &3552377286757915691
 MonoBehaviour:
@@ -193,6 +195,7 @@ MonoBehaviour:
   maxHP: 200
   isCapitan: 0
   VictoryUI: {fileID: 0}
+  slime: {fileID: 0}
 --- !u!1818360608 &3552377286757915687
 PositionConstraint:
   m_ObjectHideFlags: 0
@@ -570,6 +573,87 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6589699314561929786, guid: 2b14e199632c70e44a4cb28b488013f7,
     type: 3}
   m_PrefabInstance: {fileID: 856337236787818023}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1569391777063890298
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 3552377286757915682}
+    m_Modifications:
+    - target: {fileID: 1779146171899094139, guid: bb0d6428d8408c848a4dbc0c9de487a8,
+        type: 3}
+      propertyPath: m_Name
+      value: SlimeLiquidGreenVFX
+      objectReference: {fileID: 0}
+    - target: {fileID: 9056829367533939057, guid: bb0d6428d8408c848a4dbc0c9de487a8,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 9056829367533939057, guid: bb0d6428d8408c848a4dbc0c9de487a8,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9056829367533939057, guid: bb0d6428d8408c848a4dbc0c9de487a8,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9056829367533939057, guid: bb0d6428d8408c848a4dbc0c9de487a8,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9056829367533939057, guid: bb0d6428d8408c848a4dbc0c9de487a8,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9056829367533939057, guid: bb0d6428d8408c848a4dbc0c9de487a8,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9056829367533939057, guid: bb0d6428d8408c848a4dbc0c9de487a8,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9056829367533939057, guid: bb0d6428d8408c848a4dbc0c9de487a8,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9056829367533939057, guid: bb0d6428d8408c848a4dbc0c9de487a8,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9056829367533939057, guid: bb0d6428d8408c848a4dbc0c9de487a8,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9056829367533939057, guid: bb0d6428d8408c848a4dbc0c9de487a8,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: bb0d6428d8408c848a4dbc0c9de487a8, type: 3}
+--- !u!1 &970338277708351745 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1779146171899094139, guid: bb0d6428d8408c848a4dbc0c9de487a8,
+    type: 3}
+  m_PrefabInstance: {fileID: 1569391777063890298}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &7527709407163991051 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9056829367533939057, guid: bb0d6428d8408c848a4dbc0c9de487a8,
+    type: 3}
+  m_PrefabInstance: {fileID: 1569391777063890298}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3200981307964105846
 PrefabInstance:

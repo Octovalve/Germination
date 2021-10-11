@@ -6,13 +6,16 @@ public class Plataform : MonoBehaviour
 {
     //[SerializeField] int layernumber = 8;
     Rigidbody RB;
-    Collider collider;
+    BoxCollider pltcollider;
     float wait;
     bool hit = false;
+    Vector3 collider_center, collider_size;
     private void Start()
     {
         RB = GetComponent<Rigidbody>();
-        collider = GetComponent<BoxCollider>();
+        pltcollider = GetComponent<BoxCollider>();
+        collider_center = pltcollider.bounds.center;
+        collider_size = pltcollider.bounds.size;
     }
     private void Update()
     {
@@ -23,7 +26,7 @@ public class Plataform : MonoBehaviour
     {
         if (collision.gameObject.tag == "shot")
         {
-            collider.enabled = false;
+            pltcollider.enabled = false;
             RB.isKinematic = false;
             wait = 0.5f;
             hit = true;
@@ -32,7 +35,9 @@ public class Plataform : MonoBehaviour
     }
     public void Destroid()
     {
-        Collider[] colliders = Physics.OverlapBox(transform.position + new Vector3(0.28f, 0.08f, 1), new Vector3(2.654602f / 2, 0.91f / 2, 11.27829f / 2), Quaternion.identity, 1 << 8);
+        Debug.Log("Center: " + collider_center);
+        Debug.Log("Size:" + collider_size);
+        Collider[] colliders = Physics.OverlapBox(collider_center, (collider_size / 2.0f) * 1.3f, Quaternion.identity, 1 << 8);
         foreach (Collider nearObject in colliders)
         {
             Rigidbody rb = nearObject.GetComponent<Rigidbody>();
@@ -40,6 +45,7 @@ public class Plataform : MonoBehaviour
             {
                 rb.useGravity = true;
                 Debug.Log(rb);
+
             }
         }
     }

@@ -6,10 +6,18 @@ public class VentanillaDeFrio : MonoBehaviour
 {
     [SerializeField] float damageToDeal;
     [SerializeField] LayerMask layer;
+    BoxCollider pltcollider;
+    Vector3 collider_center, collider_size;
+    private void Start()
+    {
+        pltcollider = GetComponent<BoxCollider>();
+        collider_center = pltcollider.bounds.center;
+        collider_size = pltcollider.bounds.size;
+    }
     //envia el daño al jugador (por alguna razon el daño se enbia 2 veces)
     private void OnTriggerEnter(Collider other)
     {
-        Collider[] colliders = Physics.OverlapBox(transform.position + new Vector3(14.30829f, -5.811924f, 0f), new Vector3(25.63359f / 2, 8.574247f / 2, 1f / 2), Quaternion.identity, layer);
+        Collider[] colliders = Physics.OverlapBox(collider_center, (collider_size / 2.0f), Quaternion.identity, 1 << 8);
         foreach (Collider nearObject in colliders)
         {
             Debug.Log(nearObject);

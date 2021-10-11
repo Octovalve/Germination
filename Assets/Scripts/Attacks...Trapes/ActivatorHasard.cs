@@ -5,15 +5,16 @@ using UnityEngine;
 public class ActivatorHasard : MonoBehaviour
 {
     [SerializeField] GameObject trigerTrap;
-    [SerializeField] float CoolDown;
+    [SerializeField] int CoolDown;
+    int activatorCoolDown;
     BoxCollider ActivationButon;
-    float InicialTCooldown;
+    TurnControl contador;
     float onTime;
     bool activo;
     private void Start()
     {
         ActivationButon = GetComponent<BoxCollider>();
-        InicialTCooldown = CoolDown;
+        contador = GameObject.FindGameObjectWithTag("MainCinemachineCamera").GetComponent<TurnControl>();
     }
     private void Update()
     {
@@ -26,16 +27,16 @@ public class ActivatorHasard : MonoBehaviour
     {
         activo = true;
         onTime = 0.1f;
-        CoolDown = InicialTCooldown;
         ActivationButon.enabled = false;
+        activatorCoolDown = contador.ContadorTurno;
+        activatorCoolDown += CoolDown;
     }
     //maneja los tiempos de activacion tanto de la trampa como el enfriamiento del boton para la trampa
     public void ActvateTrap()
     {
         trigerTrap.SetActive(true);
-        onTime -= Time.deltaTime;
-        CoolDown -= Time.deltaTime;
+        onTime -= Time.deltaTime; 
         if (onTime <= 0) { trigerTrap.SetActive(false); }
-        if (CoolDown <= 0) { activo = false; ActivationButon.enabled = true; }
+        if (CoolDown <= contador.ContadorTurno) { activo = false; ActivationButon.enabled = true; }
     }
 }

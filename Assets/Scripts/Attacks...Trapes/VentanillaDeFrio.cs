@@ -5,11 +5,22 @@ using UnityEngine;
 public class VentanillaDeFrio : MonoBehaviour
 {
     [SerializeField] float damageToDeal;
-    HP hpScript;
+    [SerializeField] LayerMask layer;
     //envia el daño al jugador (por alguna razon el daño se enbia 2 veces)
     private void OnTriggerEnter(Collider other)
     {
-        hpScript = other.transform.GetComponent<HP>();
-        hpScript.TackeDamage(damageToDeal);
+        Collider[] colliders = Physics.OverlapBox(new Vector3(14.30829f, -5.811924f, 0f), new Vector3(25.63359f, 8.574247f, 1f), Quaternion.identity, layer);
+        foreach (Collider nearObject in colliders)
+        {
+            Debug.Log(nearObject);
+            HP hpScript = nearObject.GetComponent<HP>();
+            CaracterReaction reactions = nearObject.GetComponent<CaracterReaction>();
+            if (hpScript != null)
+            {
+                hpScript.TackeDamage(damageToDeal);
+                reactions.Congelado=true;
+                //nearObject.enabled = false;
+            }
+        }
     }
 }

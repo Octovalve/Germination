@@ -21,6 +21,7 @@ public class Drag : MonoBehaviour
     private Vector3 force;
     TurnControl turnControl;
     CameraControl camControl;
+    Stick stick;
     UIControl ZoomCam;
     [FMODUnity.EventRef]
     public string Event;
@@ -35,6 +36,7 @@ public class Drag : MonoBehaviour
         turnControl = GameObject.FindGameObjectWithTag("MainCinemachineCamera").GetComponent<TurnControl>();
         camControl = GameObject.FindGameObjectWithTag("MainCinemachineCamera").GetComponent<CameraControl>();
         ZoomCam = camControl.GetComponent<UIControl>();
+        stick = GetComponent<Stick>();
     }
     //Toma la posicion del maus en el momento que unde sobr el objeto 
     private void OnMouseDown()
@@ -76,6 +78,7 @@ public class Drag : MonoBehaviour
         FMODUnity.RuntimeManager.PlayOneShotAttached(Event, gameObject);
         rb.AddForce(force * 2000);
         ZoomCam.ZoomCamera1.SetActive(false);
+        stick.Landed = false;
         isShoot = true;
     }
 

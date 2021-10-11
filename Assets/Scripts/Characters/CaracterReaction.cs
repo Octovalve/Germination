@@ -6,9 +6,17 @@ public class CaracterReaction : MonoBehaviour
 {
     [SerializeField] float knockbackValue;
     Rigidbody thisrb;
+    private bool congelado = false;
+
+    public bool Congelado { get => congelado; set => congelado = value; }
+
     private void Start()
     {
         thisrb = GetComponent<Rigidbody>();
+    }
+    private void Update()
+    {
+        
     }
     private void OnCollisionEnter(Collision collision)
     {

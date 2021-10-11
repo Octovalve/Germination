@@ -1894,12 +1894,12 @@ PrefabInstance:
     - target: {fileID: 8501326898186611363, guid: 80e724c79d2dd7345abef9b03f081a51,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8501326898186611363, guid: 80e724c79d2dd7345abef9b03f081a51,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 9.43
+      value: 9.76
       objectReference: {fileID: 0}
     - target: {fileID: 8501326898186611363, guid: 80e724c79d2dd7345abef9b03f081a51,
         type: 3}
@@ -24972,11 +24972,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6840130419483869746, guid: 1ba29c5d1104940448c4352ae5682117,
-        type: 3}
-      propertyPath: maxHP
-      value: 100
-      objectReference: {fileID: 0}
     - target: {fileID: 6840130419483869746, guid: 1ba29c5d1104940448c4352ae5682117,
         type: 3}
       propertyPath: VictoryUI

@@ -32,7 +32,7 @@ public class Plataform : MonoBehaviour
     }
     public void Destroid()
     {
-        Collider[] colliders = Physics.OverlapBox(transform.position + new Vector3(0.28f, 0.08f, 1), new Vector3(2.543038f / 2, 0.91f / 2, 11.27829f / 2), Quaternion.identity, 1 << 8);
+        Collider[] colliders = Physics.OverlapBox(transform.position + new Vector3(0.28f, 0.08f, 1), new Vector3(2.654602f / 2, 0.91f / 2, 11.27829f / 2), Quaternion.identity, 1 << 8);
         foreach (Collider nearObject in colliders)
         {
             Rigidbody rb = nearObject.GetComponent<Rigidbody>();

@@ -7,7 +7,7 @@
 [LOG] OutputWASAPI::init                       : Output buffer size: 4096 samples, latency: 0.00ms, period: 10.00ms, DSP buffer: 1024 * 4
 [LOG] Thread::initThread                       : Init FMOD stream thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFB, Stack Size: 98304, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Affinity: 0x8000000000000001, Priority: 0xFFFF7FFA, Stack Size: 81920, Semaphore: No, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 000002199DFE22B8 isAsync 0 updatePeriod 0.02
+[LOG] AsyncManager::init                       : manager 0000023F8F391F28 isAsync 0 updatePeriod 0.02
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
 [LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFD, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
@@ -24,24 +24,42 @@
 [LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
 [LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
 [LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             : exinfo->length             = 1545216
-[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 15136
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 1556032
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 16448
 [LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000FDB0DAEF38
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000779079EFA8
 [LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFFF29A60E0
-[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFFF29A60B0
-[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFFF29A61B0
-[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFFF29A6270
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000217487829F8
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFB647C60E0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFB647C60B0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFB647C61B0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFB647C6270
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000023F939FA4D8
 [LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
 [LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
 [LOG] SystemI::createSoundInternal             : Sample 0/1: name='ChooseBacteria', format=5, channels=2, frequency=48000, lengthbytes=4512, lengthpcm=22569, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.245819.
-[LOG] SoundI::release                          :  (00000219351DBC38)
-[LOG] SoundI::release                          :     ChooseBacteria (000002197B5C8498)
-[LOG] SoundI::release                          :  (000002191AE154A8)
-[LOG] SoundI::release                          :     NeveraSFX (000002197BE6CA48)
+[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
+[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             : exinfo->length             = 1556032
+[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 16448
+[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000779079EFA8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFB647C60E0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFB647C60B0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFB647C61B0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFB647C6270
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000023FF43F50E8
+[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
+[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
+[LOG] SystemI::createSoundInternal             : Sample 0/1: name='JumpButtonSFX', format=5, channels=2, frequency=48000, lengthbytes=4640, lengthpcm=25077, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.378143.
+[LOG] SoundI::release                          :  (0000023FE89F16F8)
+[LOG] SoundI::release                          :     ChooseBacteria (0000023F28FB94F8)
+[LOG] SoundI::release                          :  (0000023F402F97F8)
+[LOG] SoundI::release                          :     JumpButtonSFX (0000023F44492B68)
+[LOG] SoundI::release                          :  (0000023FF4214108)
+[LOG] SoundI::release                          :     NeveraSFX (0000023F3FFBC758)
 [LOG] Thread::callback                         : FMOD Studio update thread finished.
 [LOG] Thread::callback                         : FMOD Studio bank load thread finished.
 [LOG] Profile::disconnectAll                   : Profiler disconnecting all clients

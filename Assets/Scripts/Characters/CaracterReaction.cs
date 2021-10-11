@@ -5,6 +5,10 @@ using UnityEngine;
 public class CaracterReaction : MonoBehaviour
 {
     [SerializeField] float knockbackValue;
+    [SerializeField] int Rondascongelado;
+    int turnoscongelado;
+    TurnControl contador;
+    SphereCollider collider;
     Rigidbody thisrb;
     private bool congelado = false;
 
@@ -13,10 +17,13 @@ public class CaracterReaction : MonoBehaviour
     private void Start()
     {
         thisrb = GetComponent<Rigidbody>();
+        contador = GameObject.FindGameObjectWithTag("MainCinemachineCamera").GetComponent<TurnControl>();
+        collider = GetComponent<SphereCollider>();
     }
     private void Update()
     {
-        
+        if (congelado == true) { EstadoCongelado(); }
+        if (congelado == false) { collider.enabled = true; }
     }
     private void OnCollisionEnter(Collision collision)
     {
@@ -25,24 +32,16 @@ public class CaracterReaction : MonoBehaviour
             AddKnockback(collision.gameObject.transform);
         }
     }
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.tag == "ground")
-        {
-            thisrb.useGravity = true;
-        }
-    }
     public void AddKnockback(Transform BuletHit)
     {
         thisrb.useGravity = true;
         thisrb.AddForce((this.gameObject.transform.position - BuletHit.position) * knockbackValue, ForceMode.Impulse);
         Debug.Log((this.gameObject.transform.position - BuletHit.position));
     }
-    private void OnTriggerStay(Collider other)
+    public void EstadoCongelado()
     {
-        if (other.gameObject.tag == "ground")
-        {
-            thisrb.useGravity = false;
-        }
+        Debug.Log("Turnos congelado" + turnoscongelado);
+        if (congelado == true && turnoscongelado < contador.ContadorTurno) { turnoscongelado += (contador.ContadorTurno + Rondascongelado); }
+        if (contador.ContadorTurno >= turnoscongelado) { congelado = false; }
     }
 }

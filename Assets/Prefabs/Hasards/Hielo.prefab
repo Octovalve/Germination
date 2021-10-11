@@ -170,4 +170,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trigerTrap: {fileID: 2961146314830332212}
-  CoolDown: 3
+  CoolDown: 7

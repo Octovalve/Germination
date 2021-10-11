@@ -321,6 +321,7 @@ MonoBehaviour:
   maxHP: 300
   isCapitan: 1
   VictoryUI: {fileID: 0}
+  VictorySound: event:/UI/Victory
 --- !u!1818360608 &8501326898186611366
 PositionConstraint:
   m_ObjectHideFlags: 0

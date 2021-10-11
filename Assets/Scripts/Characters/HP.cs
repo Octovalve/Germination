@@ -9,6 +9,8 @@ public class HP : MonoBehaviour
     [SerializeField] float maxHP;
     [SerializeField] bool isCapitan;
     [SerializeField] GameObject VictoryUI;
+    [FMODUnity.EventRef]
+    public string VictorySound;
     private float curentHP;
 
     public float CurentHP { get => curentHP; set => curentHP = value; }
@@ -28,6 +30,7 @@ public class HP : MonoBehaviour
             if (isCapitan == true)
             {
                 VictoryUI.SetActive(true);
+                FMODUnity.RuntimeManager.PlayOneShotAttached(VictorySound, gameObject);
                 Time.timeScale = 0;
             }
         }

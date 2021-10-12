@@ -475,7 +475,7 @@ MonoBehaviour:
   sourceProjectPath: Assets/Germifmod/Germifmod.fspro
   sourceBankPath: Assets/Germifmod/Build
   SourceBankPathUnformatted: 
-  BankRefreshCooldown: 5
+  BankRefreshCooldown: 1
   ShowBankRefreshWindow: 1
   AutomaticEventLoading: 1
   BankLoadType: 0

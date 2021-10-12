@@ -126,6 +126,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageToDeal: 0
+  SpikeSound: event:/FX/SpikeSFX
 --- !u!1818360608 &1827624255
 PositionConstraint:
   m_ObjectHideFlags: 0

@@ -2820,8 +2820,8 @@ MonoBehaviour:
   fondo: {fileID: 346752761}
   jumpButon: {fileID: 61424867}
   spitButon: {fileID: 1921265575}
-  pasturn: {fileID: 646259452}
-  cancel: {fileID: 81829410}
+  pasturn: {fileID: 81829410}
+  cancel: {fileID: 646259452}
   JumpBSound: event:/UI/JumpButtonSFX
   BackBSound: event:/UI/ButtonBackSFX
   WeaponBSound: event:/UI/ShootButtonSFX

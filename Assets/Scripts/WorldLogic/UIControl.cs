@@ -107,6 +107,7 @@ public class UIControl : MonoBehaviour
         jumpButon.interactable = false;
         cancel.interactable = false;
         fondo.SetActive(false);
+        ZoomCamera1.SetActive(true);
         laststate = turnControl.Estado;
         FMODUnity.RuntimeManager.PlayOneShotAttached(JumpBSound, gameObject);
     }

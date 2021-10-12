@@ -7,9 +7,9 @@ public class Weapon1 : MonoBehaviour
     [SerializeField] float ofsetRot;
     [SerializeField] Transform SpawnP;
     [SerializeField] GameObject projectile;
+    [SerializeField] GameObject muzzleVFX;
     CameraControl camControl;
     float forceMod = 2;
-    [SerializeField] GameObject muzzleVFX;
     Vector3 mouseUpPos;
     UIControl ZoomCam;
     Vector3 force;
@@ -61,6 +61,7 @@ public class Weapon1 : MonoBehaviour
         bullet.GetComponent<Rigidbody>().AddForce(force * forceMod, ForceMode.Impulse);
         ZoomCam.ZoomCamera1.SetActive(false);
         IsShoot = true;
+        this.gameObject.SetActive(false);
     }
     private Vector3 WorldPosition(float z)
     {

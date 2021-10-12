@@ -39,7 +39,6 @@ public class CameraControl : MonoBehaviour
     // LateUpdate is called after Update methods
     private void Update()
     {
-        //Debug.Log(TEspera);
         EsperarTiempo();
         if (turnControl.Estado == 4 || turnControl.Estado == 5)
         {
@@ -80,7 +79,7 @@ public class CameraControl : MonoBehaviour
     {
         if (TEspera > 1)
         {
-            TEspera -= 1; Debug.Log(TEspera);
+            TEspera -= 1;
         }
         else { TEspera = 0; }
     }

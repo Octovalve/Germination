@@ -47,9 +47,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ofsetRot: 0
-  SpawnP: {fileID: 0}
-  projectile: {fileID: 0}
-  muzzleVFX: {fileID: 0}
+  SpawnP: {fileID: 7045633743089339060}
+  projectile: {fileID: 7994269197635608159, guid: 5f59b77ed4aef0e48b161629c5ff7fc9,
+    type: 3}
+  muzzleVFX: {fileID: 8595657303808111298, guid: 98da1cab2af360f48b8e500d4d424690,
+    type: 3}
   Event: 
 --- !u!1818360608 &701088958388704093
 PositionConstraint:

@@ -15,7 +15,7 @@ MonoBehaviour:
   Path: Assets/Germifmod/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637695856293782098
+  lastModified: 637695732565248345
   FileSizes:
   - Name: Desktop
     Value: 1328
@@ -193,7 +193,7 @@ MonoBehaviour:
   Path: Assets/Germifmod/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637695856293772118
+  lastModified: 637695732565248345
   FileSizes:
   - Name: Desktop
     Value: 1572480
@@ -249,14 +249,37 @@ MonoBehaviour:
   - {fileID: 2101235690930372548}
   - {fileID: 6033712221562305843}
   - {fileID: 9126227079299033950}
-  - {fileID: -5928294948096626410}
+  - {fileID: 361754059347126131}
   EditorParameters: []
   MasterBanks:
   - {fileID: -1802159664353297115}
   StringsBanks:
   - {fileID: -8668246463116451103}
-  stringsBankWriteTime: 637695856293782098
+  stringsBankWriteTime: 637695732565248345
   cacheVersion: 8
+--- !u!114 &361754059347126131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/FX/WallBouncing
+  m_EditorClassIdentifier: 
+  Path: event:/FX/WallBouncing
+  guid: 5393d4e6f78a0b419899b34df56d8aab
+  Banks:
+  - {fileID: -1802159664353297115}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1567
 --- !u!114 &755119954619174672
 MonoBehaviour:
   m_ObjectHideFlags: 0

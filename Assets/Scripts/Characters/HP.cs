@@ -9,6 +9,8 @@ public class HP : MonoBehaviour
     [SerializeField] float maxHP;
     [SerializeField] bool isCapitan;
     [SerializeField] GameObject VictoryUI;
+    //[SerializeField] GameObject slime;
+    //Material slimeMaterial;
     private float curentHP;
 
     public float CurentHP { get => curentHP; set => curentHP = value; }
@@ -16,6 +18,7 @@ public class HP : MonoBehaviour
     private void Start()
     {
         curentHP = maxHP;
+        //slimeMaterial = slime.GetComponent<MeshRenderer>().sharedMaterial;
     }
 
     // Update is called once per frame
@@ -24,12 +27,18 @@ public class HP : MonoBehaviour
         barraHP.fillAmount = curentHP / maxHP;
         if (curentHP <= 0)
         {
-            Destroy(gameObject);
-            if (isCapitan == true)
+            float timer = 0 + Time.deltaTime;
+            //slimeMaterial.SetFloat("_Dissolve", timer);
+            if (timer > 1)
             {
-                VictoryUI.SetActive(true);
-                Time.timeScale = 0;
+                if (isCapitan == true)
+                {
+                    VictoryUI.SetActive(true);
+                    Time.timeScale = 0;
+                }
+                Destroy(gameObject);
             }
+            Destroy(gameObject);
         }
     }
     public void TackeDamage(float damage)

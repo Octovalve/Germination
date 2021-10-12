@@ -1,13 +1,13 @@
 fileFormatVersion: 2
-<<<<<<< HEAD:Assets/ScritableObjects.meta
-guid: b8a822dc7ee98a04eb2da792d44f685c
-folderAsset: yes
-DefaultImporter:
+<<<<<<< HEAD:Assets/Materials/Materials/ShatterMaterial.mat.meta
+guid: 1d0d3d43c01ef254a971640e1d969192
+NativeFormatImporter:
 =======
 guid: 1e03d81c6403d1e43b1ba67fc3a70f4f
 PrefabImporter:
->>>>>>> main:Assets/Prefabs/VFX/SlimeLiquidBlueVFX.prefab.meta
+>>>>>>> Development:Assets/Prefabs/VFX/SlimeLiquidBlueVFX.prefab.meta
   externalObjects: {}
+  mainObjectFileID: 2100000
   userData: 
   assetBundleName: 
   assetBundleVariant: 

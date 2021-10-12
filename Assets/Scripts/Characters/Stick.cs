@@ -20,8 +20,12 @@ public class Stick : MonoBehaviour
     [SerializeField] string StickySurfeceTag;
     [SerializeField] GameObject liquidSlimeVFX;
     ParticleSystem liquidSlimePs;
+    private bool landed = true;
     [FMODUnity.EventRef]
     public string Event;
+
+    public bool Landed { get => landed; set => landed = value; }
+
     private void Awake()
     {
         turnControl = GameObject.FindGameObjectWithTag("MainCinemachineCamera").GetComponent<TurnControl>();
@@ -36,18 +40,11 @@ public class Stick : MonoBehaviour
             GetComponent<Rigidbody>().velocity = Vector3.zero;
             GetComponent<Rigidbody>().useGravity = false;
             GetComponent<Rigidbody>().Sleep();
-            if (turnControl.Estado >= 4)
+            if (turnControl.Estado >= 4 && landed == false)
             {
                 turnControl.Estado += 1;
                 FMODUnity.RuntimeManager.PlayOneShotAttached(Event, gameObject);
             }
-        }
-    }
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.tag == "ground")
-        {
-            GetComponent<Rigidbody>().useGravity = true;
         }
     }
 }

@@ -565,6 +565,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -179.60901
       objectReference: {fileID: 0}
+    - target: {fileID: 7884808309509237385, guid: 2b14e199632c70e44a4cb28b488013f7,
+        type: 3}
+      propertyPath: muzzleVFX
+      value: 
+      objectReference: {fileID: 1005267914599616905, guid: bac524d7245dac74ba4e308269f54734,
+        type: 3}
+    - target: {fileID: 7884808309509237385, guid: 2b14e199632c70e44a4cb28b488013f7,
+        type: 3}
+      propertyPath: projectile
+      value: 
+      objectReference: {fileID: 2037830563759639262, guid: 8eb10c5935536734cada69f006bd8f1c,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2b14e199632c70e44a4cb28b488013f7, type: 3}
 --- !u!1 &587020768335290857 stripped

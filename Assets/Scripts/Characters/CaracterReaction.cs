@@ -40,7 +40,6 @@ public class CaracterReaction : MonoBehaviour
     }
     public void EstadoCongelado()
     {
-        Debug.Log("Turnos congelado" + turnoscongelado);
         if (congelado == true && turnoscongelado < contador.ContadorTurno) { turnoscongelado += (contador.ContadorTurno + Rondascongelado); }
         if (contador.ContadorTurno >= turnoscongelado) { congelado = false; }
     }

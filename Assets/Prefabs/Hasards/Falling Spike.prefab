@@ -125,8 +125,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d97055c51586dcc4f9a31c55773b6501, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageToDeal: 0
+  damageToDeal: 50
   SpikeSound: event:/FX/SpikeSFX
+  spikeActivado: 0
 --- !u!1818360608 &1827624255
 PositionConstraint:
   m_ObjectHideFlags: 0

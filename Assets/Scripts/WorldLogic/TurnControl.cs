@@ -21,7 +21,6 @@ public class TurnControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(contadorTurno);
         if (estado >= 7 && teamselection.Team == 1)
         {
             teamselection.Team += 1;

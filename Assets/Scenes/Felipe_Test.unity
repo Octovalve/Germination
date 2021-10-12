@@ -342,81 +342,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 36764341}
   m_CullTransparentMesh: 0
---- !u!1 &46395019
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 46395020}
-  - component: {fileID: 46395022}
-  - component: {fileID: 46395021}
-  m_Layer: 5
-  m_Name: TipImage
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!224 &46395020
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 46395019}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1625751426}
-  m_Father: {fileID: 1717631522}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -2.5, y: -33.2}
-  m_SizeDelta: {x: 174.63217, y: 66.31082}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &46395021
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 46395019}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &46395022
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 46395019}
-  m_CullTransparentMesh: 0
 --- !u!114 &61424867 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8958862143985504482, guid: 923af75c26414dc41b3c362df06242c6,
@@ -2865,86 +2790,6 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 2028603220}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1625751423
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1625751426}
-  - component: {fileID: 1625751425}
-  - component: {fileID: 1625751424}
-  m_Layer: 5
-  m_Name: TipText
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1625751424
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1625751423}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
-  m_RaycastTarget: 1
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 18
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 73
-    m_Alignment: 4
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: "El bot\xF3n izquierdo, de color rojo, se usa para disparar el arma.\nEl
-    derecho, de color azul, se usa para mover al personaje.\nLa cruz y la flecha
-    en la secci\xF3n superior se usan para cambiar selecci\xF3n y terminar turno."
---- !u!222 &1625751425
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1625751423}
-  m_CullTransparentMesh: 0
---- !u!224 &1625751426
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1625751423}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 46395020}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1637514408
 GameObject:
   m_ObjectHideFlags: 0
@@ -3302,136 +3147,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1689067053}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1717631521
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1717631522}
-  - component: {fileID: 1717631525}
-  - component: {fileID: 1717631524}
-  - component: {fileID: 1717631523}
-  m_Layer: 5
-  m_Name: Tip
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1717631522
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1717631521}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 46395020}
-  m_Father: {fileID: 1619592303}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.12252578, y: 0.291}
-  m_AnchorMax: {x: 0.48800004, y: 0.65000004}
-  m_AnchoredPosition: {x: 98, y: -135}
-  m_SizeDelta: {x: -83.212105, y: -56.02954}
-  m_Pivot: {x: 0.4481535, y: 0.60718685}
---- !u!114 &1717631523
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1717631521}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 1717631524}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1733503595}
-        m_MethodName: ShowTip
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &1717631524
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1717631521}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 936345f7fc3934efa8119a8700d904c7, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &1717631525
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1717631521}
-  m_CullTransparentMesh: 0
 --- !u!1 &1720222213
 GameObject:
   m_ObjectHideFlags: 0
@@ -3585,7 +3300,6 @@ MonoBehaviour:
   spitButon: {fileID: 1921265575}
   pasturn: {fileID: 646259452}
   cancel: {fileID: 81829410}
-  tip: {fileID: 46395019}
   JumpBSound: event:/UI/JumpButtonSFX
   BackBSound: event:/UI/ButtonBackSFX
   WeaponBSound: event:/UI/ShootButtonSFX
@@ -4317,7 +4031,7 @@ PrefabInstance:
     - target: {fileID: 8958862142328049838, guid: 923af75c26414dc41b3c362df06242c6,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8958862142328049841, guid: 923af75c26414dc41b3c362df06242c6,
         type: 3}
@@ -4775,6 +4489,132 @@ PrefabInstance:
       objectReference: {fileID: 539848690}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 80e724c79d2dd7345abef9b03f081a51, type: 3}
+--- !u!1001 &1751166498370498934
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1619592303}
+    m_Modifications:
+    - target: {fileID: 1751166496720079696, guid: 982aa19f08209a04eb15eeb03206ed5c,
+        type: 3}
+      propertyPath: tipText
+      value: "El bot\xF3n izquierdo, de color rojo, se usa para disparar el arma.\nEl
+        derecho, de color azul, se usa para mover al personaje.\nLa cruz y la flecha
+        en la secci\xF3n superior se usan para cambiar selecci\xF3n y terminar turno."
+      objectReference: {fileID: 0}
+    - target: {fileID: 1751166496720079700, guid: 982aa19f08209a04eb15eeb03206ed5c,
+        type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.4481535
+      objectReference: {fileID: 0}
+    - target: {fileID: 1751166496720079700, guid: 982aa19f08209a04eb15eeb03206ed5c,
+        type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.60718685
+      objectReference: {fileID: 0}
+    - target: {fileID: 1751166496720079700, guid: 982aa19f08209a04eb15eeb03206ed5c,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1751166496720079700, guid: 982aa19f08209a04eb15eeb03206ed5c,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.48800004
+      objectReference: {fileID: 0}
+    - target: {fileID: 1751166496720079700, guid: 982aa19f08209a04eb15eeb03206ed5c,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.65000004
+      objectReference: {fileID: 0}
+    - target: {fileID: 1751166496720079700, guid: 982aa19f08209a04eb15eeb03206ed5c,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.12252578
+      objectReference: {fileID: 0}
+    - target: {fileID: 1751166496720079700, guid: 982aa19f08209a04eb15eeb03206ed5c,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.291
+      objectReference: {fileID: 0}
+    - target: {fileID: 1751166496720079700, guid: 982aa19f08209a04eb15eeb03206ed5c,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -83.212105
+      objectReference: {fileID: 0}
+    - target: {fileID: 1751166496720079700, guid: 982aa19f08209a04eb15eeb03206ed5c,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -56.02954
+      objectReference: {fileID: 0}
+    - target: {fileID: 1751166496720079700, guid: 982aa19f08209a04eb15eeb03206ed5c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1751166496720079700, guid: 982aa19f08209a04eb15eeb03206ed5c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1751166496720079700, guid: 982aa19f08209a04eb15eeb03206ed5c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1751166496720079700, guid: 982aa19f08209a04eb15eeb03206ed5c,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1751166496720079700, guid: 982aa19f08209a04eb15eeb03206ed5c,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1751166496720079700, guid: 982aa19f08209a04eb15eeb03206ed5c,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1751166496720079700, guid: 982aa19f08209a04eb15eeb03206ed5c,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1751166496720079700, guid: 982aa19f08209a04eb15eeb03206ed5c,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 98
+      objectReference: {fileID: 0}
+    - target: {fileID: 1751166496720079700, guid: 982aa19f08209a04eb15eeb03206ed5c,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -135
+      objectReference: {fileID: 0}
+    - target: {fileID: 1751166496720079700, guid: 982aa19f08209a04eb15eeb03206ed5c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1751166496720079700, guid: 982aa19f08209a04eb15eeb03206ed5c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1751166496720079700, guid: 982aa19f08209a04eb15eeb03206ed5c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1751166496720079703, guid: 982aa19f08209a04eb15eeb03206ed5c,
+        type: 3}
+      propertyPath: m_Name
+      value: TipButton
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 982aa19f08209a04eb15eeb03206ed5c, type: 3}
 --- !u!1001 &2866733403602766477
 PrefabInstance:
   m_ObjectHideFlags: 0

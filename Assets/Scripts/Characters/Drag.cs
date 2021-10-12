@@ -20,7 +20,12 @@ public class Drag : MonoBehaviour
     private bool isShoot = true;
     private Vector3 force;
     TurnControl turnControl;
+    [SerializeField] GameObject liquidSlimeBurstVFX;
+    [SerializeField] GameObject liquidSlimeVFX;
+    ParticleSystem liquidSlimeBurstPs;
+    ParticleSystem liquidSlimePs;
     CameraControl camControl;
+    Stick stick;
     UIControl ZoomCam;
     [FMODUnity.EventRef]
     public string Event;
@@ -34,7 +39,10 @@ public class Drag : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         turnControl = GameObject.FindGameObjectWithTag("MainCinemachineCamera").GetComponent<TurnControl>();
         camControl = GameObject.FindGameObjectWithTag("MainCinemachineCamera").GetComponent<CameraControl>();
+        liquidSlimeBurstPs = liquidSlimeBurstVFX.GetComponentInChildren<ParticleSystem>();
+        liquidSlimePs = liquidSlimeVFX.GetComponentInChildren<ParticleSystem>();
         ZoomCam = camControl.GetComponent<UIControl>();
+        stick = GetComponent<Stick>();
     }
     //Toma la posicion del maus en el momento que unde sobr el objeto 
     private void OnMouseDown()
@@ -72,10 +80,13 @@ public class Drag : MonoBehaviour
         {
             return;
         }
+        liquidSlimeBurstPs.Play();
+        liquidSlimePs.Play();
         rb.useGravity = true;
         FMODUnity.RuntimeManager.PlayOneShotAttached(Event, gameObject);
         rb.AddForce(force * 2000);
         ZoomCam.ZoomCamera1.SetActive(false);
+        stick.Landed = false;
         isShoot = true;
     }
 

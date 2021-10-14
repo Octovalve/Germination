@@ -10,7 +10,9 @@ public class TurnControl : MonoBehaviour
     // 7 termino
     private int estado = 0;
     CharctesSelection teamselection;
+    private int contadorTurno = 1;
     public int Estado { get => estado; set => estado = value; }
+    public int ContadorTurno { get => contadorTurno; set => contadorTurno = value; }
 
     private void Start()
     {
@@ -23,11 +25,13 @@ public class TurnControl : MonoBehaviour
         {
             teamselection.Team += 1;
             estado = 0;
+            contadorTurno++;
         }
         else if (estado >= 7 && teamselection.Team == 2)
         {
             teamselection.Team -= 1;
             estado = 0;
+            contadorTurno++;
         }
     }
 }

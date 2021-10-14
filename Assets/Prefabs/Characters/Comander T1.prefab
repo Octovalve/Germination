@@ -310,6 +310,7 @@ MonoBehaviour:
   maxHP: 300
   isCapitan: 1
   VictoryUI: {fileID: 0}
+  VictorySound: event:/UI/Victory
 --- !u!1818360608 &8501326898186611366
 PositionConstraint:
   m_ObjectHideFlags: 0
@@ -362,7 +363,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 952219a3dd094d74e82b8c3283e5c46b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  knockbackValue: 0
+  knockbackValue: 2
+  Rondascongelado: 5
 --- !u!1 &8807269891743192817
 GameObject:
   m_ObjectHideFlags: 0
@@ -958,6 +960,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -179.60901
       objectReference: {fileID: 0}
+    - target: {fileID: 7884808309509237385, guid: 2b14e199632c70e44a4cb28b488013f7,
+        type: 3}
+      propertyPath: muzzleVFX
+      value: 
+      objectReference: {fileID: 1005267914599616905, guid: bac524d7245dac74ba4e308269f54734,
+        type: 3}
     - target: {fileID: 7884808309509237385, guid: 2b14e199632c70e44a4cb28b488013f7,
         type: 3}
       propertyPath: projectile

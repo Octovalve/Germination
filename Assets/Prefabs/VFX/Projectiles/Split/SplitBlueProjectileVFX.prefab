@@ -106,7 +106,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageToDeal: 100
   hitVFX: {fileID: 3707039816863422156, guid: df5bb7fab644dde4f94551fbf72c20eb, type: 3}
-  floorCol: event:/FX/SpitShoot
+  floorCol: event:/FX/SpitImpact
   wallCol: event:/FX/WallBouncing
 --- !u!135 &3158581680043861905
 SphereCollider:

@@ -15,10 +15,10 @@ MonoBehaviour:
   Path: Assets/Germifmod/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637676900249803247
+  lastModified: 637695866954101873
   FileSizes:
   - Name: Desktop
-    Value: 1286
+    Value: 1460
   Exists: 1
 --- !u!114 &-8439597086774613239
 MonoBehaviour:
@@ -63,6 +63,52 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 1540
+--- !u!114 &-5179922767658396825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/FX/WallBouncing
+  m_EditorClassIdentifier: 
+  Path: event:/FX/WallBouncing
+  guid: 5393d4e6f78a0b419899b34df56d8aab
+  Banks:
+  - {fileID: -1802159664353297115}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1567
+--- !u!114 &-4380951844813501521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/FX/FreezeSoundSFX
+  m_EditorClassIdentifier: 
+  Path: event:/FX/FreezeSoundSFX
+  guid: 0a95063c799db146b28672b6a70bac67
+  Banks:
+  - {fileID: -1802159664353297115}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1280
 --- !u!114 &-4258700913454217640
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -109,6 +155,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 470
+--- !u!114 &-3512231863754590893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UI/Victory
+  m_EditorClassIdentifier: 
+  Path: event:/UI/Victory
+  guid: 525bff0b9fd1f448998fb62e093ee355
+  Banks:
+  - {fileID: -1802159664353297115}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 2063
 --- !u!114 &-3276409545222140099
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -147,10 +216,10 @@ MonoBehaviour:
   Path: Assets/Germifmod/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637676900249793277
+  lastModified: 637695866954071896
   FileSizes:
   - Name: Desktop
-    Value: 1560352
+    Value: 1631232
   Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
@@ -180,13 +249,40 @@ MonoBehaviour:
   - {fileID: 2101235690930372548}
   - {fileID: 6033712221562305843}
   - {fileID: 9126227079299033950}
+  - {fileID: -5179922767658396825}
+  - {fileID: -3512231863754590893}
+  - {fileID: -4380951844813501521}
+  - {fileID: 594609887207145056}
   EditorParameters: []
   MasterBanks:
   - {fileID: -1802159664353297115}
   StringsBanks:
   - {fileID: -8668246463116451103}
-  stringsBankWriteTime: 637676900249803247
+  stringsBankWriteTime: 637695866954101873
   cacheVersion: 8
+--- !u!114 &594609887207145056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/FX/SpikeSFX
+  m_EditorClassIdentifier: 
+  Path: event:/FX/SpikeSFX
+  guid: 6dd75c10eb7f834bbf250a29f975d7c2
+  Banks:
+  - {fileID: -1802159664353297115}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 653
 --- !u!114 &755119954619174672
 MonoBehaviour:
   m_ObjectHideFlags: 0

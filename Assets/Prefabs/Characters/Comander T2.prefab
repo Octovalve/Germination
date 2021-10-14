@@ -210,6 +210,7 @@ MonoBehaviour:
   maxHP: 300
   isCapitan: 1
   VictoryUI: {fileID: 0}
+  VictorySound: event:/UI/Victory
 --- !u!1818360608 &7895654504002365933
 PositionConstraint:
   m_ObjectHideFlags: 0
@@ -262,7 +263,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 952219a3dd094d74e82b8c3283e5c46b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  knockbackValue: 0
+  knockbackValue: 2
+  Rondascongelado: 5
 --- !u!1 &7900561296524973677
 GameObject:
   m_ObjectHideFlags: 0

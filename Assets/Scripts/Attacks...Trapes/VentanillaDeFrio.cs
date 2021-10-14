@@ -8,6 +8,8 @@ public class VentanillaDeFrio : MonoBehaviour
     [SerializeField] LayerMask layer;
     BoxCollider pltcollider;
     Vector3 collider_center, collider_size;
+    [FMODUnity.EventRef]
+    public string FreezeSound;
     private void Start()
     {
         pltcollider = GetComponent<BoxCollider>();
@@ -20,14 +22,14 @@ public class VentanillaDeFrio : MonoBehaviour
         Collider[] colliders = Physics.OverlapBox(collider_center, (collider_size / 2.0f), Quaternion.identity, 1 << 8);
         foreach (Collider nearObject in colliders)
         {
-            Debug.Log(nearObject);
             HP hpScript = nearObject.GetComponent<HP>();
+            FMODUnity.RuntimeManager.PlayOneShotAttached(FreezeSound, gameObject);
             CaracterReaction reactions = nearObject.GetComponent<CaracterReaction>();
             if (hpScript != null)
             {
                 hpScript.TackeDamage(damageToDeal);
                 reactions.Congelado = true;
-                //nearObject.enabled = false;
+                nearObject.enabled = false;
             }
         }
     }

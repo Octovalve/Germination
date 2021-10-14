@@ -111,6 +111,7 @@ public class UIControl : MonoBehaviour
         laststate = turnControl.Estado;
         FMODUnity.RuntimeManager.PlayOneShotAttached(JumpBSound, gameObject);
     }
+
     public void Cancel()
     {
         FMODUnity.RuntimeManager.PlayOneShotAttached(BackBSound, gameObject);

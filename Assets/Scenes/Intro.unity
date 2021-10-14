@@ -465,6 +465,21 @@ PrefabInstance:
       propertyPath: OkButtonSound
       value: event:/UI/ButtonSFX
       objectReference: {fileID: 0}
+    - target: {fileID: 8510009906836798119, guid: 568366aa199021c40aa06ae4926d053a,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.158
+      objectReference: {fileID: 0}
+    - target: {fileID: 8510009906836798119, guid: 568366aa199021c40aa06ae4926d053a,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -1.7175598
+      objectReference: {fileID: 0}
+    - target: {fileID: 8510009906836798119, guid: 568366aa199021c40aa06ae4926d053a,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.9000244
+      objectReference: {fileID: 0}
     - target: {fileID: 8510009907963653569, guid: 568366aa199021c40aa06ae4926d053a,
         type: 3}
       propertyPath: m_RootOrder

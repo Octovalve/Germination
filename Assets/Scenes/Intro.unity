@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0.99999905, b: 0.99999905, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -444,17 +444,17 @@ PrefabInstance:
         type: 3}
       propertyPath: menuUI
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1038522025}
     - target: {fileID: 8510009906451960841, guid: 568366aa199021c40aa06ae4926d053a,
         type: 3}
       propertyPath: credits
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 962865755}
     - target: {fileID: 8510009906451960841, guid: 568366aa199021c40aa06ae4926d053a,
         type: 3}
       propertyPath: options
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1856565917}
     - target: {fileID: 8510009906451960841, guid: 568366aa199021c40aa06ae4926d053a,
         type: 3}
       propertyPath: CancelBSound
@@ -542,3 +542,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 568366aa199021c40aa06ae4926d053a, type: 3}
+--- !u!1 &962865755 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8510009906652822217, guid: 568366aa199021c40aa06ae4926d053a,
+    type: 3}
+  m_PrefabInstance: {fileID: 886964527}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1038522025 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8510009908269566931, guid: 568366aa199021c40aa06ae4926d053a,
+    type: 3}
+  m_PrefabInstance: {fileID: 886964527}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1856565917 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8510009908078870285, guid: 568366aa199021c40aa06ae4926d053a,
+    type: 3}
+  m_PrefabInstance: {fileID: 886964527}
+  m_PrefabAsset: {fileID: 0}

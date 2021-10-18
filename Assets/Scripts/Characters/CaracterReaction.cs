@@ -23,7 +23,7 @@ public class CaracterReaction : MonoBehaviour
     private void Update()
     {
         if (congelado == true) { EstadoCongelado(); }
-        if (congelado == false) { collider.enabled = true; }
+        if (congelado == false && contador.ContadorTurno == turnoscongelado) { collider.enabled = true; }
     }
     private void OnCollisionEnter(Collision collision)
     {
@@ -34,8 +34,8 @@ public class CaracterReaction : MonoBehaviour
     }
     public void AddKnockback(Transform BuletHit)
     {
-        thisrb.useGravity = true;
         thisrb.AddForce((this.gameObject.transform.position - BuletHit.position) * knockbackValue, ForceMode.Impulse);
+        thisrb.useGravity = true;
         Debug.Log((this.gameObject.transform.position - BuletHit.position));
     }
     public void EstadoCongelado()

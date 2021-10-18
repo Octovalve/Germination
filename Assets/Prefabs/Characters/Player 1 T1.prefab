@@ -17,9 +17,9 @@ GameObject:
   - component: {fileID: 3552377286757915689}
   - component: {fileID: 3552377286757915691}
   - component: {fileID: 2478257733394855645}
+  - component: {fileID: -8892171073888127701}
   - component: {fileID: 3552377286757915687}
   - component: {fileID: 3552377286757915686}
-  - component: {fileID: -8892171073888127701}
   m_Layer: 8
   m_Name: Player 1 T1
   m_TagString: Player
@@ -185,6 +185,20 @@ MonoBehaviour:
   isCapitan: 0
   VictoryUI: {fileID: 0}
   VictorySound: event:/UI/Victory
+--- !u!114 &-8892171073888127701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3552377286757915710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 952219a3dd094d74e82b8c3283e5c46b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  knockbackValue: 2
+  Rondascongelado: 5
 --- !u!1818360608 &3552377286757915687
 PositionConstraint:
   m_ObjectHideFlags: 0
@@ -225,19 +239,6 @@ RotationConstraint:
   - sourceTransform: {fileID: 4360555123025209868, guid: 42b7bf02a6491e043993543cab985ec1,
       type: 3}
     weight: 1
---- !u!114 &-8892171073888127701
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3552377286757915710}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 952219a3dd094d74e82b8c3283e5c46b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  knockbackValue: 0
 --- !u!1001 &383821348774252167
 PrefabInstance:
   m_ObjectHideFlags: 0

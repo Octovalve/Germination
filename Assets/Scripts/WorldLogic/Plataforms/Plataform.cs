@@ -35,8 +35,6 @@ public class Plataform : MonoBehaviour
     }
     public void Destroid()
     {
-        Debug.Log("Center: " + collider_center);
-        Debug.Log("Size:" + collider_size);
         Collider[] colliders = Physics.OverlapBox(collider_center, (collider_size / 2.0f) * 1.3f, Quaternion.identity, 1 << 8);
         foreach (Collider nearObject in colliders)
         {
@@ -44,8 +42,6 @@ public class Plataform : MonoBehaviour
             if (rb != null)
             {
                 rb.useGravity = true;
-                Debug.Log(rb);
-
             }
         }
     }

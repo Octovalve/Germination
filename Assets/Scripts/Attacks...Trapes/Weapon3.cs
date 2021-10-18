@@ -9,7 +9,7 @@ public class Weapon3 : MonoBehaviour
     [SerializeField] GameObject projectile;
     [SerializeField] GameObject muzzleVFX;
     CameraControl camControl;
-    float forceMod = 2;
+    float forceMod = 4;
     Vector3 mouseUpPos;
     UIControl ZoomCam;
     Vector3 force;

@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class HP : MonoBehaviour
 {
     [SerializeField] Image barraHP;
-    [SerializeField] Image barraHPUIMenu;
     [SerializeField] float maxHP;
     [SerializeField] bool isCapitan;
     [SerializeField] GameObject VictoryUI;
@@ -28,20 +27,13 @@ public class HP : MonoBehaviour
     void Update()
     {
         barraHP.fillAmount = curentHP / maxHP;
-        barraHPUIMenu.fillAmount = curentHP / maxHP;
         if (curentHP <= 0)
         {
-            float timer = 0 + Time.deltaTime;
-            //slimeMaterial.SetFloat("_Dissolve", timer);
-            if (timer > 1)
+            if (isCapitan == true)
             {
-                if (isCapitan == true)
-                {
-                    VictoryUI.SetActive(true);
-                    FMODUnity.RuntimeManager.PlayOneShotAttached(VictorySound, gameObject);
-                    Time.timeScale = 0;
-                }
-                Destroy(gameObject);
+                VictoryUI.SetActive(true);
+                FMODUnity.RuntimeManager.PlayOneShotAttached(VictorySound, gameObject);
+                Time.timeScale = 0;
             }
             Destroy(gameObject);
         }

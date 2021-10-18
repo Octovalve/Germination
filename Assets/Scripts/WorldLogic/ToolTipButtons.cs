@@ -6,29 +6,59 @@ using UnityEngine.UI;
 
 public class ToolTipButtons : MonoBehaviour
 {
-    [TextArea] public string tipText;
+    [SerializeField] int HowManyTips;
+    [TextArea] public string[] tipText;
 
-    [SerializeField] TextMeshProUGUI tip;
-    [SerializeField] GameObject tipImage;
+    //[SerializeField] TextMeshProUGUI tip;
+    //[SerializeField] GameObject tipImage;
+    int currentTip;
+
+    [SerializeField] TextMeshProUGUI[] tipsArray;
+    [SerializeField] GameObject[] TipsImageArray;
 
     [SerializeField] LayoutElement layoutElement = null;
     [SerializeField] int characterWrapLimit = 0;
 
+    [SerializeField] Button buton;
+
+    void Start()
+    {
+        currentTip = 0;
+    }
+
     public void ShowTip()
     {
-        int contentLenght = tip.text.Length;
+        int contentLenght = tipsArray[currentTip].text.Length;
 
         layoutElement.enabled = (contentLenght > characterWrapLimit) ? true : false;
 
-        tipImage.SetActive(true);
-        tip.text = "" + tipText;
+        TipsImageArray[currentTip].SetActive(true);
+        tipsArray[currentTip].text = "" + tipText[currentTip];
+
+        buton.enabled = false;
+
         StartCoroutine(TurnOff());
     }
 
     IEnumerator TurnOff()
     {
-        yield return new WaitForSeconds(4f);
-        tipImage.SetActive(false);
-        tip.text = "";
+        yield return new WaitForSeconds(2f);
+
+        tipsArray[currentTip].text = "";
+        TipsImageArray[currentTip].SetActive(false);
+
+        //tipImage.SetActive(false);
+        //tip.text = "";
+
+        if (currentTip != HowManyTips - 1)
+        {
+            currentTip += 1;
+            ShowTip();
+        }
+        else
+        {
+            currentTip = 0;
+            buton.enabled = true;
+        }
     }
 }

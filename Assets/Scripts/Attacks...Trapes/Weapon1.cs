@@ -7,12 +7,16 @@ public class Weapon1 : MonoBehaviour
     [SerializeField] float ofsetRot;
     [SerializeField] Transform SpawnP;
     [SerializeField] GameObject projectile;
-    Vector3 mouseUpPos;
-    Vector3 force;
+    [SerializeField] GameObject muzzleVFX;
     CameraControl camControl;
+    float forceMod = 2;
+    Vector3 mouseUpPos;
+    UIControl ZoomCam;
+    Vector3 force;
     Rigidbody rb;
     Camera cam;
-    float forceMod = 2;
+    float rotZ;
+    float angle;
     [FMODUnity.EventRef]
     public string Event;
     private bool isShoot = false;
@@ -23,14 +27,16 @@ public class Weapon1 : MonoBehaviour
     {
         rb = projectile.GetComponent<Rigidbody>();
         cam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
-        camControl = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraControl>();
+        camControl = GameObject.FindGameObjectWithTag("MainCinemachineCamera").GetComponent<CameraControl>();
+        ZoomCam = camControl.GetComponent<UIControl>();
     }
     void Update()
     {
         Vector3 diference = transform.position - WorldPosition(0);
         force = SpawnP.position - WorldPosition(0);
-        float rotZ = Mathf.Atan2(-diference.y, -diference.x) * Mathf.Rad2Deg;
+        rotZ = Mathf.Atan2(-diference.y, -diference.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0, 0, rotZ + ofsetRot);
+
         if (Input.GetMouseButton(0))
         {
             if (IsShoot == false)
@@ -50,9 +56,12 @@ public class Weapon1 : MonoBehaviour
         Trajectory.Instance.HideLine();
         GameObject bullet = Instantiate(projectile, SpawnP.position, Quaternion.identity) as GameObject;
         FMODUnity.RuntimeManager.PlayOneShotAttached(Event, gameObject);
+        GameObject muzzle = Instantiate(muzzleVFX, SpawnP.position, Quaternion.identity) as GameObject;
         camControl.FolowThis = bullet.GetComponent<Transform>();
         bullet.GetComponent<Rigidbody>().AddForce(force * forceMod, ForceMode.Impulse);
+        ZoomCam.ZoomCamera1.SetActive(false);
         IsShoot = true;
+        this.gameObject.SetActive(false);
     }
     private Vector3 WorldPosition(float z)
     {

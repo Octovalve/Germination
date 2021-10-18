@@ -6,14 +6,17 @@ using UnityEngine.UI;
 
 public class UIControl : MonoBehaviour
 {
+    [SerializeField] GameObject ZoomCamera;
+    [SerializeField] string levelToLoad;
     [SerializeField] GameObject fondo;
     [SerializeField] Button jumpButon;
     [SerializeField] Button spitButon;
+    [SerializeField] Button pasturn;
     [SerializeField] Button cancel;
-    BoxCollider trigerUI;
     CharctesSelection teamSelectio;
     CameraControl cameracontrol;
     TurnControl turnControl;
+    BoxCollider trigerUI;
     Attack attackScript;
     Drag dragScript;
     int laststate;
@@ -23,15 +26,19 @@ public class UIControl : MonoBehaviour
     public string BackBSound;
     [FMODUnity.EventRef]
     public string WeaponBSound;
+
+    public GameObject ZoomCamera1 { get => ZoomCamera; set => ZoomCamera = value; }
+
     // Start is called before the first frame update
     void Start()
     {
         teamSelectio = GetComponent<CharctesSelection>();
-        turnControl = GetComponent<TurnControl>();
         cameracontrol = GetComponent<CameraControl>();
+        turnControl = GetComponent<TurnControl>();
         trigerUI = GetComponent<BoxCollider>();
         jumpButon.interactable = false;
         spitButon.interactable = false;
+        pasturn.interactable = false;
         cancel.interactable = false;
     }
     private void Update()
@@ -41,13 +48,16 @@ public class UIControl : MonoBehaviour
             trigerUI.enabled = true;
             fondo.SetActive(false);
         }
-        
-        if (turnControl.Estado != laststate && turnControl.Estado < 7)
+
+        if (turnControl.Estado != laststate && turnControl.Estado < 7 && cameracontrol.TEspera == 0)
         {
             fondo.SetActive(true);
             laststate = turnControl.Estado;
         }
-
+        if (turnControl.Estado >= 5 && dragScript == null)
+        {
+            turnControl.Estado = 7;
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -59,6 +69,7 @@ public class UIControl : MonoBehaviour
             fondo.SetActive(true);
             jumpButon.interactable = true;
             spitButon.interactable = true;
+            pasturn.interactable = true;
             cancel.interactable = true;
             trigerUI.enabled = false;
         }
@@ -69,14 +80,15 @@ public class UIControl : MonoBehaviour
         FMODUnity.RuntimeManager.PlayOneShotAttached(WeaponBSound, gameObject);
         spitButon.interactable = false;
         cancel.interactable = false;
+        ZoomCamera1.SetActive(true);
         fondo.SetActive(false);
         laststate = turnControl.Estado;
 
     }
     public void Weapon2()
     {
-        attackScript.Attack3();
-        //spitButon.interactable = false;
+        attackScript.Attack2();
+        spitButon.interactable = false;
         cancel.interactable = false;
         fondo.SetActive(false);
         laststate = turnControl.Estado;
@@ -84,7 +96,7 @@ public class UIControl : MonoBehaviour
     public void Weapon3()
     {
         attackScript.Attack3();
-        //spitButon.interactable = false;
+        spitButon.interactable = false;
         cancel.interactable = false;
         fondo.SetActive(false);
         laststate = turnControl.Estado;
@@ -95,17 +107,27 @@ public class UIControl : MonoBehaviour
         jumpButon.interactable = false;
         cancel.interactable = false;
         fondo.SetActive(false);
+        ZoomCamera1.SetActive(true);
         laststate = turnControl.Estado;
         FMODUnity.RuntimeManager.PlayOneShotAttached(JumpBSound, gameObject);
     }
+
     public void Cancel()
     {
         FMODUnity.RuntimeManager.PlayOneShotAttached(BackBSound, gameObject);
         turnControl.Estado = 0;
     }
+    public void EndTurn()
+    {
+        jumpButon.interactable = false;
+        spitButon.interactable = false;
+        pasturn.interactable = false;
+        cancel.interactable = false;
+        turnControl.Estado = 7;
+    }
     public void Reload()
     {
-        SceneManager.LoadScene("Jesus");
+        SceneManager.LoadScene(levelToLoad);
         Time.timeScale = 1;
     }
 

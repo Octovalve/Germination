@@ -20,10 +20,15 @@ public class Drag : MonoBehaviour
     private bool isShoot = true;
     private Vector3 force;
     TurnControl turnControl;
+    [SerializeField] GameObject liquidSlimeBurstVFX;
+    [SerializeField] GameObject liquidSlimeVFX;
+    ParticleSystem liquidSlimeBurstPs;
+    ParticleSystem liquidSlimePs;
+    CameraControl camControl;
+    Stick stick;
+    UIControl ZoomCam;
     [FMODUnity.EventRef]
     public string Event;
-    [FMODUnity.EventRef]
-    public string Event2;
 
     public Vector3 Force { get => force; set => force = value; }
     public bool IsShoot { get => isShoot; set => isShoot = value; }
@@ -32,7 +37,12 @@ public class Drag : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        turnControl = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<TurnControl>();
+        turnControl = GameObject.FindGameObjectWithTag("MainCinemachineCamera").GetComponent<TurnControl>();
+        camControl = GameObject.FindGameObjectWithTag("MainCinemachineCamera").GetComponent<CameraControl>();
+        liquidSlimeBurstPs = liquidSlimeBurstVFX.GetComponentInChildren<ParticleSystem>();
+        liquidSlimePs = liquidSlimeVFX.GetComponentInChildren<ParticleSystem>();
+        ZoomCam = camControl.GetComponent<UIControl>();
+        stick = GetComponent<Stick>();
     }
     //Toma la posicion del maus en el momento que unde sobr el objeto 
     private void OnMouseDown()
@@ -55,7 +65,7 @@ public class Drag : MonoBehaviour
         Vector3 forceInit = (mouseDownPos - Input.mousePosition);
         if (!isShoot)
         {
-            Trajectory.Instance.UpdateTrajectory(forceVector: forceInit * 2, rb, startingPoint: transform.position);
+            Trajectory.Instance.UpdateTrajectory(forceVector: forceInit * 2000, rb, startingPoint: transform.position);
         }
     }
     public void Jump()
@@ -70,9 +80,13 @@ public class Drag : MonoBehaviour
         {
             return;
         }
+        liquidSlimeBurstPs.Play();
+        liquidSlimePs.Play();
         rb.useGravity = true;
         FMODUnity.RuntimeManager.PlayOneShotAttached(Event, gameObject);
-        rb.AddForce(force * 2);
+        rb.AddForce(force * 2000);
+        ZoomCam.ZoomCamera1.SetActive(false);
+        stick.Landed = false;
         isShoot = true;
     }
 

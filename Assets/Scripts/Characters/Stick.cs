@@ -31,10 +31,6 @@ public class Stick : MonoBehaviour
         turnControl = GameObject.FindGameObjectWithTag("MainCinemachineCamera").GetComponent<TurnControl>();
         liquidSlimePs = liquidSlimeVFX.GetComponentInChildren<ParticleSystem>();
     }
-    private void Update()
-    {
-        Debug.Log(landed);
-    }
     //este detiene por completo el movimiento del objeto al colicionar y le quita la gravedad para simular el efecto de que se adiere
     private void OnCollisionEnter(Collision collision)
     {

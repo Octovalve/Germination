@@ -15,10 +15,10 @@ MonoBehaviour:
   Path: Assets/Germifmod/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637695866954101873
+  lastModified: 637701883298625540
   FileSizes:
   - Name: Desktop
-    Value: 1460
+    Value: 1564
   Exists: 1
 --- !u!114 &-8439597086774613239
 MonoBehaviour:
@@ -63,6 +63,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 1540
+--- !u!114 &-5784268675490261620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/FX/SniperShoot
+  m_EditorClassIdentifier: 
+  Path: event:/FX/SniperShoot
+  guid: f64c080baeef73409dc22111893ee6b9
+  Banks:
+  - {fileID: -1802159664353297115}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 988
 --- !u!114 &-5179922767658396825
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -201,6 +224,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 496
+--- !u!114 &-3040391510202546505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/NeveraSFX 2
+  m_EditorClassIdentifier: 
+  Path: event:/Music/NeveraSFX 2
+  guid: 19dd03360b4f054cb696f96441627432
+  Banks:
+  - {fileID: -1802159664353297115}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 4310
 --- !u!114 &-1802159664353297115
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -216,10 +262,10 @@ MonoBehaviour:
   Path: Assets/Germifmod/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637695866954071896
+  lastModified: 637701883298585551
   FileSizes:
   - Name: Desktop
-    Value: 1631232
+    Value: 1616832
   Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
@@ -242,7 +288,6 @@ MonoBehaviour:
   - {fileID: 755119954619174672}
   - {fileID: -3276409545222140099}
   - {fileID: -7871994700179727372}
-  - {fileID: 2003217939761139145}
   - {fileID: -3694800803154925752}
   - {fileID: -4258700913454217640}
   - {fileID: 5360571507975305037}
@@ -253,13 +298,38 @@ MonoBehaviour:
   - {fileID: -3512231863754590893}
   - {fileID: -4380951844813501521}
   - {fileID: 594609887207145056}
+  - {fileID: -3040391510202546505}
+  - {fileID: -5784268675490261620}
+  - {fileID: 8211965327343435064}
   EditorParameters: []
   MasterBanks:
   - {fileID: -1802159664353297115}
   StringsBanks:
   - {fileID: -8668246463116451103}
-  stringsBankWriteTime: 637695866954101873
+  stringsBankWriteTime: 637701883298625540
   cacheVersion: 8
+--- !u!114 &520521023969007539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/FX/SniperShoot
+  m_EditorClassIdentifier: 
+  Path: event:/FX/SniperShoot
+  guid: 276589a44e0070459b034f5bdf19fe6c
+  Banks: []
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1018
 --- !u!114 &594609887207145056
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -320,8 +390,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Music/NeveraSFX
   guid: 51c1c75276878440bafe9a880ad1966b
-  Banks:
-  - {fileID: -1802159664353297115}
+  Banks: []
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -508,6 +577,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 496
+--- !u!114 &8211965327343435064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/FX/SniperImpact
+  m_EditorClassIdentifier: 
+  Path: event:/FX/SniperImpact
+  guid: 8123850dae9cdf468ad255fb65de88a2
+  Banks:
+  - {fileID: -1802159664353297115}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 570
 --- !u!114 &9126227079299033950
 MonoBehaviour:
   m_ObjectHideFlags: 0

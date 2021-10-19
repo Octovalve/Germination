@@ -89,9 +89,9 @@ GameObject:
   - component: {fileID: 7895654504002365932}
   - component: {fileID: 7895654504002365844}
   - component: {fileID: 6840130419483869746}
+  - component: {fileID: -2165525070955357844}
   - component: {fileID: 7895654504002365933}
   - component: {fileID: 7895654504002365934}
-  - component: {fileID: -2165525070955357844}
   m_Layer: 8
   m_Name: Comander T2
   m_TagString: Player
@@ -211,6 +211,20 @@ MonoBehaviour:
   isCapitan: 1
   VictoryUI: {fileID: 0}
   VictorySound: event:/UI/Victory
+--- !u!114 &-2165525070955357844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7895654504002365935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 952219a3dd094d74e82b8c3283e5c46b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  knockbackValue: 2
+  Rondascongelado: 5
 --- !u!1818360608 &7895654504002365933
 PositionConstraint:
   m_ObjectHideFlags: 0
@@ -251,20 +265,6 @@ RotationConstraint:
   - sourceTransform: {fileID: 4360555123025209868, guid: 42b7bf02a6491e043993543cab985ec1,
       type: 3}
     weight: 1
---- !u!114 &-2165525070955357844
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7895654504002365935}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 952219a3dd094d74e82b8c3283e5c46b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  knockbackValue: 2
-  Rondascongelado: 5
 --- !u!1 &7900561296524973677
 GameObject:
   m_ObjectHideFlags: 0

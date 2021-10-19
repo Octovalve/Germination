@@ -189,9 +189,9 @@ GameObject:
   - component: {fileID: 8501326898186611368}
   - component: {fileID: 8501326898186611370}
   - component: {fileID: 8852950930339318108}
+  - component: {fileID: -8617072460421257807}
   - component: {fileID: 8501326898186611366}
   - component: {fileID: 8501326898186611367}
-  - component: {fileID: -8617072460421257807}
   m_Layer: 8
   m_Name: Comander T1
   m_TagString: Player
@@ -311,6 +311,20 @@ MonoBehaviour:
   isCapitan: 1
   VictoryUI: {fileID: 0}
   VictorySound: event:/UI/Victory
+--- !u!114 &-8617072460421257807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8501326898186611391}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 952219a3dd094d74e82b8c3283e5c46b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  knockbackValue: 2
+  Rondascongelado: 5
 --- !u!1818360608 &8501326898186611366
 PositionConstraint:
   m_ObjectHideFlags: 0
@@ -351,20 +365,6 @@ RotationConstraint:
   - sourceTransform: {fileID: 4360555123025209868, guid: 42b7bf02a6491e043993543cab985ec1,
       type: 3}
     weight: 1
---- !u!114 &-8617072460421257807
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8501326898186611391}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 952219a3dd094d74e82b8c3283e5c46b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  knockbackValue: 2
-  Rondascongelado: 5
 --- !u!1 &8807269891743192817
 GameObject:
   m_ObjectHideFlags: 0
@@ -928,7 +928,7 @@ PrefabInstance:
     - target: {fileID: 6589699314561929786, guid: 2b14e199632c70e44a4cb28b488013f7,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.0000001872535
+      value: 0.00000028088027
       objectReference: {fileID: 0}
     - target: {fileID: 6589699314561929786, guid: 2b14e199632c70e44a4cb28b488013f7,
         type: 3}
@@ -938,7 +938,7 @@ PrefabInstance:
     - target: {fileID: 6589699314561929786, guid: 2b14e199632c70e44a4cb28b488013f7,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6589699314561929786, guid: 2b14e199632c70e44a4cb28b488013f7,
         type: 3}

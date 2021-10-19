@@ -42,6 +42,7 @@ public class Stick : MonoBehaviour
             GetComponent<Rigidbody>().Sleep();
             if (turnControl.Estado >= 4 && landed == false)
             {
+                landed = true;
                 turnControl.Estado += 1;
                 FMODUnity.RuntimeManager.PlayOneShotAttached(Event, gameObject);
             }

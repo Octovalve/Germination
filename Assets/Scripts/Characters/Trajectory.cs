@@ -35,7 +35,7 @@ public class Trajectory : MonoBehaviour
     public void UpdateTrajectory(Vector3 forceVector, Rigidbody rigidbody, Vector3 startingPoint)
     {
         Vector3 velocity = (forceVector / rigidbody.mass) * Time.fixedDeltaTime;
-        float FlightDuration = 1;
+        float FlightDuration = 0.3f;
         float stepTime = FlightDuration / _lineSegmentCount;
         _linePoints.Clear();
         for (int i = 0; i < _lineSegmentCount; i++)
@@ -54,7 +54,7 @@ public class Trajectory : MonoBehaviour
     public void UpdateTrajectoryInpuls(Vector3 forceVector, Rigidbody rigidbody, Vector3 startingPoint)
     {
         Vector3 velocity = (forceVector / rigidbody.mass);
-        float FlightDuration = 1;
+        float FlightDuration = 0.3f;
         float stepTime = FlightDuration / _lineSegmentCount;
         _linePoints.Clear();
         for (int i = 0; i < _lineSegmentCount; i++)

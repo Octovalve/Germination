@@ -49,6 +49,7 @@ public class DamageAttack : MonoBehaviour
             if (collision.gameObject.tag == "jumpingWall")
             {
                 FMODUnity.RuntimeManager.PlayOneShotAttached(wallCol, gameObject);
+                GameObject hit = Instantiate(hitVFX, transform.position, Quaternion.identity) as GameObject;
             }
             if (collision.gameObject.tag != "jumpingWall")
             {

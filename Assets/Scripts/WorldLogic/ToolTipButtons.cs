@@ -9,8 +9,6 @@ public class ToolTipButtons : MonoBehaviour
     [SerializeField] int HowManyTips;
     [TextArea] public string[] tipText;
 
-    //[SerializeField] TextMeshProUGUI tip;
-    //[SerializeField] GameObject tipImage;
     int currentTip;
 
     [SerializeField] TextMeshProUGUI[] tipsArray;
@@ -24,6 +22,19 @@ public class ToolTipButtons : MonoBehaviour
     void Start()
     {
         currentTip = 0;
+    }
+
+    void OnDisable()
+    {
+        for (int i = 0; i < tipsArray.Length; i++)
+        {
+            tipsArray[currentTip].text = "";
+            TipsImageArray[currentTip].SetActive(false); 
+        }
+
+        currentTip = 0;
+
+        buton.enabled = true;
     }
 
     public void ShowTip()
@@ -46,9 +57,6 @@ public class ToolTipButtons : MonoBehaviour
 
         tipsArray[currentTip].text = "";
         TipsImageArray[currentTip].SetActive(false);
-
-        //tipImage.SetActive(false);
-        //tip.text = "";
 
         if (currentTip != HowManyTips - 1)
         {

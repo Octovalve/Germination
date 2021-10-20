@@ -29,7 +29,7 @@ public class DamageAttack : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        cameracontrol.TEspera = 120;
+        cameracontrol.TEspera = 60;
         
         //Berifica si golpeo al jugador toma su script de HP y le pasa un balor de daño a recivir
         if (collision.gameObject.tag == "Player")

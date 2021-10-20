@@ -58,7 +58,7 @@ public class CameraControl : MonoBehaviour
         {
             Vector3 distanciAInicialPos = transform.position - camStartPos.position;
             float distTotal = distanciAInicialPos.magnitude;
-            SmoothFactor = 0.05f;
+            SmoothFactor = 0.1f;
             if (distTotal >= 0.5f && startposreach == false)
             {
                 this.transform.position = Vector3.Lerp(transform.position, camStartPos.position, SmoothFactor1);

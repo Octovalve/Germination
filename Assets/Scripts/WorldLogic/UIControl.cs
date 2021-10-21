@@ -33,6 +33,9 @@ public class UIControl : MonoBehaviour
 
     public GameObject ZoomCamera1 { get => ZoomCamera; set => ZoomCamera = value; }
 
+    public delegate void EndTurnEvent();
+    public static event EndTurnEvent EndTurnAction;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -154,6 +157,11 @@ public class UIControl : MonoBehaviour
         pasturn.interactable = false;
         cancel.interactable = false;
         turnControl.Estado = 7;
+
+        if (EndTurnAction != null)
+        {
+            EndTurnAction();
+        }
     }
     public void Reload()
     {

@@ -6,6 +6,10 @@ using UnityEngine.UI;
 
 public class ToolTipButtons : MonoBehaviour
 {
+    [SerializeField] bool automatic;
+    [SerializeField] bool atTurnEnd;
+    [SerializeField] float delay;
+
     [SerializeField] int HowManyTips;
     [TextArea] public string[] tipText;
 
@@ -19,13 +23,15 @@ public class ToolTipButtons : MonoBehaviour
 
     [SerializeField] Button buton;
 
-    void Start()
+    void OnEnable()
     {
-        currentTip = 0;
-    }
+        UIControl.EndTurnAction += TurnEnd;
+    } 
 
     void OnDisable()
     {
+        UIControl.EndTurnAction -= TurnEnd;
+
         for (int i = 0; i < tipsArray.Length; i++)
         {
             tipsArray[currentTip].text = "";
@@ -35,6 +41,25 @@ public class ToolTipButtons : MonoBehaviour
         currentTip = 0;
 
         buton.enabled = true;
+    }
+
+    void Start()
+    {
+        currentTip = 0;
+
+        if (automatic == true)
+        {
+            ShowTip();
+        }
+    }
+
+    void TurnEnd()
+    {
+        if(atTurnEnd == true)
+        {
+            currentTip = 0;
+            ShowTip();
+        }
     }
 
     public void ShowTip()
@@ -53,7 +78,7 @@ public class ToolTipButtons : MonoBehaviour
 
     IEnumerator TurnOff()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(delay);
 
         tipsArray[currentTip].text = "";
         TipsImageArray[currentTip].SetActive(false);

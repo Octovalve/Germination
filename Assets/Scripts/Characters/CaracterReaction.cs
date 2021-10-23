@@ -8,7 +8,7 @@ public class CaracterReaction : MonoBehaviour
     [SerializeField] int Rondascongelado;
     int turnoscongelado;
     TurnControl contador;
-    SphereCollider collider;
+    SphereCollider colliderobj;
     Rigidbody thisrb;
     private bool congelado = false;
 
@@ -18,12 +18,12 @@ public class CaracterReaction : MonoBehaviour
     {
         thisrb = GetComponent<Rigidbody>();
         contador = GameObject.FindGameObjectWithTag("MainCinemachineCamera").GetComponent<TurnControl>();
-        collider = GetComponent<SphereCollider>();
+        colliderobj = GetComponent<SphereCollider>();
     }
     private void Update()
     {
         if (congelado == true) { EstadoCongelado(); }
-        if (congelado == false && contador.ContadorTurno == turnoscongelado) { collider.enabled = true; }
+        if (congelado == false && contador.ContadorTurno == turnoscongelado) { colliderobj.enabled = true; }
     }
     private void OnCollisionEnter(Collision collision)
     {
@@ -35,11 +35,9 @@ public class CaracterReaction : MonoBehaviour
     public void AddKnockback(Transform BuletHit)
     {
         Vector3 colitionDirection = this.transform.position - BuletHit.position;
-        Vector3 forceDirection = new Vector3(colitionDirection.x,colitionDirection.y*-1,colitionDirection.z); 
-        thisrb.AddForce((forceDirection*knockbackValue) * 2000, ForceMode.Impulse);
+        Vector3 forceDirection = new Vector3(colitionDirection.x, colitionDirection.y * -1, colitionDirection.z);
+        thisrb.AddForce((forceDirection * knockbackValue) * 2000, ForceMode.Impulse);
         thisrb.useGravity = true;
-        Debug.Log(forceDirection + "Direcion fuerza");
-        Debug.Log(colitionDirection + "Dierecion colicion");
     }
     public void EstadoCongelado()
     {

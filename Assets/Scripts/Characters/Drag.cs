@@ -87,7 +87,7 @@ public class Drag : MonoBehaviour
         rb.AddForce(force * 2000);
         ZoomCam.ZoomCamera1.SetActive(false);
         stick.Landed = false;
-        stick.TiempoMovimiento = 10f;
+        stick.TiempoMovimiento = 5f;
         isShoot = true;
     }
 

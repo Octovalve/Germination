@@ -40,9 +40,6 @@ public class Stick : MonoBehaviour
     }
     private void Update()
     {
-        Debug.Log(tiempoMovimiento);
-        Debug.Log(grounded);
-        Debug.Log(landed);
         Grounded();
         if (grounded == true && landed == false)
         {

@@ -19,17 +19,46 @@ public class Stick : MonoBehaviour
     //Este string determina el tac se sera el encargado de marcar como aderibles las superficies
     [SerializeField] string StickySurfeceTag;
     [SerializeField] GameObject liquidSlimeVFX;
+    SphereCollider ColiderPlayer;
     ParticleSystem liquidSlimePs;
     private bool landed = true;
+    private bool grounded = true;
+    float tiempoMovimiento = 1;
+    float distPiso;
     [FMODUnity.EventRef]
     public string Event;
 
     public bool Landed { get => landed; set => landed = value; }
+    public float TiempoMovimiento { get => tiempoMovimiento; set => tiempoMovimiento = value; }
 
     private void Awake()
     {
         turnControl = GameObject.FindGameObjectWithTag("MainCinemachineCamera").GetComponent<TurnControl>();
         liquidSlimePs = liquidSlimeVFX.GetComponentInChildren<ParticleSystem>();
+        ColiderPlayer = GetComponent<SphereCollider>();
+        distPiso = ColiderPlayer.radius;
+    }
+    private void Update()
+    {
+        Grounded();
+        if (grounded == true && landed == false)
+        {
+            tiempoMovimiento -= Time.deltaTime;
+        }
+        if (tiempoMovimiento <= 0 && landed == false)
+        {
+            liquidSlimePs.Stop();
+            GetComponent<Rigidbody>().velocity = Vector3.zero;
+            GetComponent<Rigidbody>().useGravity = false;
+            GetComponent<Rigidbody>().Sleep();
+            if (turnControl.Estado >= 4 && landed == false)
+            {
+                tiempoMovimiento = 1;
+                landed = true;
+                turnControl.Estado += 1;
+                FMODUnity.RuntimeManager.PlayOneShotAttached(Event, gameObject);
+            }
+        }
     }
     //este detiene por completo el movimiento del objeto al colicionar y le quita la gravedad para simular el efecto de que se adiere
     private void OnCollisionEnter(Collision collision)
@@ -47,5 +76,14 @@ public class Stick : MonoBehaviour
                 FMODUnity.RuntimeManager.PlayOneShotAttached(Event, gameObject);
             }
         }
+    }
+    public void Grounded()
+    {
+        //Debug.DrawLine(transform.position, transform.position + (Vector3.down * 0.6f));
+        if (Physics.Raycast(transform.position, Vector3.down, distPiso + 0.1f))
+        {
+            grounded = true;
+        }
+        else { grounded = false; }
     }
 }

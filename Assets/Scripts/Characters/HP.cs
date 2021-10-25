@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class HP : MonoBehaviour
 {
     [SerializeField] Image barraHP;
+    [SerializeField] Image barraHPUI;
     [SerializeField] float maxHP;
     [SerializeField] bool isCapitan;
     [SerializeField] GameObject VictoryUI;
@@ -27,6 +28,7 @@ public class HP : MonoBehaviour
     void Update()
     {
         barraHP.fillAmount = curentHP / maxHP;
+        barraHPUI.fillAmount = curentHP / maxHP;
         if (curentHP <= 0)
         {
             if (isCapitan == true)

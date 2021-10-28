@@ -49,6 +49,7 @@ public class CharctesSelection : MonoBehaviour
                             cameracontrol.CharacterSelected = curentPlayer.transform;
                             cameracontrol.FolowThis = curentPlayer.transform;
                             turnControl.Estado += 4;
+                            turnControl.TurnStart = true;
                         }
                     }
                 }
@@ -62,6 +63,7 @@ public class CharctesSelection : MonoBehaviour
                             cameracontrol.CharacterSelected = curentPlayer.transform;
                             cameracontrol.FolowThis = curentPlayer.transform;
                             turnControl.Estado += 4;
+                            turnControl.TurnStart = true;
                         }
                     }
                 }

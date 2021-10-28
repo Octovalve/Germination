@@ -8,6 +8,7 @@ public class ToolTipButtons : MonoBehaviour
 {
     [SerializeField] bool automatic;
     [SerializeField] bool atTurnEnd;
+    int once = 0;
     [SerializeField] float delay;
 
     [SerializeField] int HowManyTips;
@@ -22,10 +23,15 @@ public class ToolTipButtons : MonoBehaviour
     [SerializeField] int characterWrapLimit = 0;
 
     [SerializeField] Button buton;
+    [SerializeField] GameObject cancelButton;
+
+    [SerializeField] GameObject continueButton;
 
     void OnEnable()
     {
         UIControl.EndTurnAction += TurnEnd;
+        cancelButton.SetActive(false);
+        continueButton.SetActive(false);
     } 
 
     void OnDisable()
@@ -44,7 +50,9 @@ public class ToolTipButtons : MonoBehaviour
     }
 
     void Start()
-    {
+    {        
+        once = 0;
+
         currentTip = 0;
 
         if (automatic == true)
@@ -55,15 +63,19 @@ public class ToolTipButtons : MonoBehaviour
 
     void TurnEnd()
     {
-        if(atTurnEnd == true)
+        if(atTurnEnd == true && once == 0)
         {
             currentTip = 0;
+            once = 1;
             ShowTip();
         }
     }
 
     public void ShowTip()
     {
+        cancelButton.SetActive(true);
+        continueButton.SetActive(true);
+
         int contentLenght = tipsArray[currentTip].text.Length;
 
         layoutElement.enabled = (contentLenght > characterWrapLimit) ? true : false;
@@ -73,13 +85,11 @@ public class ToolTipButtons : MonoBehaviour
 
         buton.enabled = false;
 
-        StartCoroutine(TurnOff());
+        //StartCoroutine(TurnOff());
     }
 
-    IEnumerator TurnOff()
+    public void Continue()
     {
-        yield return new WaitForSeconds(delay);
-
         tipsArray[currentTip].text = "";
         TipsImageArray[currentTip].SetActive(false);
 
@@ -90,8 +100,18 @@ public class ToolTipButtons : MonoBehaviour
         }
         else
         {
+            cancelButton.SetActive(false);
+            continueButton.SetActive(false);
             currentTip = 0;
             buton.enabled = true;
         }
     }
+
+    /*IEnumerator TurnOff()
+    {
+        yield return new WaitForSeconds(delay);
+
+        tipsArray[currentTip].text = "";
+        TipsImageArray[currentTip].SetActive(false);
+    }*/
 }

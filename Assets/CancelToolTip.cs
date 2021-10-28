@@ -4,14 +4,7 @@ using UnityEngine;
 
 public class CancelToolTip : MonoBehaviour
 {
-    [SerializeField] GameObject cancelButton;
-
     [SerializeField] GameObject toolTip;
-
-    void Start()
-    {
-        cancelButton.SetActive(false);
-    }
 
     public void Cancel()
     {

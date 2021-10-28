@@ -924,8 +924,8 @@ MonoBehaviour:
   layoutElement: {fileID: 4016906468069745999}
   characterWrapLimit: 80
   buton: {fileID: 4016906467662360600}
-  cancelButton: {fileID: 0}
-  continueButton: {fileID: 0}
+  cancelButton: {fileID: 998525788581831275}
+  continueButton: {fileID: 8462018158069590640}
 --- !u!114 &4016906467662360600
 MonoBehaviour:
   m_ObjectHideFlags: 0

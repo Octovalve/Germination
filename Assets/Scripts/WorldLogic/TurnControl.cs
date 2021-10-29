@@ -14,7 +14,7 @@ public class TurnControl : MonoBehaviour
     CharctesSelection teamselection;
     [SerializeField] GameObject turnoAzul;
     [SerializeField] GameObject turnoVerde;
-    [SerializeField] float turnDuration;
+    [SerializeField] float turnDuration = 20;
     float turnDurationtemp;
     public int Estado { get => estado; set => estado = value; }
     public int ContadorTurno { get => contadorTurno; set => contadorTurno = value; }
@@ -31,6 +31,8 @@ public class TurnControl : MonoBehaviour
         if (estado >= 7 && teamselection.Team == 1)
         {
             teamselection.Team += 1;
+            turnDuration = turnDurationtemp;
+            turnStart = false;
             turnoAzul.SetActive(true);
             turnoVerde.SetActive(false);
             estado = 0;
@@ -39,6 +41,8 @@ public class TurnControl : MonoBehaviour
         else if (estado >= 7 && teamselection.Team == 2)
         {
             teamselection.Team -= 1;
+            turnDuration = turnDurationtemp;
+            turnStart = false;
             turnoVerde.SetActive(true);
             turnoAzul.SetActive(false);
             estado = 0;

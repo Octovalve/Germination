@@ -8,6 +8,7 @@ public class CharctesSelection : MonoBehaviour
     [SerializeField] Transform[] team1;
     [SerializeField] Transform[] team2;
     CameraControl cameracontrol;
+    CaracterReaction reaction;
     [FMODUnity.EventRef]
     public string Event;
     private int team;
@@ -45,11 +46,15 @@ public class CharctesSelection : MonoBehaviour
                     {
                         if (team1[i] == curentPlayer && turnControl.Estado < 4)
                         {
-                            FMODUnity.RuntimeManager.PlayOneShotAttached(Event, gameObject);
-                            cameracontrol.CharacterSelected = curentPlayer.transform;
-                            cameracontrol.FolowThis = curentPlayer.transform;
-                            turnControl.Estado += 4;
-                            turnControl.TurnStart = true;
+                            reaction = curentPlayer.GetComponent<CaracterReaction>();
+                            if (reaction.Congelado == false)
+                            {
+                                FMODUnity.RuntimeManager.PlayOneShotAttached(Event, gameObject);
+                                cameracontrol.CharacterSelected = curentPlayer.transform;
+                                cameracontrol.FolowThis = curentPlayer.transform;
+                                turnControl.Estado += 4;
+                                turnControl.TurnStart = true;
+                            }
                         }
                     }
                 }
@@ -59,11 +64,15 @@ public class CharctesSelection : MonoBehaviour
                     {
                         if (team2[i] == curentPlayer && turnControl.Estado < 4)
                         {
-                            FMODUnity.RuntimeManager.PlayOneShotAttached(Event, gameObject);
-                            cameracontrol.CharacterSelected = curentPlayer.transform;
-                            cameracontrol.FolowThis = curentPlayer.transform;
-                            turnControl.Estado += 4;
-                            turnControl.TurnStart = true;
+                            reaction = curentPlayer.GetComponent<CaracterReaction>();
+                            if (reaction.Congelado == false)
+                            {
+                                FMODUnity.RuntimeManager.PlayOneShotAttached(Event, gameObject);
+                                cameracontrol.CharacterSelected = curentPlayer.transform;
+                                cameracontrol.FolowThis = curentPlayer.transform;
+                                turnControl.Estado += 4;
+                                turnControl.TurnStart = true;
+                            }
                         }
                     }
                 }

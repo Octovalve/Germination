@@ -29,7 +29,6 @@ public class VentanillaDeFrio : MonoBehaviour
             {
                 hpScript.TackeDamage(damageToDeal);
                 reactions.Congelado = true;
-                nearObject.enabled = false;
             }
         }
     }

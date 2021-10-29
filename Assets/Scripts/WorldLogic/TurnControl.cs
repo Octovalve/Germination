@@ -55,7 +55,6 @@ public class TurnControl : MonoBehaviour
     }
     public void TurnStarted()
     {
-        Debug.Log(turnDuration);
         if (turnDuration > 0)
         {
             turnDuration -= Time.deltaTime;

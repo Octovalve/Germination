@@ -9,6 +9,7 @@ public class HP : MonoBehaviour
     [SerializeField] float maxHP;
     [SerializeField] bool isCapitan;
     [SerializeField] GameObject VictoryUI;
+    [SerializeField] float ondeadTime = 0.5f;
     [FMODUnity.EventRef]
     public string VictorySound;
     //[SerializeField] GameObject slime;
@@ -31,11 +32,19 @@ public class HP : MonoBehaviour
         {
             if (isCapitan == true)
             {
-                VictoryUI.SetActive(true);
-                FMODUnity.RuntimeManager.PlayOneShotAttached(VictorySound, gameObject);
-                Time.timeScale = 0;
+                ondeadTime -= Time.deltaTime;
+                if (ondeadTime <= 0)
+                {
+                    FMODUnity.RuntimeManager.PlayOneShotAttached(VictorySound, gameObject);
+                    VictoryUI.SetActive(true);
+                    Time.timeScale = 0;
+                    Destroy(gameObject);
+                }
             }
-            Destroy(gameObject);
+            else
+            {
+                Destroy(gameObject);
+            }
         }
     }
     public void TackeDamage(float damage)

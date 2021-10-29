@@ -148,6 +148,7 @@ public class UIControl : MonoBehaviour
         WeaponSelectionPanel.SetActive(false);
         WeaponSelectionButon.interactable = true;
         turnControl.Estado = 0;
+        turnControl.TurnCanceled();
     }
     public void EndTurn()
     {
@@ -157,6 +158,7 @@ public class UIControl : MonoBehaviour
         pasturn.interactable = false;
         cancel.interactable = false;
         turnControl.Estado = 7;
+        turnControl.TurnEnded();
 
         if (EndTurnAction != null)
         {

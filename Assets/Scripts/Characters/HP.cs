@@ -6,10 +6,10 @@ using UnityEngine.UI;
 public class HP : MonoBehaviour
 {
     [SerializeField] Image barraHP;
-    [SerializeField] Image barraHPUIMenu;
     [SerializeField] float maxHP;
     [SerializeField] bool isCapitan;
     [SerializeField] GameObject VictoryUI;
+    [SerializeField] float ondeadTime = 0.5f;
     [FMODUnity.EventRef]
     public string VictorySound;
     //[SerializeField] GameObject slime;
@@ -28,22 +28,23 @@ public class HP : MonoBehaviour
     void Update()
     {
         barraHP.fillAmount = curentHP / maxHP;
-        barraHPUIMenu.fillAmount = curentHP / maxHP;
         if (curentHP <= 0)
         {
-            float timer = 0 + Time.deltaTime;
-            //slimeMaterial.SetFloat("_Dissolve", timer);
-            if (timer > 1)
+            if (isCapitan == true)
             {
-                if (isCapitan == true)
+                ondeadTime -= Time.deltaTime;
+                if (ondeadTime <= 0)
                 {
-                    VictoryUI.SetActive(true);
                     FMODUnity.RuntimeManager.PlayOneShotAttached(VictorySound, gameObject);
+                    VictoryUI.SetActive(true);
                     Time.timeScale = 0;
+                    Destroy(gameObject);
                 }
+            }
+            else
+            {
                 Destroy(gameObject);
             }
-            Destroy(gameObject);
         }
     }
     public void TackeDamage(float damage)

@@ -5,27 +5,38 @@ using UnityEngine;
 public class Plataform : MonoBehaviour
 {
     //[SerializeField] int layernumber = 8;
+    [SerializeField] AnimationCurve curve;
+    [SerializeField] float duration;
+    float t = 0;
     Rigidbody RB;
     BoxCollider pltcollider;
     float wait;
     bool hit = false;
     Vector3 collider_center, collider_size;
+    Material material;
     private void Start()
     {
         RB = GetComponent<Rigidbody>();
         pltcollider = GetComponent<BoxCollider>();
+        material = GetComponent<MeshRenderer>().material;
         collider_center = pltcollider.bounds.center;
         collider_size = pltcollider.bounds.size;
     }
     private void Update()
     {
-        if (hit == true) { wait -= Time.deltaTime; }
+        if (hit == true) 
+        {
+            float y = curve.Evaluate(t / duration);
+            wait -= Time.deltaTime;
+            t += Time.deltaTime;
+            material.SetFloat("_Dissolve", y);
+        }
         if (wait <= 0 && hit == true) { gameObject.SetActive(false); }
     }
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "shot")
-        {
+        { 
             pltcollider.enabled = false;
             RB.isKinematic = false;
             wait = 0.5f;
@@ -35,8 +46,6 @@ public class Plataform : MonoBehaviour
     }
     public void Destroid()
     {
-        Debug.Log("Center: " + collider_center);
-        Debug.Log("Size:" + collider_size);
         Collider[] colliders = Physics.OverlapBox(collider_center, (collider_size / 2.0f) * 1.3f, Quaternion.identity, 1 << 8);
         foreach (Collider nearObject in colliders)
         {
@@ -44,8 +53,6 @@ public class Plataform : MonoBehaviour
             if (rb != null)
             {
                 rb.useGravity = true;
-                Debug.Log(rb);
-
             }
         }
     }

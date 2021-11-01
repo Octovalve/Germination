@@ -8,9 +8,13 @@ public class UIControl : MonoBehaviour
 {
     [SerializeField] GameObject ZoomCamera;
     [SerializeField] string levelToLoad;
-    [SerializeField] GameObject fondo;
+    [SerializeField] GameObject PlayerPanel;
+    [SerializeField] GameObject WeaponSelectionPanel;
     [SerializeField] Button jumpButon;
+    [SerializeField] Button WeaponSelectionButon;
     [SerializeField] Button spitButon;
+    [SerializeField] Button pistol;
+    [SerializeField] Button Sniper;
     [SerializeField] Button pasturn;
     [SerializeField] Button cancel;
     CharctesSelection teamSelectio;
@@ -29,6 +33,9 @@ public class UIControl : MonoBehaviour
 
     public GameObject ZoomCamera1 { get => ZoomCamera; set => ZoomCamera = value; }
 
+    public delegate void EndTurnEvent();
+    public static event EndTurnEvent EndTurnAction;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -37,7 +44,7 @@ public class UIControl : MonoBehaviour
         turnControl = GetComponent<TurnControl>();
         trigerUI = GetComponent<BoxCollider>();
         jumpButon.interactable = false;
-        spitButon.interactable = false;
+        WeaponSelectionButon.interactable = false;
         pasturn.interactable = false;
         cancel.interactable = false;
     }
@@ -46,12 +53,12 @@ public class UIControl : MonoBehaviour
         if (turnControl.Estado == 0)
         {
             trigerUI.enabled = true;
-            fondo.SetActive(false);
+            PlayerPanel.SetActive(false);
         }
 
         if (turnControl.Estado != laststate && turnControl.Estado < 7 && cameracontrol.TEspera == 0)
         {
-            fondo.SetActive(true);
+            PlayerPanel.SetActive(true);
             laststate = turnControl.Estado;
         }
         if (turnControl.Estado >= 5 && dragScript == null)
@@ -66,13 +73,29 @@ public class UIControl : MonoBehaviour
         {
             dragScript = teamSelectio.CurentPlayer.GetComponent<Drag>();
             attackScript = teamSelectio.CurentPlayer.GetComponent<Attack>();
-            fondo.SetActive(true);
+            PlayerPanel.SetActive(true);
+            WeaponSelectionPanel.SetActive(false);
+            //butons start
             jumpButon.interactable = true;
-            spitButon.interactable = true;
+            WeaponSelectionButon.interactable = true;
             pasturn.interactable = true;
             cancel.interactable = true;
             trigerUI.enabled = false;
+            //butons end
         }
+    }
+    public void WeaponSelection()
+    {
+        WeaponSelectionButon.interactable = false;
+
+        //Weapon butons start
+        spitButon.interactable = true;
+        pistol.interactable = true;
+        Sniper.interactable = true;
+        //Weapon butons end
+
+        WeaponSelectionPanel.SetActive(true);
+
     }
     public void Weapon1()
     {
@@ -81,24 +104,31 @@ public class UIControl : MonoBehaviour
         spitButon.interactable = false;
         cancel.interactable = false;
         ZoomCamera1.SetActive(true);
-        fondo.SetActive(false);
+        PlayerPanel.SetActive(false);
+        WeaponSelectionPanel.SetActive(false);
         laststate = turnControl.Estado;
 
     }
     public void Weapon2()
     {
         attackScript.Attack2();
-        spitButon.interactable = false;
+        FMODUnity.RuntimeManager.PlayOneShotAttached(WeaponBSound, gameObject);
+        pistol.interactable = false;
         cancel.interactable = false;
-        fondo.SetActive(false);
+        ZoomCamera1.SetActive(true);
+        PlayerPanel.SetActive(false);
+        WeaponSelectionPanel.SetActive(false);
         laststate = turnControl.Estado;
     }
     public void Weapon3()
     {
         attackScript.Attack3();
-        spitButon.interactable = false;
+        FMODUnity.RuntimeManager.PlayOneShotAttached(WeaponBSound, gameObject);
+        Sniper.interactable = false;
         cancel.interactable = false;
-        fondo.SetActive(false);
+        ZoomCamera1.SetActive(true);
+        PlayerPanel.SetActive(false);
+        WeaponSelectionPanel.SetActive(false);
         laststate = turnControl.Estado;
     }
     public void JumpButon()
@@ -106,7 +136,7 @@ public class UIControl : MonoBehaviour
         dragScript.IsShoot = false;
         jumpButon.interactable = false;
         cancel.interactable = false;
-        fondo.SetActive(false);
+        PlayerPanel.SetActive(false);
         ZoomCamera1.SetActive(true);
         laststate = turnControl.Estado;
         FMODUnity.RuntimeManager.PlayOneShotAttached(JumpBSound, gameObject);
@@ -115,15 +145,25 @@ public class UIControl : MonoBehaviour
     public void Cancel()
     {
         FMODUnity.RuntimeManager.PlayOneShotAttached(BackBSound, gameObject);
+        WeaponSelectionPanel.SetActive(false);
+        WeaponSelectionButon.interactable = true;
         turnControl.Estado = 0;
+        turnControl.TurnCanceled();
     }
     public void EndTurn()
     {
         jumpButon.interactable = false;
+        WeaponSelectionButon.interactable = false;
         spitButon.interactable = false;
         pasturn.interactable = false;
         cancel.interactable = false;
         turnControl.Estado = 7;
+        turnControl.TurnEnded();
+
+        if (EndTurnAction != null)
+        {
+            EndTurnAction();
+        }
     }
     public void Reload()
     {
@@ -131,5 +171,5 @@ public class UIControl : MonoBehaviour
         Time.timeScale = 1;
     }
 
-    
+
 }

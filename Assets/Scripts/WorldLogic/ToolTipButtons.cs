@@ -6,29 +6,112 @@ using UnityEngine.UI;
 
 public class ToolTipButtons : MonoBehaviour
 {
-    [TextArea] public string tipText;
+    [SerializeField] bool automatic;
+    [SerializeField] bool atTurnEnd;
+    int once = 0;
+    [SerializeField] float delay;
 
-    [SerializeField] TextMeshProUGUI tip;
-    [SerializeField] GameObject tipImage;
+    [SerializeField] int HowManyTips;
+    [TextArea] public string[] tipText;
+
+    int currentTip;
+
+    [SerializeField] TextMeshProUGUI[] tipsArray;
+    [SerializeField] GameObject[] TipsImageArray;
 
     [SerializeField] LayoutElement layoutElement = null;
     [SerializeField] int characterWrapLimit = 0;
 
+    [SerializeField] Button buton;
+    [SerializeField] GameObject cancelButton;
+
+    [SerializeField] GameObject continueButton;
+
+    void OnEnable()
+    {
+        UIControl.EndTurnAction += TurnEnd;
+        cancelButton.SetActive(false);
+        continueButton.SetActive(false);
+    } 
+
+    void OnDisable()
+    {
+        UIControl.EndTurnAction -= TurnEnd;
+
+        for (int i = 0; i < tipsArray.Length; i++)
+        {
+            tipsArray[currentTip].text = "";
+            TipsImageArray[currentTip].SetActive(false); 
+        }
+
+        currentTip = 0;
+
+        buton.enabled = true;
+    }
+
+    void Start()
+    {        
+        once = 0;
+
+        currentTip = 0;
+
+        if (automatic == true)
+        {
+            ShowTip();
+        }
+    }
+
+    void TurnEnd()
+    {
+        if(atTurnEnd == true && once == 0)
+        {
+            currentTip = 0;
+            once = 1;
+            ShowTip();
+        }
+    }
+
     public void ShowTip()
     {
-        int contentLenght = tip.text.Length;
+        cancelButton.SetActive(true);
+        continueButton.SetActive(true);
+
+        int contentLenght = tipsArray[currentTip].text.Length;
 
         layoutElement.enabled = (contentLenght > characterWrapLimit) ? true : false;
 
-        tipImage.SetActive(true);
-        tip.text = "" + tipText;
-        StartCoroutine(TurnOff());
+        TipsImageArray[currentTip].SetActive(true);
+        tipsArray[currentTip].text = "" + tipText[currentTip];
+
+        buton.enabled = false;
+
+        //StartCoroutine(TurnOff());
     }
 
-    IEnumerator TurnOff()
+    public void Continue()
     {
-        yield return new WaitForSeconds(4f);
-        tipImage.SetActive(false);
-        tip.text = "";
+        tipsArray[currentTip].text = "";
+        TipsImageArray[currentTip].SetActive(false);
+
+        if (currentTip != HowManyTips - 1)
+        {
+            currentTip += 1;
+            ShowTip();
+        }
+        else
+        {
+            cancelButton.SetActive(false);
+            continueButton.SetActive(false);
+            currentTip = 0;
+            buton.enabled = true;
+        }
     }
+
+    /*IEnumerator TurnOff()
+    {
+        yield return new WaitForSeconds(delay);
+
+        tipsArray[currentTip].text = "";
+        TipsImageArray[currentTip].SetActive(false);
+    }*/
 }

@@ -15,6 +15,7 @@ public class TurnControl : MonoBehaviour
     [SerializeField] GameObject turnoAzul;
     [SerializeField] GameObject turnoVerde;
     [SerializeField] float turnDuration = 20;
+    UIControl ZoomCam;
     float turnDurationtemp;
     public int Estado { get => estado; set => estado = value; }
     public int ContadorTurno { get => contadorTurno; set => contadorTurno = value; }
@@ -24,6 +25,7 @@ public class TurnControl : MonoBehaviour
     {
         turnDurationtemp = turnDuration;
         teamselection = GetComponent<CharctesSelection>();
+        ZoomCam = GetComponent<UIControl>();
     }
     // Update is called once per frame
     void Update()
@@ -63,6 +65,7 @@ public class TurnControl : MonoBehaviour
         {
             turnStart = false;
             estado = 7;
+            ZoomCam.ZoomCamera1.SetActive(false);
             turnDuration = turnDurationtemp;
         }
     }

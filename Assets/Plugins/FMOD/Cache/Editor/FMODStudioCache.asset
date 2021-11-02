@@ -15,10 +15,10 @@ MonoBehaviour:
   Path: Assets/Germifmod/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637707939249497932
+  lastModified: 637714563564288768
   FileSizes:
   - Name: Desktop
-    Value: 1460
+    Value: 1564
   Exists: 1
 --- !u!114 &-8810861033143702420
 MonoBehaviour:
@@ -158,6 +158,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 496
+--- !u!114 &-3400907105827031927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/NeveraSFX 2
+  m_EditorClassIdentifier: 
+  Path: event:/Music/NeveraSFX 2
+  guid: 19dd03360b4f054cb696f96441627432
+  Banks:
+  - {fileID: 1327500969096916990}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 4310
 --- !u!114 &-3066130740468724079
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -181,6 +204,52 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 496
+--- !u!114 &-1602002206154735864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/FX/SniperImpact
+  m_EditorClassIdentifier: 
+  Path: event:/FX/SniperImpact
+  guid: 8123850dae9cdf468ad255fb65de88a2
+  Banks:
+  - {fileID: 1327500969096916990}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 570
+--- !u!114 &-985339984097049362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/FX/SniperShoot
+  m_EditorClassIdentifier: 
+  Path: event:/FX/SniperShoot
+  guid: f64c080baeef73409dc22111893ee6b9
+  Banks:
+  - {fileID: 1327500969096916990}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 988
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -199,7 +268,6 @@ MonoBehaviour:
   EditorEvents:
   - {fileID: 5517119732958166188}
   - {fileID: -6910265758305179886}
-  - {fileID: 1197756480947554015}
   - {fileID: -7015981775142996048}
   - {fileID: -8810861033143702420}
   - {fileID: 8317331746647457646}
@@ -213,12 +281,15 @@ MonoBehaviour:
   - {fileID: -7656160155223327188}
   - {fileID: -4990606357757529290}
   - {fileID: 6790267512483512544}
+  - {fileID: -3400907105827031927}
+  - {fileID: -1602002206154735864}
+  - {fileID: -985339984097049362}
   EditorParameters: []
   MasterBanks:
   - {fileID: 1327500969096916990}
   StringsBanks:
   - {fileID: -8899455795537939601}
-  stringsBankWriteTime: 637707939249497932
+  stringsBankWriteTime: 637714563564288768
   cacheVersion: 8
 --- !u!114 &818793510430944790
 MonoBehaviour:
@@ -304,10 +375,10 @@ MonoBehaviour:
   Path: Assets/Germifmod/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637707939249467942
+  lastModified: 637714563564288768
   FileSizes:
   - Name: Desktop
-    Value: 1631232
+    Value: 1616832
   Exists: 1
 --- !u!114 &2016094048071315676
 MonoBehaviour:

@@ -119,6 +119,9 @@
 	<object class="MixerBusEffectChain" id="{3c75900b-0a6d-40da-8df8-b6162e955475}">
 		<relationship name="effects">
 			<destination>{a4ce8b93-feba-4388-a538-13e30a4125f0}</destination>
+			<destination>{bc663fcb-d503-4c29-b922-390407976352}</destination>
+			<destination>{e477f02f-6504-4657-bc5c-cf51870e8a75}</destination>
+			<destination>{b01c43cc-749e-4bdd-afdf-ca23712dba13}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{6a291d95-d413-4ba7-a759-13c008d644d9}" />
@@ -130,5 +133,35 @@
 	</object>
 	<object class="MixerBusPanner" id="{b7e7a441-4ea3-47b2-959c-a47bcb306b27}" />
 	<object class="MixerBusFader" id="{a4ce8b93-feba-4388-a538-13e30a4125f0}" />
+	<object class="ThreeEQEffect" id="{bc663fcb-d503-4c29-b922-390407976352}">
+		<property name="lowGain">
+			<value>1</value>
+		</property>
+		<property name="midGain">
+			<value>-4.5</value>
+		</property>
+		<property name="highGain">
+			<value>-7.5</value>
+		</property>
+	</object>
+	<object class="DelayEffect" id="{e477f02f-6504-4657-bc5c-cf51870e8a75}">
+		<property name="delay">
+			<value>420</value>
+		</property>
+		<property name="feedback">
+			<value>10</value>
+		</property>
+		<property name="level">
+			<value>-19.5</value>
+		</property>
+	</object>
+	<object class="CompressorEffect" id="{b01c43cc-749e-4bdd-afdf-ca23712dba13}">
+		<property name="threshold">
+			<value>-18</value>
+		</property>
+		<property name="ratio">
+			<value>4.30000019</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{8843fea6-0742-4340-a3c1-e920f5af5390}" />
 </objects>

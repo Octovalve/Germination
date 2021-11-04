@@ -1621,7 +1621,7 @@ MonoBehaviour:
     type: 3}
   muzzleVFX: {fileID: 8595657303808111298, guid: 98da1cab2af360f48b8e500d4d424690,
     type: 3}
-  Event: 
+  Event: event:/FX/SniperShoot
 --- !u!1818360609 &8173132406827058625
 RotationConstraint:
   m_ObjectHideFlags: 0

@@ -93,7 +93,10 @@
 	<object class="MixerBusPanner" id="{c8e95dc5-9aa2-429f-a25e-b36513c35c07}" />
 	<object class="SingleSound" id="{12174ea6-6a15-4052-b786-ed28c37d53d8}">
 		<property name="length">
-			<value>0.65306122448979587</value>
+			<value>0.62306122448979584</value>
+		</property>
+		<property name="timelockedOffset">
+			<value>0.029999999999999999</value>
 		</property>
 		<relationship name="audioFile">
 			<destination>{df282fad-bca7-47cb-9431-99c411a2bab7}</destination>
@@ -118,6 +121,8 @@
 			<destination>{f2f870c8-ae89-4750-bdcc-4544838bf97a}</destination>
 			<destination>{ec1d0f8a-5958-49e3-902e-fbc0d2fa91da}</destination>
 			<destination>{bd4fc953-d344-47e0-8a7c-27e730d63464}</destination>
+			<destination>{7bbb5e5b-3c8b-4efd-9f55-f7fd6ff57ce5}</destination>
+			<destination>{2cb83daa-f4c4-4eb9-a6e3-41b2afff8ad5}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{ae2dc243-dcc3-424b-baa2-f0d566e7b94f}" />
@@ -151,13 +156,32 @@
 			<destination>{d8109710-cf29-4767-acd0-f418d074b2c8}</destination>
 		</relationship>
 	</object>
+	<object class="ChorusEffect" id="{7bbb5e5b-3c8b-4efd-9f55-f7fd6ff57ce5}">
+		<property name="rate">
+			<value>0.119999997</value>
+		</property>
+		<property name="depth">
+			<value>41.5</value>
+		</property>
+	</object>
+	<object class="CompressorEffect" id="{2cb83daa-f4c4-4eb9-a6e3-41b2afff8ad5}">
+		<property name="threshold">
+			<value>-25.5</value>
+		</property>
+		<property name="ratio">
+			<value>14.5</value>
+		</property>
+		<property name="gain">
+			<value>-2.5</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{d1ef4b78-3c17-4e84-a3a3-bed297aec37f}" />
 	<object class="RandomizerModulator" id="{d8109710-cf29-4767-acd0-f418d074b2c8}">
 		<property name="nameOfPropertyBeingModulated">
 			<value>pitch</value>
 		</property>
 		<property name="amount">
-			<value>11</value>
+			<value>5</value>
 		</property>
 	</object>
 </objects>

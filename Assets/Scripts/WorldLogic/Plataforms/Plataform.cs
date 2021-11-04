@@ -14,6 +14,8 @@ public class Plataform : MonoBehaviour
     bool hit = false;
     Vector3 collider_center, collider_size;
     Material material;
+    [FMODUnity.EventRef]
+    public string platformDestruction;
     private void Start()
     {
         RB = GetComponent<Rigidbody>();
@@ -36,7 +38,8 @@ public class Plataform : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "shot")
-        { 
+        {
+            FMODUnity.RuntimeManager.PlayOneShotAttached(platformDestruction, gameObject);
             pltcollider.enabled = false;
             RB.isKinematic = false;
             wait = 0.5f;

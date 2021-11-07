@@ -10,6 +10,8 @@ public class UIControl : MonoBehaviour
     [SerializeField] string levelToLoad;
     [SerializeField] GameObject PlayerPanel;
     [SerializeField] GameObject WeaponSelectionPanel;
+    [SerializeField] GameObject canselJumpObj;
+    [SerializeField] GameObject canselAtackObj;
     [SerializeField] Button jumpButon;
     [SerializeField] Button WeaponSelectionButon;
     [SerializeField] Button spitButon;
@@ -17,6 +19,8 @@ public class UIControl : MonoBehaviour
     [SerializeField] Button Sniper;
     [SerializeField] Button pasturn;
     [SerializeField] Button cancel;
+    [SerializeField] Button cancelJump;
+    [SerializeField] Button cancelAttack;
     CharctesSelection teamSelectio;
     CameraControl cameracontrol;
     TurnControl turnControl;
@@ -47,8 +51,12 @@ public class UIControl : MonoBehaviour
         cameracontrol = GetComponent<CameraControl>();
         turnControl = GetComponent<TurnControl>();
         trigerUI = GetComponent<BoxCollider>();
+        canselAtackObj.SetActive(false);
+        canselJumpObj.SetActive(false);
         jumpButon.interactable = false;
         WeaponSelectionButon.interactable = false;
+        cancelAttack.interactable = false;
+        cancelJump.interactable = false;
         pasturn.interactable = false;
         cancel.interactable = false;
     }
@@ -69,6 +77,7 @@ public class UIControl : MonoBehaviour
         {
             turnControl.Estado = 7;
         }
+        if (dragScript.IsShoot == true) { canselJumpObj.SetActive(false); }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -107,7 +116,9 @@ public class UIControl : MonoBehaviour
         FMODUnity.RuntimeManager.PlayOneShotAttached(WeaponBSound, gameObject);
         spitButon.interactable = false;
         cancel.interactable = false;
+        cancelAttack.interactable = true;
         ZoomCamera1.SetActive(true);
+        //canselAtackObj.SetActive(true);
         PlayerPanel.SetActive(false);
         WeaponSelectionPanel.SetActive(false);
         laststate = turnControl.Estado;
@@ -119,7 +130,9 @@ public class UIControl : MonoBehaviour
         FMODUnity.RuntimeManager.PlayOneShotAttached(WeaponBSound, gameObject);
         pistol.interactable = false;
         cancel.interactable = false;
+        cancelAttack.interactable = true;
         ZoomCamera1.SetActive(true);
+        //canselAtackObj.SetActive(true);
         PlayerPanel.SetActive(false);
         WeaponSelectionPanel.SetActive(false);
         laststate = turnControl.Estado;
@@ -130,8 +143,10 @@ public class UIControl : MonoBehaviour
         FMODUnity.RuntimeManager.PlayOneShotAttached(WeaponBSound, gameObject);
         Sniper.interactable = false;
         cancel.interactable = false;
+        cancelAttack.interactable = true;
         ZoomCamera1.SetActive(true);
         PlayerPanel.SetActive(false);
+        //canselAtackObj.SetActive(true);
         WeaponSelectionPanel.SetActive(false);
         laststate = turnControl.Estado;
     }
@@ -140,10 +155,33 @@ public class UIControl : MonoBehaviour
         dragScript.IsShoot = false;
         jumpButon.interactable = false;
         cancel.interactable = false;
+        cancelJump.interactable = true;
         PlayerPanel.SetActive(false);
         ZoomCamera1.SetActive(true);
+        canselJumpObj.SetActive(true);
         laststate = turnControl.Estado;
         FMODUnity.RuntimeManager.PlayOneShotAttached(JumpBSound, gameObject);
+    }
+    public void CancelJump()
+    {
+        dragScript.IsShoot = true;
+        jumpButon.interactable = true;
+        cancelJump.interactable = false;
+        PlayerPanel.SetActive(true);
+        canselJumpObj.SetActive(false);
+        ZoomCamera1.SetActive(false);
+    }
+    public void CancelAttack()
+    {
+        Sniper.interactable = true;
+        spitButon.interactable = true;
+        pistol.interactable = true;
+        cancel.interactable = false;
+        cancelAttack.interactable = false;
+        WeaponSelectionButon.interactable = true;
+        ZoomCamera1.SetActive(false);
+        canselAtackObj.SetActive(false);
+        PlayerPanel.SetActive(true);
     }
 
     public void Cancel()

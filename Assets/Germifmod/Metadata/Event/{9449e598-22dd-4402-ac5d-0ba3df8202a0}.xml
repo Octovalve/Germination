@@ -90,16 +90,16 @@
 	<object class="MixerBusPanner" id="{2f6e6355-16c0-41d1-bf87-9e918c09c414}" />
 	<object class="SingleSound" id="{18e5aca0-d697-45d9-85e9-31beaa6bc6cb}">
 		<property name="length">
-			<value>0.49632653061224491</value>
+			<value>0.47132653061224489</value>
+		</property>
+		<property name="timelockedOffset">
+			<value>0.025000000000000001</value>
 		</property>
 		<relationship name="audioFile">
 			<destination>{79e48e90-8455-40b0-9f1d-5c7366e40b47}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{f50d4d65-85ed-4d8a-9c7b-05534060ec6f}">
-		<property name="volume">
-			<value>1.5</value>
-		</property>
 		<property name="name">
 			<value>Audio 1</value>
 		</property>
@@ -117,6 +117,8 @@
 		<relationship name="effects">
 			<destination>{784df7cf-9fd5-4659-b319-c960462555fe}</destination>
 			<destination>{e5982a52-7b2a-4704-ac72-bd7cc9f5a9e3}</destination>
+			<destination>{b43c2561-f151-4901-b4f4-4dbce59362eb}</destination>
+			<destination>{9be12321-9560-471c-be6d-db61391fd5fd}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{63fd354f-23cd-4983-bb22-6d3ba19587d9}" />
@@ -148,5 +150,44 @@
 			<value>-4</value>
 		</property>
 	</object>
+	<object class="ChorusEffect" id="{b43c2561-f151-4901-b4f4-4dbce59362eb}">
+		<property name="rate">
+			<value>2.5</value>
+		</property>
+		<property name="depth">
+			<value>75</value>
+		</property>
+		<relationship name="modulators">
+			<destination>{a8c4701a-990c-4de4-9a67-e7d477a4ee05}</destination>
+			<destination>{089d6f98-e917-4c72-afb8-bf2660e26ef5}</destination>
+		</relationship>
+	</object>
+	<object class="ThreeEQEffect" id="{9be12321-9560-471c-be6d-db61391fd5fd}">
+		<property name="lowGain">
+			<value>3.5</value>
+		</property>
+		<property name="midGain">
+			<value>-3.5</value>
+		</property>
+		<property name="highGain">
+			<value>-3.5</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{1e16254e-a165-47d9-8733-62e3534c6cd7}" />
+	<object class="RandomizerModulator" id="{a8c4701a-990c-4de4-9a67-e7d477a4ee05}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>rate</value>
+		</property>
+		<property name="amount">
+			<value>15.5</value>
+		</property>
+	</object>
+	<object class="RandomizerModulator" id="{089d6f98-e917-4c72-afb8-bf2660e26ef5}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>depth</value>
+		</property>
+		<property name="amount">
+			<value>16.5</value>
+		</property>
+	</object>
 </objects>

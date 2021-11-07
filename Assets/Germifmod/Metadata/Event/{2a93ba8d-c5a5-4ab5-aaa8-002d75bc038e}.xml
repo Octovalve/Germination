@@ -130,6 +130,7 @@
 			<destination>{a911c7fa-2f00-44c7-8625-9a781970b456}</destination>
 			<destination>{9678b04c-602e-44d2-891e-37874d4b7535}</destination>
 			<destination>{acb798a5-a930-4831-9086-8dc5592e54c7}</destination>
+			<destination>{18a5863e-eb7f-443b-a24b-11ff98a21d16}</destination>
 			<destination>{07ee6652-0bee-4200-a8d9-ad931b8d704b}</destination>
 		</relationship>
 	</object>
@@ -179,6 +180,18 @@
 			<value>-1</value>
 		</property>
 	</object>
+	<object class="ChorusEffect" id="{18a5863e-eb7f-443b-a24b-11ff98a21d16}">
+		<property name="rate">
+			<value>3.60000014</value>
+		</property>
+		<property name="depth">
+			<value>66.5</value>
+		</property>
+		<relationship name="modulators">
+			<destination>{951149f6-b6e5-4b63-ab5a-f3d831926e43}</destination>
+			<destination>{0280c588-9017-4383-b406-7f18e2ff0b10}</destination>
+		</relationship>
+	</object>
 	<object class="PannerEffect" id="{07ee6652-0bee-4200-a8d9-ad931b8d704b}">
 		<property name="overridingOutputFormat">
 			<value>1</value>
@@ -202,6 +215,22 @@
 		</property>
 		<property name="amount">
 			<value>16.5</value>
+		</property>
+	</object>
+	<object class="RandomizerModulator" id="{951149f6-b6e5-4b63-ab5a-f3d831926e43}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>rate</value>
+		</property>
+		<property name="amount">
+			<value>9</value>
+		</property>
+	</object>
+	<object class="RandomizerModulator" id="{0280c588-9017-4383-b406-7f18e2ff0b10}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>depth</value>
+		</property>
+		<property name="amount">
+			<value>12.5</value>
 		</property>
 	</object>
 	<object class="Automator" id="{8311d56c-27ee-4fe3-a8db-29554a58a760}">

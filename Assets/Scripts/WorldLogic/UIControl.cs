@@ -30,6 +30,10 @@ public class UIControl : MonoBehaviour
     public string BackBSound;
     [FMODUnity.EventRef]
     public string WeaponBSound;
+    [FMODUnity.EventRef]
+    public string PassBTurn;
+    [FMODUnity.EventRef]
+    public string weaponSelection;
 
     public GameObject ZoomCamera1 { get => ZoomCamera; set => ZoomCamera = value; }
 
@@ -87,7 +91,7 @@ public class UIControl : MonoBehaviour
     public void WeaponSelection()
     {
         WeaponSelectionButon.interactable = false;
-
+        FMODUnity.RuntimeManager.PlayOneShotAttached(weaponSelection, gameObject);
         //Weapon butons start
         spitButon.interactable = true;
         pistol.interactable = true;
@@ -148,15 +152,18 @@ public class UIControl : MonoBehaviour
         WeaponSelectionPanel.SetActive(false);
         WeaponSelectionButon.interactable = true;
         turnControl.Estado = 0;
+        turnControl.TurnCanceled();
     }
     public void EndTurn()
     {
+        FMODUnity.RuntimeManager.PlayOneShotAttached(PassBTurn, gameObject);
         jumpButon.interactable = false;
         WeaponSelectionButon.interactable = false;
         spitButon.interactable = false;
         pasturn.interactable = false;
         cancel.interactable = false;
         turnControl.Estado = 7;
+        turnControl.TurnEnded();
 
         if (EndTurnAction != null)
         {

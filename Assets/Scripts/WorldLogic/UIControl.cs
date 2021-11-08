@@ -174,6 +174,23 @@ public class UIControl : MonoBehaviour
         SceneManager.LoadScene(levelToLoad);
         Time.timeScale = 1;
     }
-
-
+    public void Pauce()
+    {
+        //[SerializeField] GameObject pausePanel;
+        if (Time.timeScale != 0)
+        {
+            //pausePanel.setactive(true);
+            Time.timeScale = 0;
+        }
+        else
+        {
+            Time.timeScale = 1;
+            //pausePanel.setactive(false);
+        }
+        //pausePanel.setactive(true);
+    }
+    public void Menu()
+    {
+        SceneManager.LoadScene("Intro");
+    }
 }

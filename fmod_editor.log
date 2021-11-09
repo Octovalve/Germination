@@ -7,7 +7,7 @@
 [LOG] OutputWASAPI::init                       : Output buffer size: 4096 samples, latency: 0.00ms, period: 10.00ms, DSP buffer: 1024 * 4
 [LOG] Thread::initThread                       : Init FMOD stream thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFB, Stack Size: 98304, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Affinity: 0x8000000000000001, Priority: 0xFFFF7FFA, Stack Size: 81920, Semaphore: No, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 00000218A1B45998 isAsync 0 updatePeriod 0.02
+[LOG] AsyncManager::init                       : manager 00000204B7949C78 isAsync 0 updatePeriod 0.02
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
 [LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFD, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
@@ -23,14 +23,14 @@
 [LOG] SystemI::createSoundInternal             : exinfo->length             = 1611360
 [LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 19872
 [LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000050058FF338
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000693157F368
 [LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFBDB3160E0
-[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFBDB3160B0
-[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFBDB3161B0
-[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFBDB316270
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000021832DFB8D8
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF800A360E0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF800A360B0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF800A361B0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF800A36270
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000002057E7E30E8
 [LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
 [LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
 [LOG] SystemI::createSoundInternal             : Sample 0/1: name='ChooseBacteria', format=5, channels=2, frequency=48000, lengthbytes=4512, lengthpcm=22569, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.245819.
@@ -39,23 +39,23 @@
 [LOG] SystemI::createSoundInternal             : exinfo->length             = 1611360
 [LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 19872
 [LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000050058FF338
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000693157F368
 [LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFBDB3160E0
-[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFBDB3160B0
-[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFBDB3161B0
-[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFBDB316270
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000021832DFB098
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF800A360E0
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF800A360B0
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF800A361B0
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF800A36270
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000204B86045B8
 [LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
 [LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
 [LOG] SystemI::createSoundInternal             : Sample 0/1: name='ShootButtonSFX', format=5, channels=2, frequency=48000, lengthbytes=5600, lengthpcm=23823, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.564514.
-[LOG] SoundI::release                          :  (00000218FAE37418)
-[LOG] SoundI::release                          :     ChooseBacteria (00000218FEC81108)
-[LOG] SoundI::release                          :  (00000218FAE36898)
-[LOG] SoundI::release                          :     ShootButtonSFX (00000218FEC82CA8)
-[LOG] SoundI::release                          :  (00000218FAE34BD8)
-[LOG] SoundI::release                          :     NeveraSFX (00000218FEC9CFE8)
+[LOG] SoundI::release                          :  (00000204FD8BA998)
+[LOG] SoundI::release                          :     ChooseBacteria (000002052634B238)
+[LOG] SoundI::release                          :  (00000202A2EE49A8)
+[LOG] SoundI::release                          :     ShootButtonSFX (00000202A3437338)
+[LOG] SoundI::release                          :  (00000202A2EE4F68)
+[LOG] SoundI::release                          :     NeveraSFX (00000202A34379B8)
 [LOG] Thread::callback                         : FMOD Studio update thread finished.
 [LOG] Thread::callback                         : FMOD Studio bank load thread finished.
 [LOG] Profile::disconnectAll                   : Profiler disconnecting all clients

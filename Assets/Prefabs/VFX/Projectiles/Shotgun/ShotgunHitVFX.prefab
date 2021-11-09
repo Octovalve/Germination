@@ -284,8 +284,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.05
-      minScalar: 0.02
+      scalar: 0.1
+      minScalar: 0.05
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -4820,6 +4820,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3911613063934165091}
+  - component: {fileID: 5314168337587546017}
   m_Layer: 0
   m_Name: ShotgunHitVFX
   m_TagString: Untagged
@@ -4842,3 +4843,15 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5314168337587546017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3911613063934165092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f05bc9fe74ae7e64a970c0c9b3210879, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

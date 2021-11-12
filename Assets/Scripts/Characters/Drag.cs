@@ -46,10 +46,6 @@ public class Drag : MonoBehaviour
         stick = GetComponent<Stick>();
         limitToShoot = new Vector3(-20, 35, 0);
     }
-    private void Update()
-    {
-        Debug.Log(force.magnitude);
-    }
     //Toma la posicion del maus en el momento que unde sobr el objeto 
     private void OnMouseDown()
     {

@@ -13,7 +13,10 @@ public class TurnControl : MonoBehaviour
     private int contadorTurno = 1;
     private bool turnStart = false;
     CharctesSelection teamselection;
+    CameraControl cameracontrol;
     [SerializeField] GameObject turnoAzul;
+    [SerializeField] GameObject ComanderT2;
+    [SerializeField] GameObject ComanderT1;
     [SerializeField] GameObject turnoVerde;
     [SerializeField] float turnDuration = 20;
     float turnDurationinicial;
@@ -28,7 +31,9 @@ public class TurnControl : MonoBehaviour
     {
         turnDurationtemp = turnDuration;
         teamselection = GetComponent<CharctesSelection>();
+        cameracontrol = GetComponent<CameraControl>();
         ZoomCam = GetComponent<UIControl>();
+        cameracontrol.FolowThis = ComanderT1.transform;
         turnDurationinicial = turnDuration;
 
     }
@@ -43,6 +48,7 @@ public class TurnControl : MonoBehaviour
             turnStart = false;
             turnoAzul.SetActive(true);
             turnoVerde.SetActive(false);
+            cameracontrol.FolowThis = ComanderT2.transform;
             estado = 0;
             contadorTurno++;
         }
@@ -53,6 +59,7 @@ public class TurnControl : MonoBehaviour
             turnStart = false;
             turnoVerde.SetActive(true);
             turnoAzul.SetActive(false);
+            cameracontrol.FolowThis = ComanderT1.transform;
             estado = 0;
             contadorTurno++;
         }

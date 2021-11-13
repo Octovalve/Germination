@@ -5,11 +5,14 @@ using UnityEngine;
 public class Weapon2 : MonoBehaviour
 {
     [SerializeField] float ofsetRot;
-    [SerializeField] Transform SpawnP;
-    [SerializeField] GameObject projectile;
+    [SerializeField] Transform SpawnA;
+    [SerializeField] Transform SpawnB;
+    [SerializeField] Transform SpawnC;
+    [SerializeField] GameObject projectileA;
+    [SerializeField] GameObject projectileB;
     [SerializeField] GameObject muzzleVFX;
     CameraControl camControl;
-    float forceMod = 2;
+    float forceMod = 4;
     Vector3 mouseUpPos;
     UIControl ZoomCam;
     Vector3 force;
@@ -25,7 +28,7 @@ public class Weapon2 : MonoBehaviour
 
     private void Start()
     {
-        rb = projectile.GetComponent<Rigidbody>();
+        rb = projectileA.GetComponent<Rigidbody>();
         cam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         camControl = GameObject.FindGameObjectWithTag("MainCinemachineCamera").GetComponent<CameraControl>();
         ZoomCam = camControl.GetComponent<UIControl>();
@@ -33,7 +36,7 @@ public class Weapon2 : MonoBehaviour
     void Update()
     {
         Vector3 diference = transform.position - WorldPosition(0);
-        force = SpawnP.position - WorldPosition(0);
+        force = SpawnA.position - WorldPosition(0);
         rotZ = Mathf.Atan2(-diference.y, -diference.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0, 0, rotZ + ofsetRot);
 
@@ -41,7 +44,7 @@ public class Weapon2 : MonoBehaviour
         {
             if (IsShoot == false)
             {
-                Trajectory.Instance.UpdateTrajectoryInpuls(forceVector: force * forceMod, rb, startingPoint: SpawnP.position);
+                Trajectory.Instance.UpdateTrajectoryInpuls(forceVector: force * forceMod, rb, startingPoint: SpawnA.position);
             }
         }
         if (Input.GetMouseButtonUp(0))
@@ -54,11 +57,15 @@ public class Weapon2 : MonoBehaviour
     {
         if (IsShoot) { return; }
         Trajectory.Instance.HideLine();
-        GameObject bullet = Instantiate(projectile, SpawnP.position, Quaternion.identity) as GameObject;
+        GameObject bulletA = Instantiate(projectileA, SpawnA.position, Quaternion.identity) as GameObject;
+        GameObject bulletB = Instantiate(projectileB, SpawnB.position, Quaternion.identity) as GameObject;
+        GameObject bulletC = Instantiate(projectileB, SpawnC.position, Quaternion.identity) as GameObject;
         FMODUnity.RuntimeManager.PlayOneShotAttached(Event, gameObject);
-        GameObject muzzle = Instantiate(muzzleVFX, SpawnP.position, Quaternion.identity) as GameObject;
-        camControl.FolowThis = bullet.GetComponent<Transform>();
-        bullet.GetComponent<Rigidbody>().AddForce(force * forceMod, ForceMode.Impulse);
+        GameObject muzzle = Instantiate(muzzleVFX, SpawnA.position, Quaternion.identity) as GameObject;
+        camControl.FolowThis = bulletA.GetComponent<Transform>();
+        bulletA.GetComponent<Rigidbody>().AddForce(force * forceMod, ForceMode.Impulse);
+        bulletB.GetComponent<Rigidbody>().AddForce(force * forceMod, ForceMode.Impulse);
+        bulletC.GetComponent<Rigidbody>().AddForce(force * forceMod, ForceMode.Impulse);
         ZoomCam.ZoomCamera1.SetActive(false);
         IsShoot = true;
         this.gameObject.SetActive(false);

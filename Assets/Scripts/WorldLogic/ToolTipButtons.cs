@@ -6,29 +6,92 @@ using UnityEngine.UI;
 
 public class ToolTipButtons : MonoBehaviour
 {
-    [TextArea] public string tipText;
+    [SerializeField] bool automatic;
+    [SerializeField] bool atTurnEnd;
+    [SerializeField] float delay;
 
-    [SerializeField] TextMeshProUGUI tip;
-    [SerializeField] GameObject tipImage;
+    [SerializeField] int HowManyTips;
+    [TextArea] public string[] tipText;
+
+    int currentTip;
+
+    [SerializeField] TextMeshProUGUI[] tipsArray;
+    [SerializeField] GameObject[] TipsImageArray;
 
     [SerializeField] LayoutElement layoutElement = null;
     [SerializeField] int characterWrapLimit = 0;
 
+    [SerializeField] Button buton;
+
+    void OnEnable()
+    {
+        UIControl.EndTurnAction += TurnEnd;
+    } 
+
+    void OnDisable()
+    {
+        UIControl.EndTurnAction -= TurnEnd;
+
+        for (int i = 0; i < tipsArray.Length; i++)
+        {
+            tipsArray[currentTip].text = "";
+            TipsImageArray[currentTip].SetActive(false); 
+        }
+
+        currentTip = 0;
+
+        buton.enabled = true;
+    }
+
+    void Start()
+    {
+        currentTip = 0;
+
+        if (automatic == true)
+        {
+            ShowTip();
+        }
+    }
+
+    void TurnEnd()
+    {
+        if(atTurnEnd == true)
+        {
+            currentTip = 0;
+            ShowTip();
+        }
+    }
+
     public void ShowTip()
     {
-        int contentLenght = tip.text.Length;
+        int contentLenght = tipsArray[currentTip].text.Length;
 
         layoutElement.enabled = (contentLenght > characterWrapLimit) ? true : false;
 
-        tipImage.SetActive(true);
-        tip.text = "" + tipText;
+        TipsImageArray[currentTip].SetActive(true);
+        tipsArray[currentTip].text = "" + tipText[currentTip];
+
+        buton.enabled = false;
+
         StartCoroutine(TurnOff());
     }
 
     IEnumerator TurnOff()
     {
-        yield return new WaitForSeconds(4f);
-        tipImage.SetActive(false);
-        tip.text = "";
+        yield return new WaitForSeconds(delay);
+
+        tipsArray[currentTip].text = "";
+        TipsImageArray[currentTip].SetActive(false);
+
+        if (currentTip != HowManyTips - 1)
+        {
+            currentTip += 1;
+            ShowTip();
+        }
+        else
+        {
+            currentTip = 0;
+            buton.enabled = true;
+        }
     }
 }

@@ -29,7 +29,7 @@ public class DamageAttack : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        cameracontrol.TEspera = 120;
+        cameracontrol.TEspera = 60;
         
         //Berifica si golpeo al jugador toma su script de HP y le pasa un balor de daño a recivir
         if (collision.gameObject.tag == "Player")
@@ -49,6 +49,7 @@ public class DamageAttack : MonoBehaviour
             if (collision.gameObject.tag == "jumpingWall")
             {
                 FMODUnity.RuntimeManager.PlayOneShotAttached(wallCol, gameObject);
+                GameObject hit = Instantiate(hitVFX, transform.position, Quaternion.identity) as GameObject;
             }
             if (collision.gameObject.tag != "jumpingWall")
             {

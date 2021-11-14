@@ -6,11 +6,14 @@ public class CaracterReaction : MonoBehaviour
 {
     [SerializeField] float knockbackValue;
     [SerializeField] int Rondascongelado;
+    [SerializeField] GameObject freezeEffect;
+    GameObject freezeVFX;
     int turnoscongelado;
     TurnControl contador;
     SphereCollider colliderobj;
     Rigidbody thisrb;
     private bool congelado = false;
+    int state;
 
     public bool Congelado { get => congelado; set => congelado = value; }
 
@@ -19,11 +22,27 @@ public class CaracterReaction : MonoBehaviour
         thisrb = GetComponent<Rigidbody>();
         contador = GameObject.FindGameObjectWithTag("MainCinemachineCamera").GetComponent<TurnControl>();
         colliderobj = GetComponent<SphereCollider>();
+        state = 0;
     }
     private void Update()
     {
-        if (congelado == true) { EstadoCongelado(); }
-        if (congelado == false && contador.ContadorTurno == turnoscongelado) { colliderobj.enabled = true; }
+        if (congelado == true) { 
+            EstadoCongelado();
+
+            if (state == 0)
+            {
+                state = 1;
+            }
+        }
+        if (congelado == false && contador.ContadorTurno == turnoscongelado) { 
+            colliderobj.enabled = true;
+
+            if (state == 2)
+            {
+                Destroy(freezeVFX);
+                state = 0;
+            }
+        }
     }
     private void OnCollisionEnter(Collision collision)
     {
@@ -43,5 +62,11 @@ public class CaracterReaction : MonoBehaviour
     {
         if (congelado == true && turnoscongelado < contador.ContadorTurno) { turnoscongelado += (contador.ContadorTurno + Rondascongelado); }
         if (contador.ContadorTurno >= turnoscongelado) { congelado = false; }
+
+        if (state == 1)
+        {
+            freezeVFX = Instantiate(freezeEffect, transform.position, Quaternion.identity) as GameObject;
+            state = 2;
+        }
     }
 }

@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Materials/Wapons.meta
 guid: 38c86df15ea1f7d42a4e026ebc38fa79
+=======
+guid: d8325b2d26bbe424c8980cde0929fd58
+>>>>>>> TSK-HazardFrezzeVFX:Assets/Prefabs/VFX/Projectiles/Shotgun.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

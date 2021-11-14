@@ -120,7 +120,6 @@
 		<relationship name="effects">
 			<destination>{1ec27193-f555-42b9-8013-c585fc0bf96b}</destination>
 			<destination>{6ae0eac5-68df-4393-885f-6e86301a737c}</destination>
-			<destination>{1d1cc155-6610-4816-80f9-6a24b8cdc598}</destination>
 			<destination>{f73db4fc-7106-450e-8128-f3c29aab14ae}</destination>
 			<destination>{4dde360b-6cbd-4131-9d85-4653c0fe2334}</destination>
 		</relationship>
@@ -145,14 +144,6 @@
 			<destination>{4d5a9a83-16f2-4e98-906f-2e5904291fba}</destination>
 			<destination>{8df1033c-4385-46b4-a936-37e3c29f395e}</destination>
 		</relationship>
-	</object>
-	<object class="ConvolutionReverbEffect" id="{1d1cc155-6610-4816-80f9-6a24b8cdc598}">
-		<property name="wetLevel">
-			<value>-13</value>
-		</property>
-		<property name="dryLevel">
-			<value>0</value>
-		</property>
 	</object>
 	<object class="PitchShifterEffect" id="{f73db4fc-7106-450e-8128-f3c29aab14ae}">
 		<property name="pitch">

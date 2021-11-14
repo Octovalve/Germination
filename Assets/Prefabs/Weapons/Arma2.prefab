@@ -325,7 +325,7 @@ MonoBehaviour:
     type: 3}
   muzzleVFX: {fileID: 5110167824173787148, guid: 38867f654c6beab4b95e1909296f6275,
     type: 3}
-  Event: 
+  Event: event:/FX/ShotgunShoot
 --- !u!1818360609 &2727696158468037739
 RotationConstraint:
   m_ObjectHideFlags: 0

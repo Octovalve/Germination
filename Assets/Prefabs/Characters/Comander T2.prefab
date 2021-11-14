@@ -225,6 +225,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   knockbackValue: 2
   Rondascongelado: 5
+  freezeEffect: {fileID: 3531078878779300513, guid: 2241e452751a9f640874111d32a8413f,
+    type: 3}
 --- !u!1818360608 &7895654504002365933
 PositionConstraint:
   m_ObjectHideFlags: 0

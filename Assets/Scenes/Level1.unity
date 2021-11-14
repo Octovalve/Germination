@@ -2125,6 +2125,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8617072460421257807, guid: 80e724c79d2dd7345abef9b03f081a51,
+        type: 3}
+      propertyPath: freezeEffect
+      value: 
+      objectReference: {fileID: 3531078878779300513, guid: 2241e452751a9f640874111d32a8413f,
+        type: 3}
     - target: {fileID: 4073698202274906023, guid: 80e724c79d2dd7345abef9b03f081a51,
         type: 3}
       propertyPath: m_IsActive
@@ -18598,6 +18604,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -7804504694676846152, guid: 1ee1001e9faa88f4aaa6ee56c6bf9268,
+        type: 3}
+      propertyPath: Rondascongelado
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1492757766304876008, guid: 1ee1001e9faa88f4aaa6ee56c6bf9268,
         type: 3}
       propertyPath: barraHPUIMenu
@@ -19119,6 +19130,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2961146314830332213, guid: 86f6ed91c6a8c97488a5a481ea492e66,
+        type: 3}
+      propertyPath: freezeEffect
+      value: 
+      objectReference: {fileID: 3531078878779300513, guid: 2241e452751a9f640874111d32a8413f,
+        type: 3}
     - target: {fileID: 2961146314968456307, guid: 86f6ed91c6a8c97488a5a481ea492e66,
         type: 3}
       propertyPath: m_Name

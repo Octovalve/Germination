@@ -19,6 +19,7 @@ public class Drag : MonoBehaviour
     private Rigidbody rb;
     private bool isShoot = true;
     private Vector3 force;
+    private Vector3 limitToShoot;
     TurnControl turnControl;
     [SerializeField] GameObject liquidSlimeBurstVFX;
     [SerializeField] GameObject liquidSlimeVFX;
@@ -43,6 +44,7 @@ public class Drag : MonoBehaviour
         liquidSlimePs = liquidSlimeVFX.GetComponentInChildren<ParticleSystem>();
         ZoomCam = camControl.GetComponent<UIControl>();
         stick = GetComponent<Stick>();
+        limitToShoot = new Vector3(-20, 35, 0);
     }
     //Toma la posicion del maus en el momento que unde sobr el objeto 
     private void OnMouseDown()
@@ -57,7 +59,7 @@ public class Drag : MonoBehaviour
             Trajectory.Instance.HideLine();
             mouseUpPos = Input.mousePosition;
             force = mouseDownPos - mouseUpPos;
-            Shoot(force);
+            if (force.magnitude > 10) { Shoot(force); }
         }
     }
     private void OnMouseDrag()

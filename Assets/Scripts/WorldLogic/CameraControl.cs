@@ -12,7 +12,6 @@ using UnityEngine;
 
 public class CameraControl : MonoBehaviour
 {
-    [SerializeField] Transform camStartPos;
     [SerializeField] Vector3 cameraOffset;
     [SerializeField] Camerapan paneo;
     public bool startposreach = false;
@@ -56,18 +55,20 @@ public class CameraControl : MonoBehaviour
         }
         else if (turnControl.Estado == 0 && tEspera == 0)
         {
-            Vector3 distanciAInicialPos = transform.position - camStartPos.position;
-            float distTotal = distanciAInicialPos.magnitude;
+            Vector3 newPos = folowThis.position - (cameraOffset+ cameraOffset);
+            float distTotal = (newPos - transform.position).magnitude;
             SmoothFactor = 0.1f;
             if (distTotal >= 0.5f && startposreach == false)
             {
-                this.transform.position = Vector3.Lerp(transform.position, camStartPos.position, SmoothFactor1);
+                this.transform.position = Vector3.Lerp(transform.position, newPos, SmoothFactor1);
             }
             else
             {
+                Debug.Log("Entre");
                 paneo.enabled = true;
                 startposreach = true;
             }
+            Debug.Log(distTotal);
         }
     }
 

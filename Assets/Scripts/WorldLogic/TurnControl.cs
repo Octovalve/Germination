@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TurnControl : MonoBehaviour
 {
@@ -12,9 +13,15 @@ public class TurnControl : MonoBehaviour
     private int contadorTurno = 1;
     private bool turnStart = false;
     CharctesSelection teamselection;
+    CameraControl cameracontrol;
     [SerializeField] GameObject turnoAzul;
+    [SerializeField] GameObject ComanderT2;
+    [SerializeField] GameObject ComanderT1;
     [SerializeField] GameObject turnoVerde;
     [SerializeField] float turnDuration = 20;
+    float turnDurationinicial;
+    [SerializeField] Image timeFB;
+    UIControl ZoomCam;
     float turnDurationtemp;
     public int Estado { get => estado; set => estado = value; }
     public int ContadorTurno { get => contadorTurno; set => contadorTurno = value; }
@@ -24,10 +31,16 @@ public class TurnControl : MonoBehaviour
     {
         turnDurationtemp = turnDuration;
         teamselection = GetComponent<CharctesSelection>();
+        cameracontrol = GetComponent<CameraControl>();
+        ZoomCam = GetComponent<UIControl>();
+        cameracontrol.FolowThis = ComanderT1.transform;
+        turnDurationinicial = turnDuration;
+
     }
     // Update is called once per frame
     void Update()
     {
+        timeFB.fillAmount = turnDuration / turnDurationinicial;
         if (estado >= 7 && teamselection.Team == 1)
         {
             teamselection.Team += 1;
@@ -35,6 +48,7 @@ public class TurnControl : MonoBehaviour
             turnStart = false;
             turnoAzul.SetActive(true);
             turnoVerde.SetActive(false);
+            cameracontrol.FolowThis = ComanderT2.transform;
             estado = 0;
             contadorTurno++;
         }
@@ -45,6 +59,7 @@ public class TurnControl : MonoBehaviour
             turnStart = false;
             turnoVerde.SetActive(true);
             turnoAzul.SetActive(false);
+            cameracontrol.FolowThis = ComanderT1.transform;
             estado = 0;
             contadorTurno++;
         }
@@ -63,6 +78,7 @@ public class TurnControl : MonoBehaviour
         {
             turnStart = false;
             estado = 7;
+            ZoomCam.ZoomCamera1.SetActive(false);
             turnDuration = turnDurationtemp;
         }
     }

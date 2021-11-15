@@ -35,7 +35,7 @@ public class CaracterReaction : MonoBehaviour
             }
         }
         if (congelado == false && contador.ContadorTurno == turnoscongelado) { 
-            colliderobj.enabled = true;
+            //colliderobj.enabled = true;
 
             if (state == 2)
             {

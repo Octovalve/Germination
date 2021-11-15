@@ -730,6 +730,18 @@ PrefabInstance:
       propertyPath: m_Sources.Array.data[0].sourceTransform
       value: 
       objectReference: {fileID: 7895654504002365846}
+    - target: {fileID: 2895546946202395420, guid: a9478b32f816d7b428f53b27eccf15d4,
+        type: 3}
+      propertyPath: muzzleVFX
+      value: 
+      objectReference: {fileID: 1005267914599616905, guid: fbc37c05ca71f634083e78882dcfb042,
+        type: 3}
+    - target: {fileID: 2895546946202395420, guid: a9478b32f816d7b428f53b27eccf15d4,
+        type: 3}
+      propertyPath: projectile
+      value: 
+      objectReference: {fileID: 2037830563759639262, guid: 944e0f830605ab44aaf130a301480190,
+        type: 3}
     - target: {fileID: 3787526692153807216, guid: a9478b32f816d7b428f53b27eccf15d4,
         type: 3}
       propertyPath: m_Name

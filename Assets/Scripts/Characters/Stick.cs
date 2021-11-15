@@ -23,7 +23,7 @@ public class Stick : MonoBehaviour
     ParticleSystem liquidSlimePs;
     private bool landed = true;
     private bool grounded = true;
-    float tiempoMovimiento = 1;
+    float tiempoMovimiento = 1f;
     float distPiso;
     [FMODUnity.EventRef]
     public string Event;
@@ -36,7 +36,7 @@ public class Stick : MonoBehaviour
         turnControl = GameObject.FindGameObjectWithTag("MainCinemachineCamera").GetComponent<TurnControl>();
         liquidSlimePs = liquidSlimeVFX.GetComponentInChildren<ParticleSystem>();
         ColiderPlayer = GetComponent<SphereCollider>();
-        distPiso = ColiderPlayer.radius;
+        distPiso = transform.localScale.magnitude / 2;
     }
     private void Update()
     {
@@ -44,6 +44,7 @@ public class Stick : MonoBehaviour
         if (grounded == true && landed == false)
         {
             tiempoMovimiento -= Time.deltaTime;
+            Debug.Log(tiempoMovimiento);
         }
         if (tiempoMovimiento <= 0 && landed == false)
         {
@@ -53,7 +54,8 @@ public class Stick : MonoBehaviour
             GetComponent<Rigidbody>().Sleep();
             if (turnControl.Estado >= 4 && landed == false)
             {
-                tiempoMovimiento = 1;
+                Debug.Log("detener mov");
+                tiempoMovimiento = 1f;
                 landed = true;
                 turnControl.Estado += 1;
                 FMODUnity.RuntimeManager.PlayOneShotAttached(Event, gameObject);

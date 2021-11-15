@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3552377286757915682}
   - component: {fileID: 3552377286757915684}
-  - component: {fileID: 3552377286757915681}
   - component: {fileID: 3552377286757915685}
   - component: {fileID: 3552377286757915689}
   - component: {fileID: 3552377286757915691}
@@ -18,6 +17,7 @@ GameObject:
   - component: {fileID: -8892171073888127701}
   - component: {fileID: 3552377286757915687}
   - component: {fileID: 3552377286757915686}
+  - component: {fileID: 5240670804720422999}
   m_Layer: 8
   m_Name: Player 1 T1
   m_TagString: Player
@@ -62,19 +62,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!135 &3552377286757915681
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3552377286757915710}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.698207
-  m_Center: {x: 0, y: 0.06258261, z: 0}
 --- !u!114 &3552377286757915685
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -133,7 +120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   barraHP: {fileID: 4792031559151428354}
-  maxHP: 200
+  maxHP: 300
   isCapitan: 0
   VictoryUI: {fileID: 0}
   ondeadTime: 0.5
@@ -151,7 +138,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   knockbackValue: 2
-  Rondascongelado: 5
+  Rondascongelado: 4
   freezeEffect: {fileID: 3531078878779300513, guid: 2241e452751a9f640874111d32a8413f,
     type: 3}
 --- !u!1818360608 &3552377286757915687
@@ -194,6 +181,20 @@ RotationConstraint:
   - sourceTransform: {fileID: 4360555123025209868, guid: 42b7bf02a6491e043993543cab985ec1,
       type: 3}
     weight: 1
+--- !u!136 &5240670804720422999
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3552377286757915710}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5379709
+  m_Height: 1.2404335
+  m_Direction: 1
+  m_Center: {x: -0.0019146204, y: 0.018980384, z: -0.06286812}
 --- !u!1001 &693712681937778904
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -649,17 +650,17 @@ PrefabInstance:
     - target: {fileID: 9056829367533939057, guid: fa04c5df9270ccf40b9783e67906def9,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.149
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9056829367533939057, guid: fa04c5df9270ccf40b9783e67906def9,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.511
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9056829367533939057, guid: fa04c5df9270ccf40b9783e67906def9,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -7.2194066
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9056829367533939057, guid: fa04c5df9270ccf40b9783e67906def9,
         type: 3}

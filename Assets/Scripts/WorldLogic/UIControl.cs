@@ -91,7 +91,7 @@ public class UIControl : MonoBehaviour
     public void WeaponSelection()
     {
         WeaponSelectionButon.interactable = false;
-        FMODUnity.RuntimeManager.PlayOneShotAttached(weaponSelection, gameObject);
+        //FMODUnity.RuntimeManager.PlayOneShotAttached(weaponSelection, gameObject);
         //Weapon butons start
         spitButon.interactable = true;
         pistol.interactable = true;
@@ -104,36 +104,35 @@ public class UIControl : MonoBehaviour
     public void Weapon1()
     {
         attackScript.Attack1();
-        FMODUnity.RuntimeManager.PlayOneShotAttached(WeaponBSound, gameObject);
         spitButon.interactable = false;
         cancel.interactable = false;
         ZoomCamera1.SetActive(true);
         PlayerPanel.SetActive(false);
         WeaponSelectionPanel.SetActive(false);
         laststate = turnControl.Estado;
-
+        //FMODUnity.RuntimeManager.PlayOneShotAttached(WeaponBSound, gameObject);
     }
     public void Weapon2()
     {
         attackScript.Attack2();
-        FMODUnity.RuntimeManager.PlayOneShotAttached(WeaponBSound, gameObject);
         pistol.interactable = false;
         cancel.interactable = false;
         ZoomCamera1.SetActive(true);
         PlayerPanel.SetActive(false);
         WeaponSelectionPanel.SetActive(false);
         laststate = turnControl.Estado;
+        //FMODUnity.RuntimeManager.PlayOneShotAttached(WeaponBSound, gameObject);
     }
     public void Weapon3()
     {
         attackScript.Attack3();
-        FMODUnity.RuntimeManager.PlayOneShotAttached(WeaponBSound, gameObject);
         Sniper.interactable = false;
         cancel.interactable = false;
         ZoomCamera1.SetActive(true);
         PlayerPanel.SetActive(false);
         WeaponSelectionPanel.SetActive(false);
         laststate = turnControl.Estado;
+        //FMODUnity.RuntimeManager.PlayOneShotAttached(WeaponBSound, gameObject);
     }
     public void JumpButon()
     {

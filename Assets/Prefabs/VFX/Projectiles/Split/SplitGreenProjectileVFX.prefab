@@ -104,7 +104,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f8c08c288f8646499bdce5c2510bf22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageToDeal: 100
+  damageToDeal: 140
   hitVFX: {fileID: 3707039816863422156, guid: 53fa31ca8239add40b02b04a10844d05, type: 3}
   floorCol: event:/FX/SpitImpact
   wallCol: event:/FX/WallBouncing

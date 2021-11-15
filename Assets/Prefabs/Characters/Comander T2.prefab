@@ -134,7 +134,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   barraHP: {fileID: 200646419003239756}
-  maxHP: 300
+  maxHP: 500
   isCapitan: 1
   VictoryUI: {fileID: 0}
   ondeadTime: 0.5
@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   knockbackValue: 2
-  Rondascongelado: 5
+  Rondascongelado: 4
   freezeEffect: {fileID: 3531078878779300513, guid: 2241e452751a9f640874111d32a8413f,
     type: 3}
 --- !u!1818360608 &7895654504002365933

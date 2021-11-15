@@ -4858,10 +4858,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9305bae5ea21004b92d23ad24b47934, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageToDeal: 150
+  damageToDeal: 60
   hitVFX: {fileID: 3911613063934165092, guid: fef55341e2784d04baa60abf94cf570d, type: 3}
-  floorCol: 
-  wallCol: 
+  floorCol: event:/FX/SniperImpact
+  wallCol: event:/FX/WallBouncing
   hitPlayer: 
 --- !u!136 &4725322341263865502
 CapsuleCollider:
@@ -4889,5 +4889,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab84b183579a88140997d849740560b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxDistance: 5
+  maxDistance: 3
   hitVFX: {fileID: 3911613063934165092, guid: fef55341e2784d04baa60abf94cf570d, type: 3}

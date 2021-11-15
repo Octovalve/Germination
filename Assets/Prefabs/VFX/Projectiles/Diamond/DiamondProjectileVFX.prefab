@@ -9749,7 +9749,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f8c08c288f8646499bdce5c2510bf22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageToDeal: 150
+  damageToDeal: 100
   hitVFX: {fileID: 3128010973988408790, guid: 95bd41279c48c3c4da6c568aa8e4001b, type: 3}
   floorCol: event:/FX/SniperImpact
   wallCol: event:/FX/WallBouncing

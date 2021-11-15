@@ -89,7 +89,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2866733403655827020}
   - component: {fileID: 2866733403655826992}
-  - component: {fileID: 2866733403655826995}
   - component: {fileID: 2866733403655826993}
   - component: {fileID: 2866733403655826998}
   - component: {fileID: 2866733403655827022}
@@ -97,6 +96,7 @@ GameObject:
   - component: {fileID: -7804504694676846152}
   - component: {fileID: 2866733403655826999}
   - component: {fileID: 2866733403655826996}
+  - component: {fileID: 4337719598635257950}
   m_Layer: 8
   m_Name: Player 1 T2
   m_TagString: Player
@@ -141,19 +141,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!135 &2866733403655826995
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2866733403655826997}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.73663306
-  m_Center: {x: 0, y: 0.1100719, z: 0}
 --- !u!114 &2866733403655826993
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -212,7 +199,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   barraHP: {fileID: 7666980064692108099}
-  maxHP: 200
+  maxHP: 300
   isCapitan: 0
   VictoryUI: {fileID: 0}
   ondeadTime: 0.5
@@ -230,7 +217,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   knockbackValue: 2
-  Rondascongelado: 5
+  Rondascongelado: 4
   freezeEffect: {fileID: 3531078878779300513, guid: 2241e452751a9f640874111d32a8413f,
     type: 3}
 --- !u!1818360608 &2866733403655826999
@@ -273,6 +260,20 @@ RotationConstraint:
   - sourceTransform: {fileID: 4360555123025209868, guid: 42b7bf02a6491e043993543cab985ec1,
       type: 3}
     weight: 1
+--- !u!136 &4337719598635257950
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2866733403655826997}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5379709
+  m_Height: 1.2404335
+  m_Direction: 1
+  m_Center: {x: -0.0019146204, y: 0.018980384, z: -0.06286812}
 --- !u!1 &4557662755396324732
 GameObject:
   m_ObjectHideFlags: 0
@@ -637,6 +638,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Arma2
+      objectReference: {fileID: 0}
+    - target: {fileID: 941922709871398109, guid: 25c49cc2bf85c3f40bf3326b0df8d215,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2727696158468037739, guid: 25c49cc2bf85c3f40bf3326b0df8d215,
         type: 3}

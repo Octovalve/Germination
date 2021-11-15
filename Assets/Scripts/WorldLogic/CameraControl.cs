@@ -64,11 +64,9 @@ public class CameraControl : MonoBehaviour
             }
             else
             {
-                Debug.Log("Entre");
                 paneo.enabled = true;
                 startposreach = true;
             }
-            Debug.Log(distTotal);
         }
     }
 
